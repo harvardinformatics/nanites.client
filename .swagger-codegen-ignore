@@ -29,3 +29,4 @@ README.md
 setup.py
 test-requirements.txt
 .gitignore
+nanites.client.swagger/configuration.py

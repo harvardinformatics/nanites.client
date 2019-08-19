@@ -18,9 +18,10 @@ import logging
 import multiprocessing
 import sys
 import urllib3
-
+import os
 import six
 from six.moves import http_client as httplib
+
 
 
 class TypeWithDefault(type):
@@ -47,7 +48,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "http://localhost:8765/nanites/api"
+        self.host = os.environ.get('NANITES_API_BASE', 'https://nanites.rc.fas.harvard.edu/nanites/api')
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
