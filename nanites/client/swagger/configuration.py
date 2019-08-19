@@ -61,7 +61,9 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         except ImportError:
             pass
         # dict to store API prefix (e.g. Bearer)
-        self.api_key_prefix = {'token': 'Token'}
+        self.api_key_prefix = {
+            'token': 'Token'
+        }
         # Username for HTTP basic authentication
         self.username = ""
         # Password for HTTP basic authentication
@@ -235,7 +237,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                     'type': 'api_key',
                     'in': 'header',
                     'key': 'Authorization',
-                    'value': self.get_api_key_with_prefix('Authorization')
+                    'value': self.get_api_key_with_prefix('token')
                 },
 
         }
