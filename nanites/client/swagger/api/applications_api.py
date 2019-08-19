@@ -114,7 +114,7 @@ class ApplicationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/applications/', 'POST',
@@ -215,7 +215,7 @@ class ApplicationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/applications/{name}/', 'DELETE',
@@ -314,7 +314,7 @@ class ApplicationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/applications/', 'GET',
@@ -423,7 +423,7 @@ class ApplicationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/applications/{name}/', 'PATCH',
@@ -524,7 +524,7 @@ class ApplicationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/applications/{name}/', 'GET',
@@ -633,7 +633,7 @@ class ApplicationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/applications/{name}/', 'PUT',

@@ -17,11 +17,11 @@ import copy
 import logging
 import multiprocessing
 import sys
-import urllib3
 import os
+import urllib3
+
 import six
 from six.moves import http_client as httplib
-
 
 
 class TypeWithDefault(type):
@@ -55,8 +55,13 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         # Authentication Settings
         # dict to store API key(s)
         self.api_key = {}
+        try:
+            from django.conf import settings
+            self.api_key['token'] = settings.IFX_APP['token']
+        except ImportError:
+            pass
         # dict to store API prefix (e.g. Bearer)
-        self.api_key_prefix = {}
+        self.api_key_prefix = {'token': 'Token'}
         # Username for HTTP basic authentication
         self.username = ""
         # Password for HTTP basic authentication
@@ -225,12 +230,12 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :return: The Auth Settings information dict.
         """
         return {
-            'Basic':
+            'token':
                 {
-                    'type': 'basic',
+                    'type': 'api_key',
                     'in': 'header',
                     'key': 'Authorization',
-                    'value': self.get_basic_auth_token()
+                    'value': self.get_api_key_with_prefix('Authorization')
                 },
 
         }

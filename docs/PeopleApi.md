@@ -27,10 +27,11 @@ import nanites.client.swagger
 from nanites.client.swagger.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
+# Configure API key authorization: token
 configuration = nanites.client.swagger.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
@@ -55,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -79,10 +80,11 @@ import nanites.client.swagger
 from nanites.client.swagger.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
+# Configure API key authorization: token
 configuration = nanites.client.swagger.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
@@ -106,7 +108,7 @@ void (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -130,10 +132,11 @@ import nanites.client.swagger
 from nanites.client.swagger.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
+# Configure API key authorization: token
 configuration = nanites.client.swagger.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
@@ -160,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -184,10 +187,11 @@ import nanites.client.swagger
 from nanites.client.swagger.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
+# Configure API key authorization: token
 configuration = nanites.client.swagger.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
@@ -214,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -238,10 +242,11 @@ import nanites.client.swagger
 from nanites.client.swagger.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
+# Configure API key authorization: token
 configuration = nanites.client.swagger.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
@@ -266,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+[token](../README.md#token)
 
 ### HTTP request headers
 
@@ -290,10 +295,11 @@ import nanites.client.swagger
 from nanites.client.swagger.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
+# Configure API key authorization: token
 configuration = nanites.client.swagger.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
@@ -320,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+[token](../README.md#token)
 
 ### HTTP request headers
 

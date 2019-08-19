@@ -13,4 +13,4 @@ RUN pip install --upgrade pip && \
     pip install urllib3 && \
     pip install django-nose
 
-CMD ./wait4db.py && /app/manage.py test -v 2
+CMD ./wait4db.py && ./manage.py test -v 2

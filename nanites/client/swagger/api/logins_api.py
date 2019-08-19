@@ -114,7 +114,7 @@ class LoginsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/logins/', 'POST',
@@ -213,7 +213,7 @@ class LoginsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/logins/{id}/', 'DELETE',
@@ -312,7 +312,7 @@ class LoginsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/logins/', 'GET',
@@ -419,7 +419,7 @@ class LoginsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/logins/{id}/', 'PATCH',
@@ -518,7 +518,7 @@ class LoginsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/logins/{id}/', 'GET',
@@ -625,7 +625,7 @@ class LoginsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['Basic']  # noqa: E501
+        auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
             '/logins/{id}/', 'PUT',

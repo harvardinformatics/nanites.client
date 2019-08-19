@@ -14,10 +14,10 @@ import time
 import MySQLdb
 
 SQL_DSN = {
-    "host"      : os.environ.get("IFXMAIL_HOSTNAME", "ifxmail-db"),
-    "db"        : os.environ.get("IFXMAIL_DATABASE", "ifxmail"),
-    "user"      : os.environ.get("IFXMAIL_USERNAME", "ifxmail"),
-    "passwd"    : os.environ.get("IFXMAIL_PASSWORD", "ifxmail"),
+    "host"      : os.environ.get("NANITES_HOSTNAME", "nanites-db"),
+    "db"        : os.environ.get("NANITES_DATABASE", "nanites"),
+    "user"      : os.environ.get("NANITES_USERNAME", "nanites"),
+    "passwd"    : os.environ.get("NANITES_PASSWORD", "nanites"),
     "use_unicode" : True,
 }
 
