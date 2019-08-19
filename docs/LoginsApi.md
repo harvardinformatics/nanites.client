@@ -1,0 +1,331 @@
+# nanites.client.swagger.LoginsApi
+
+All URIs are relative to *http://localhost:8765/nanites/api*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**logins_create**](LoginsApi.md#logins_create) | **POST** /logins/ | 
+[**logins_delete**](LoginsApi.md#logins_delete) | **DELETE** /logins/{id}/ | 
+[**logins_list**](LoginsApi.md#logins_list) | **GET** /logins/ | 
+[**logins_partial_update**](LoginsApi.md#logins_partial_update) | **PATCH** /logins/{id}/ | 
+[**logins_read**](LoginsApi.md#logins_read) | **GET** /logins/{id}/ | 
+[**logins_update**](LoginsApi.md#logins_update) | **PUT** /logins/{id}/ | 
+
+
+# **logins_create**
+> Login logins_create(data)
+
+
+
+Viewset for Logins
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nanites.client.swagger
+from nanites.client.swagger.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: Basic
+configuration = nanites.client.swagger.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = nanites.client.swagger.LoginsApi(nanites.client.swagger.ApiClient(configuration))
+data = nanites.client.swagger.Login() # Login | 
+
+try:
+    api_response = api_instance.logins_create(data)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginsApi->logins_create: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Login**](Login.md)|  | 
+
+### Return type
+
+[**Login**](Login.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logins_delete**
+> logins_delete(id)
+
+
+
+Viewset for Logins
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nanites.client.swagger
+from nanites.client.swagger.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: Basic
+configuration = nanites.client.swagger.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = nanites.client.swagger.LoginsApi(nanites.client.swagger.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    api_instance.logins_delete(id)
+except ApiException as e:
+    print("Exception when calling LoginsApi->logins_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logins_list**
+> InlineResponse2003 logins_list(page=page, page_size=page_size)
+
+
+
+Viewset for Logins
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nanites.client.swagger
+from nanites.client.swagger.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: Basic
+configuration = nanites.client.swagger.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = nanites.client.swagger.LoginsApi(nanites.client.swagger.ApiClient(configuration))
+page = 56 # int | A page number within the paginated result set. (optional)
+page_size = 56 # int | Number of results to return per page. (optional)
+
+try:
+    api_response = api_instance.logins_list(page=page, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginsApi->logins_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| A page number within the paginated result set. | [optional] 
+ **page_size** | **int**| Number of results to return per page. | [optional] 
+
+### Return type
+
+[**InlineResponse2003**](InlineResponse2003.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logins_partial_update**
+> Login logins_partial_update(id, data)
+
+
+
+Viewset for Logins
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nanites.client.swagger
+from nanites.client.swagger.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: Basic
+configuration = nanites.client.swagger.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = nanites.client.swagger.LoginsApi(nanites.client.swagger.ApiClient(configuration))
+id = 'id_example' # str | 
+data = nanites.client.swagger.Login() # Login | 
+
+try:
+    api_response = api_instance.logins_partial_update(id, data)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginsApi->logins_partial_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **data** | [**Login**](Login.md)|  | 
+
+### Return type
+
+[**Login**](Login.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logins_read**
+> Login logins_read(id)
+
+
+
+Viewset for Logins
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nanites.client.swagger
+from nanites.client.swagger.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: Basic
+configuration = nanites.client.swagger.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = nanites.client.swagger.LoginsApi(nanites.client.swagger.ApiClient(configuration))
+id = 'id_example' # str | 
+
+try:
+    api_response = api_instance.logins_read(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginsApi->logins_read: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**Login**](Login.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logins_update**
+> Login logins_update(id, data)
+
+
+
+Viewset for Logins
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nanites.client.swagger
+from nanites.client.swagger.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: Basic
+configuration = nanites.client.swagger.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = nanites.client.swagger.LoginsApi(nanites.client.swagger.ApiClient(configuration))
+id = 'id_example' # str | 
+data = nanites.client.swagger.Login() # Login | 
+
+try:
+    api_response = api_instance.logins_update(id, data)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginsApi->logins_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **data** | [**Login**](Login.md)|  | 
+
+### Return type
+
+[**Login**](Login.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
