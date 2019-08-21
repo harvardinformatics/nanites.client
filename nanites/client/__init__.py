@@ -41,6 +41,8 @@ OPERATIONS = [
 ]
 
 
+LIST_PAGE_SIZE = 1000000000
+
 class SwaggerClient(object):
 
     def __init__(self, api_client=None):
@@ -104,6 +106,11 @@ class SwaggerClient(object):
         operation = match.group(1)
         model_name = match.group(2)
 
+        # Model name might be plural, so switch it to singluar
+        for k, v in MODEL_NAMES.items():
+            if model_name == v:
+                model_name = k
+
         api_client = kwargs.pop('api_client', None)
         if not api_client:
             api_client = self.api_client
@@ -115,7 +122,7 @@ class SwaggerClient(object):
         data = {}
         for key in model_class.attribute_map.keys():
             if key in kwargs:
-                data[key] = kwargs[key]
+                data[key] = kwargs.pop(key)
 
         # Swagger API class name e.g. SourcesApi
         api_class = globals()['%sApi' % MODEL_NAMES[model_name]]
@@ -127,34 +134,35 @@ class SwaggerClient(object):
         # though for "Source" it's a name
         # create requires a data dict, others use kwargs for some reason
         if operation == 'create':
-            return self.call_api_func(api, swagger_func_name.lower(), data=data)
+            return self.call_api_func(api, swagger_func_name.lower(), data=data, **kwargs)
         elif operation == 'update':
             if model_name == 'Source':
                 if 'name' not in data:
                     raise Exception('Source update requires a name')
                 name = data.pop('name')
-                return self.call_api_func(api, swagger_func_name.lower(), name=name, data=data)
+                return self.call_api_func(api, swagger_func_name.lower(), name=name, data=data, **kwargs)
             else:
                 if 'id' not in data:
                     raise Exception('id required to update %s' % model_name)
                 id = data.pop('id')
-                return self.call_api_func(api, swagger_func_name.lower(), id=id, data=data)
+                return self.call_api_func(api, swagger_func_name.lower(), id=id, data=data, **kwargs)
         elif operation == 'delete':
             if model_name == 'Source':
                 if 'name' not in data:
                     raise Exception('Source delete requires a name')
                 name = data.pop('name')
-                return self.call_api_func(api, swagger_func_name.lower(), name=name)
+                return self.call_api_func(api, swagger_func_name.lower(), name=name, **kwargs)
             else:
                 if 'id' not in data:
                     raise Exception('id required to delete %s' % model_name)
                 id = data.pop('id')
-                return self.call_api_func(api, swagger_func_name.lower(), id=id)
+                return self.call_api_func(api, swagger_func_name.lower(), id=id, **kwargs)
         elif operation == 'list':
-            response = self.call_api_func(api, swagger_func_name.lower(), **data)
+            data['page_size'] = LIST_PAGE_SIZE
+            response = self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
             return response.results
         else:
-            return self.call_api_func(api, swagger_func_name.lower(), **data)
+            return self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
 
     def call_api_func(self, api, func_name, *args, **kwargs):
         '''

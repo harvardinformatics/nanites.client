@@ -8,10 +8,13 @@ Test Source
 from __future__ import absolute_import
 
 import unittest
-
+import os
+from copy import deepcopy
 from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
 from test.client import data
+
+DATABASE_LOGIN_TOTAL = 10203
 
 
 # Maintain ids of created items so we can clean them up later
@@ -43,29 +46,86 @@ class TestLoginsApi(unittest.TestCase):
                 except Exception as e:
                     print('Error deleting id %s: %s' % (str(id), str(e)))
 
-
     def test_login_create(self):
         '''Create a login with a person attached using createLogin method
         '''
-        logindata = data.LOGINS[0]
-        logindata['person'] = data.PEOPLE[0]
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['person'] = deepcopy(data.PEOPLE[0])
         login = API.createLogin(api_client=self.api_client, **logindata)
 
         # Should only need to get rid of the person and the login will cascade
         IDS['Person'] = [login.person.id]
         self.assertTrue(login.username == logindata['username'], 'Incorrect username %s' % login.username)
 
+    def test_login_create_no_username(self):
+        '''Ensure that login creation fails if there is no username
+        '''
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['person'] = deepcopy(data.PEOPLE[0])
+        del logindata['username']
+        try:
+            login = API.createLogin(api_client=self.api_client, **logindata)
+            self.assertTrue(False, 'Login created without username')
+        except Exception as e:
+            self.assertTrue('{"username":["This field is required."]' in str(e), 'Unexpected exception message %s' % str(e))
+
+    @unittest.skipUnless(os.environ.get('ENABLE_LONG_TESTS'), "Must set ENABLE_LONG_TESTs")
     def test_logins_list(self):
         '''Ensure that all logins can be returned by listLogins.  Total depends on what's in the database :)
         '''
         logins = API.listLogins(api_client=self.api_client)
-        self.assertTrue(len(logins) == 100, 'Incorrect number of logins %d' % (len(logins)))
+        self.assertTrue(len(logins) == DATABASE_LOGIN_TOTAL, 'Incorrect number of logins %d' % (len(logins)))
+
+    def test_logins_list_by_primary_email(self):
+        '''Ensure that a login can be fetched by primary email
+        '''
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['person'] = deepcopy(data.PEOPLE[0])
+        login = API.createLogin(api_client=self.api_client, **logindata)
+        # Should only need to get rid of the person and the login will cascade
+        IDS['Person'] = [login.person.id]
+
+        logins = API.listLogins(api_client=self.api_client, primary_email=data.PEOPLE[0]['primary_email'])
+        self.assertTrue(len(logins) == 1, 'Incorrect number of logins %d' % len(logins))
+        self.assertTrue(logins[0].username == logindata['username'], 'Incorrect login returned %s' % str(logins[0]))
+
+    def test_logins_list_by_username(self):
+        '''Ensure that a login can be fetched by username
+        '''
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['person'] = deepcopy(data.PEOPLE[0])
+        login = API.createLogin(api_client=self.api_client, **logindata)
+        # Should only need to get rid of the person and the login will cascade
+        IDS['Person'] = [login.person.id]
+
+        logins = API.listLogins(api_client=self.api_client, username=logindata['username'])
+        self.assertTrue(len(logins) == 1, 'Incorrect number of logins %d' % len(logins))
+        self.assertTrue(logins[0].username == logindata['username'], 'Incorrect login returned %s' % str(logins[0]))
+
+    def test_logins_list_by_ifxid(self):
+        '''Ensure that a login can be fetched by ifxid
+        '''
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['person'] = deepcopy(data.PEOPLE[0])
+        login = API.createLogin(api_client=self.api_client, **logindata)
+        # Should only need to get rid of the person and the login will cascade
+        IDS['Person'] = [login.person.id]
+
+        logins = API.listLogins(api_client=self.api_client, ifxid=login.person.ifxid)
+        self.assertTrue(len(logins) == 1, 'Incorrect number of logins %d' % len(logins))
+        self.assertTrue(logins[0].username == logindata['username'], 'Incorrect login returned %s' % str(logins[0]))
+
+    def test_logins_list_non_existent(self):
+        '''Ensure listLogins returns an empty list if no match exists
+        '''
+        logins = API.listLogins(api_client=self.api_client, ifxid='bad value')
+        self.assertTrue(len(logins) == 0, 'Incorrect number of logins %d' % len(logins))
 
     def test_login_update(self):
         '''Ensure that a login can be updated
         '''
-        logindata = data.LOGINS[0]
-        logindata['person'] = data.PEOPLE[0]
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['person'] = deepcopy(data.PEOPLE[0])
         login = API.createLogin(api_client=self.api_client, **logindata)
 
         # Should only need to get rid of the person and the login will cascade
@@ -77,33 +137,40 @@ class TestLoginsApi(unittest.TestCase):
         login = API.updateLogin(api_client=self.api_client, **logindata)
         self.assertTrue(login.username == 'newusername', 'Incorrect username %s' % login.username)
 
-    # def test_add_login_to_person(self):
-    #     '''Ensure that you can add a login to an existing person
-    #     '''
-    #     person = API.createPerson(api_client=self.api_client, **data.PEOPLE[0])
-    #     IDS['Person'] = [person.id]
-    #     logindata = data.LOGINS[0]
-    #     logindata['ifxid'] = person.ifxid
+    def test_add_login_to_person(self):
+        '''Ensure that you can add a login to an existing person
+        '''
+        persondata = deepcopy(data.PEOPLE[0])
+        person = API.createPerson(api_client=self.api_client, **persondata)
+        IDS['Person'] = [person.id]
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['ifxid'] = person.ifxid
 
-    #     # Double check
-    #     newperson = API.readPerson(id=person.id)
-    #     self.assertTrue(newperson.ifxid == person.ifxid)
+        login = API.createLogin(**logindata)
+        self.assertTrue(login.username == logindata['username'], 'Incorrect login username %s' % login.username)
+        self.assertTrue(login.person.full_name == person.full_name, 'Incorrect person %s' % str(login.person))
 
-    #     # login = API.createLogin(**logindata)
-    #     # self.assertTrue(login.username == logindata['username'], 'Incorrect login username %s' % login.username)
-    #     # self.assertTrue(login.person.full_name == person.full_name, 'Incorrect person %s' % str(login.person))
+    def test_read_login(self):
+        '''Ensure that a single login can be fetched by id
+        '''
+        logindata = deepcopy(data.LOGINS[0])
+        logindata['person'] = deepcopy(data.PEOPLE[0])
+        login = API.createLogin(api_client=self.api_client, **logindata)
+        # Should only need to get rid of the person and the login will cascade
+        IDS['Person'] = [login.person.id]
 
-    # def test_sources_update_fail(self):
-    #     '''Ensure that a source update will fail without a 'name'
-    #     '''
-    #     source = API.createSource(api_client=self.api_client, **SOURCES[0])
-    #     self.assertTrue(source.name == SOURCES[0]['name'], 'Incorrect source name: %s' % str(source))
-    #     updated_description = 'Updated description'
-    #     try:
-    #         source = API.updateSource(api_client=self.api_client, description=updated_description)
-    #         self.assertTrue(False, 'Successfully updated without a name parameter')
-    #     except Exception as e:
-    #         self.assertTrue('Source update requires a name' in str(e), 'Incorrect error message %s' % str(e))
+        fetchedlogin = API.readLogin(api_client=self.api_client, id=login.id)
+        self.assertTrue(fetchedlogin.username == login.username, 'Incorrect login returned %s' % str(fetchedlogin))
+
+    def test_failed_read_login(self):
+        '''Ensure that readLogin throws an exception for a non-existent value
+        '''
+        try:
+            fetchedlogin = API.readLogin(api_client=self.api_client, id=99999999999)
+            self.assertTrue(False, 'Actually fetched a login!')
+        except Exception as e:
+            self.assertTrue('Item not found' in str(e), 'Incorrect error message: %s' % str(e))
+
 
 if __name__ == '__main__':
     unittest.main()
