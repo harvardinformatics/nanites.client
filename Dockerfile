@@ -1,3 +1,6 @@
+#
+# This Dockerfile is meant for testing only.
+#
 FROM python:3.6
 
 EXPOSE 80

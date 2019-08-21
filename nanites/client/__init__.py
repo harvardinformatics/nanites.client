@@ -83,8 +83,6 @@ class SwaggerClient(object):
 
     def apiFn(self, api_func_name, *args, **kwargs):
         '''
-        %s
-
         Execute API function based on the model name and operation as
         determined by the function_name
         Model name should be capitalized and singular (e.g. Source).
@@ -94,7 +92,7 @@ class SwaggerClient(object):
             list
             read
             update
-        ''' % api_func_name
+        '''
 
         if not api_func_name in self.fnames:
             raise Exception('I am not familiar with the %s function' % api_func_name)
@@ -151,7 +149,7 @@ class SwaggerClient(object):
                 if 'id' not in data:
                     raise Exception('id required to delete %s' % model_name)
                 id = data.pop('id')
-                return self.call_api_func(api, swagger_func_name.lower(), id=id, data=data)
+                return self.call_api_func(api, swagger_func_name.lower(), id=id)
         elif operation == 'list':
             response = self.call_api_func(api, swagger_func_name.lower(), **data)
             return response.results
