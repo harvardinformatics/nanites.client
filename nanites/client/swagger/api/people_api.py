@@ -243,6 +243,9 @@ class PeopleApi(object):
         :param async bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
+        :param str login:
+        :param str username:
+        :param str primary_email:
         :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
@@ -266,12 +269,15 @@ class PeopleApi(object):
         :param async bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
+        :param str login:
+        :param str username:
+        :param str primary_email:
         :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'page_size']  # noqa: E501
+        all_params = ['page', 'page_size', 'login', 'username', 'primary_email']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -296,6 +302,12 @@ class PeopleApi(object):
             query_params.append(('page', params['page']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
+        if 'login' in params:
+            query_params.append(('login', params['login']))  # noqa: E501
+        if 'username' in params:
+            query_params.append(('username', params['username']))  # noqa: E501
+        if 'primary_email' in params:
+            query_params.append(('primary_email', params['primary_email']))  # noqa: E501
 
         header_params = {}
 

@@ -1,5 +1,7 @@
 #
 # Make the swagger client
+# Most of it gets generated in nanites/client/swagger, but for some reason, a nanites.client.swagger directory
+# is also created.  Contents are copied to the correct location and the dir is removed.
 #
 PACKAGE_NAME=nanites.client.swagger
 
