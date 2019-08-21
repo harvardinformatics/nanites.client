@@ -43,6 +43,7 @@ class GetPiNamesApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str search:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,12 +65,13 @@ class GetPiNamesApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str search:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['search']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -90,6 +92,8 @@ class GetPiNamesApi(object):
         path_params = {}
 
         query_params = []
+        if 'search' in params:
+            query_params.append(('search', params['search']))  # noqa: E501
 
         header_params = {}
 

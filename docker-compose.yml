@@ -41,6 +41,7 @@ services:
     environment:
       - NANITES_API_BASE=http://nanites/nanites/api
       - NANITES_CLIENT_IFX_APP_TOKEN=5944af78759a6efd27aca271072e094a939dc072
+#      - ENABLE_LONG_TESTS=True
 
 volumes:
   nanites-data:

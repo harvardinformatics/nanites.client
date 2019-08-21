@@ -14,7 +14,7 @@ from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
 from test.client import data
 
-DATABASE_LOGIN_TOTAL = 10203
+DATABASE_LOGIN_TOTAL = 10202
 
 
 # Maintain ids of created items so we can clean them up later
@@ -69,7 +69,7 @@ class TestLoginsApi(unittest.TestCase):
         except Exception as e:
             self.assertTrue('{"username":["This field is required."]' in str(e), 'Unexpected exception message %s' % str(e))
 
-    @unittest.skipUnless(os.environ.get('ENABLE_LONG_TESTS'), "Must set ENABLE_LONG_TESTs")
+    @unittest.skipUnless(os.environ.get('ENABLE_LONG_TESTS'), "Must set ENABLE_LONG_TESTS")
     def test_logins_list(self):
         '''Ensure that all logins can be returned by listLogins.  Total depends on what's in the database :)
         '''

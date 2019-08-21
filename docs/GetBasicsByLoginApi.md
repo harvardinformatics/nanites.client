@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_basics_by_login_list**
-> get_basics_by_login_list()
+> get_basics_by_login_list(login=login)
 
 
 
@@ -30,15 +30,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.GetBasicsByLoginApi(nanites.client.swagger.ApiClient(configuration))
+login = 'login_example' # str |  (optional)
 
 try:
-    api_instance.get_basics_by_login_list()
+    api_instance.get_basics_by_login_list(login=login)
 except ApiException as e:
     print("Exception when calling GetBasicsByLoginApi->get_basics_by_login_list: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **login** | **str**|  | [optional] 
 
 ### Return type
 

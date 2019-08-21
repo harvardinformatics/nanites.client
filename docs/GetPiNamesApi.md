@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_pi_names_list**
-> get_pi_names_list()
+> get_pi_names_list(search=search)
 
 
 
@@ -30,15 +30,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.GetPiNamesApi(nanites.client.swagger.ApiClient(configuration))
+search = 'search_example' # str |  (optional)
 
 try:
-    api_instance.get_pi_names_list()
+    api_instance.get_pi_names_list(search=search)
 except ApiException as e:
     print("Exception when calling GetPiNamesApi->get_pi_names_list: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search** | **str**|  | [optional] 
 
 ### Return type
 

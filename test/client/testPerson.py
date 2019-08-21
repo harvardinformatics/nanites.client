@@ -15,7 +15,9 @@ from nanites.client import API
 from test.client import data
 
 
-DATABASE_PEOPLE_TOTAL = 10
+DATABASE_PEOPLE_TOTAL = 10017
+
+
 # Maintain ids of created items so we can clean them up later
 IDS = {
     "Person": [],
@@ -63,7 +65,7 @@ class TestPersonApi(unittest.TestCase):
         self.assertTrue(len(person.contacts) == 3, 'Incorrect number of contacts: %d' % len(person.contacts))
         self.assertTrue(len(person.affiliations) == 1, 'Incorrect number of contacts: %d' % len(person.affiliations))
 
-    @unittest.skipUnless(os.environ.get('ENABLE_LONG_TESTS'), "Must set ENABLE_LONG_TESTs")
+    @unittest.skipUnless(os.environ.get('ENABLE_LONG_TESTS'), "Must set ENABLE_LONG_TESTS")
     def test_people_list(self):
         '''Ensure that all people can be returned by listPeople.  Total depends on what's in the database :)
         '''

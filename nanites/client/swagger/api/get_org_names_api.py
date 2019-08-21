@@ -43,6 +43,9 @@ class GetOrgNamesApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str search:
+        :param str ranks:
+        :param str org_tree:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,12 +67,15 @@ class GetOrgNamesApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str search:
+        :param str ranks:
+        :param str org_tree:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['search', 'ranks', 'org_tree']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -90,6 +96,12 @@ class GetOrgNamesApi(object):
         path_params = {}
 
         query_params = []
+        if 'search' in params:
+            query_params.append(('search', params['search']))  # noqa: E501
+        if 'ranks' in params:
+            query_params.append(('ranks', params['ranks']))  # noqa: E501
+        if 'org_tree' in params:
+            query_params.append(('org_tree', params['org_tree']))  # noqa: E501
 
         header_params = {}
 

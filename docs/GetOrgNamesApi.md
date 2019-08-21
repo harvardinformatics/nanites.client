@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_org_names_list**
-> get_org_names_list()
+> get_org_names_list(search=search, ranks=ranks, org_tree=org_tree)
 
 
 
@@ -30,15 +30,23 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.GetOrgNamesApi(nanites.client.swagger.ApiClient(configuration))
+search = 'search_example' # str |  (optional)
+ranks = 'ranks_example' # str |  (optional)
+org_tree = 'org_tree_example' # str |  (optional)
 
 try:
-    api_instance.get_org_names_list()
+    api_instance.get_org_names_list(search=search, ranks=ranks, org_tree=org_tree)
 except ApiException as e:
     print("Exception when calling GetOrgNamesApi->get_org_names_list: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search** | **str**|  | [optional] 
+ **ranks** | **str**|  | [optional] 
+ **org_tree** | **str**|  | [optional] 
 
 ### Return type
 

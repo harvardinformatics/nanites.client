@@ -41,7 +41,7 @@ OPERATIONS = [
 ]
 
 
-LIST_PAGE_SIZE = 1000000000
+DEFAULT_LIST_PAGE_SIZE = 1000000000
 
 class SwaggerClient(object):
 
@@ -158,7 +158,8 @@ class SwaggerClient(object):
                 id = data.pop('id')
                 return self.call_api_func(api, swagger_func_name.lower(), id=id, **kwargs)
         elif operation == 'list':
-            data['page_size'] = LIST_PAGE_SIZE
+            if 'page_size' not in kwargs:
+                kwargs['page_size'] = DEFAULT_LIST_PAGE_SIZE
             response = self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
             return response.results
         else:
