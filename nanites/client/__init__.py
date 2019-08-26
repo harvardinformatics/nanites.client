@@ -6,6 +6,28 @@
     This code provides a layer of insulation between the Swagger generated code
     and a client.  Returns swagger models.
 
+    Essentially just maps a set of standard API function names to Swagger code, e.g.
+
+        createPerson  -> PeopleApi.people_create
+        readPerson    -> PeopleApi.people_read
+        deletePerson  -> PeopleApi.people_delete
+        updatePerson  -> PeopleApi.people_update
+        listPeople    -> PeopleApi.people_list
+
+    The Swagger models are returned, though these are relatively simple things with
+    attributes corresponding to data fields.  Don't really need a wrapper for those.
+
+    Arguments to the standard functions are attribute kwargs:
+
+        createPerson(first_name='Vera', last_name='Min')
+
+    which are converted to whatever Swagger wants.  Extra parameters are passed on to
+    the Swagger code so you can use things like "async=True".  An ApiClient class can
+    be specified as is done in the tests.
+
+
+
+
     Contact: ifx@fas.harvard.edu
 """
 import re

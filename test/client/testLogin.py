@@ -12,39 +12,12 @@ import os
 from copy import deepcopy
 from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
-from test.client import data
+from test.client import data, ApiTest
 
 DATABASE_LOGIN_TOTAL = 10202
 
 
-# Maintain ids of created items so we can clean them up later
-IDS = {
-    "Person": [],
-    "Organization": [],
-    "Login": [],
-}
-class TestLoginsApi(unittest.TestCase):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        configuration = Configuration()
-        configuration.debug = True
-        self.api_client = ApiClient(configuration=configuration)
-
-    def setUp(self):
-        self.clean()
-
-    def tearDown(self):
-        self.clean()
-
-    def clean(self):
-        for model_name, ids in IDS.items():
-            for i in range(len(ids)):
-                id = IDS[model_name].pop(i)
-                try:
-                    API.apiFn('delete%s' % model_name, api_client=self.api_client, id=id)
-                except Exception as e:
-                    print('Error deleting id %s: %s' % (str(id), str(e)))
+class TestLoginsApi(ApiTest):
 
     def test_login_create(self):
         '''Create a login with a person attached using createLogin method
@@ -54,7 +27,7 @@ class TestLoginsApi(unittest.TestCase):
         login = API.createLogin(api_client=self.api_client, **logindata)
 
         # Should only need to get rid of the person and the login will cascade
-        IDS['Person'] = [login.person.id]
+        self.IDS['Person'] = [login.person.id]
         self.assertTrue(login.username == logindata['username'], 'Incorrect username %s' % login.username)
 
     def test_login_create_no_username(self):
@@ -83,7 +56,7 @@ class TestLoginsApi(unittest.TestCase):
         logindata['person'] = deepcopy(data.PEOPLE[0])
         login = API.createLogin(api_client=self.api_client, **logindata)
         # Should only need to get rid of the person and the login will cascade
-        IDS['Person'] = [login.person.id]
+        self.IDS['Person'] = [login.person.id]
 
         logins = API.listLogins(api_client=self.api_client, primary_email=data.PEOPLE[0]['primary_email'])
         self.assertTrue(len(logins) == 1, 'Incorrect number of logins %d' % len(logins))
@@ -96,7 +69,7 @@ class TestLoginsApi(unittest.TestCase):
         logindata['person'] = deepcopy(data.PEOPLE[0])
         login = API.createLogin(api_client=self.api_client, **logindata)
         # Should only need to get rid of the person and the login will cascade
-        IDS['Person'] = [login.person.id]
+        self.IDS['Person'] = [login.person.id]
 
         logins = API.listLogins(api_client=self.api_client, username=logindata['username'])
         self.assertTrue(len(logins) == 1, 'Incorrect number of logins %d' % len(logins))
@@ -109,7 +82,7 @@ class TestLoginsApi(unittest.TestCase):
         logindata['person'] = deepcopy(data.PEOPLE[0])
         login = API.createLogin(api_client=self.api_client, **logindata)
         # Should only need to get rid of the person and the login will cascade
-        IDS['Person'] = [login.person.id]
+        self.IDS['Person'] = [login.person.id]
 
         logins = API.listLogins(api_client=self.api_client, ifxid=login.person.ifxid)
         self.assertTrue(len(logins) == 1, 'Incorrect number of logins %d' % len(logins))
@@ -129,7 +102,7 @@ class TestLoginsApi(unittest.TestCase):
         login = API.createLogin(api_client=self.api_client, **logindata)
 
         # Should only need to get rid of the person and the login will cascade
-        IDS['Person'] = [login.person.id]
+        self.IDS['Person'] = [login.person.id]
         self.assertTrue(login.username == logindata['username'], 'Incorrect username %s' % login.username)
 
         login.username = 'newusername'
@@ -142,7 +115,7 @@ class TestLoginsApi(unittest.TestCase):
         '''
         persondata = deepcopy(data.PEOPLE[0])
         person = API.createPerson(api_client=self.api_client, **persondata)
-        IDS['Person'] = [person.id]
+        self.IDS['Person'] = [person.id]
         logindata = deepcopy(data.LOGINS[0])
         logindata['ifxid'] = person.ifxid
 
@@ -157,7 +130,7 @@ class TestLoginsApi(unittest.TestCase):
         logindata['person'] = deepcopy(data.PEOPLE[0])
         login = API.createLogin(api_client=self.api_client, **logindata)
         # Should only need to get rid of the person and the login will cascade
-        IDS['Person'] = [login.person.id]
+        self.IDS['Person'] = [login.person.id]
 
         fetchedlogin = API.readLogin(api_client=self.api_client, id=login.id)
         self.assertTrue(fetchedlogin.username == login.username, 'Incorrect login returned %s' % str(fetchedlogin))

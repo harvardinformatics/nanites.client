@@ -7,9 +7,14 @@ Test data
 
 ORGANIZATIONS = [
     {
-        'name': 'Harvard University (CFA)',
-        'rank': 'institution',
-        'org_tree': 'CNS'
+        'name': 'Derp',
+        'rank': 'department',
+        'org_tree': 'Research Computing AD',
+    },
+    {
+        'name': 'Slurpiston Lab',
+        'rank': 'lab',
+        'org_tree': 'Research Computing AD',
     },
 ]
 PEOPLE = [
@@ -19,7 +24,7 @@ PEOPLE = [
         'full_name': 'Derpy (Fred) Derpiston, Jr.',
         'primary_email': 'dderpiston@gmail.com',
         'change_comment': 'Initial entry',
-        'primary_affiliation': 'Harvard University (CFA) (a CNS Institution)',
+        'primary_affiliation': 'Slurpiston Lab (a Research Computing AD Laboratory)',
     },
     {
         'first_name': 'Slurpy',
@@ -27,7 +32,7 @@ PEOPLE = [
         'full_name': 'Slurpy Slurpiston',
         'primary_email': 'sslurpiston@gmail.com',
         'change_comment': 'Initial entry',
-        'primary_affiliation': 'Harvard University (CFA) (a CNS Institution)',
+        'primary_affiliation': 'Slurpiston Lab (a Research Computing AD Laboratory)',
         'race': 'White',
         'ethnicity': 'Southern',
         'gender': 'Fluid',
