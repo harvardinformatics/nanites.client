@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_pi_names_list**
-> get_pi_names_list(search=search)
+> list[GetPiNames] get_pi_names_list(search=search)
 
 
 
@@ -33,7 +33,8 @@ api_instance = nanites.client.swagger.GetPiNamesApi(nanites.client.swagger.ApiCl
 search = 'search_example' # str |  (optional)
 
 try:
-    api_instance.get_pi_names_list(search=search)
+    api_response = api_instance.get_pi_names_list(search=search)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling GetPiNamesApi->get_pi_names_list: %s\n" % e)
 ```
@@ -46,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**list[GetPiNames]**](GetPiNames.md)
 
 ### Authorization
 

@@ -12,7 +12,7 @@ import os
 from copy import deepcopy
 from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
-from test.client import data
+from nanites.test.client import data
 
 
 class ApiTest(unittest.TestCase):
@@ -27,7 +27,7 @@ class ApiTest(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.configuration = Configuration()
-        self.configuration.debug = True
+        self.configuration.debug = False
         self.api_client = ApiClient(configuration=self.configuration)
         self.IDS = {
             'Person': [],
@@ -38,22 +38,39 @@ class ApiTest(unittest.TestCase):
             'Application': [],
             'Contact': [],
         }
+        self.plurals = {
+            'Person': 'People',
+            'Login': 'Logins',
+            'Organization': 'Organizations',
+            'Address': 'Addresses',
+            'Source': 'Sources',
+            'Application': 'Applications',
+            'Contact': 'Contacts',
+        }
 
     def setUp(self):
         self.clean()
         for orgdata in data.ORGANIZATIONS:
             org = API.createOrganization(api_client=self.api_client, **orgdata)
             self.IDS['Organization'].append(org.id)
+        for applicationdata in data.APPLICATIONS:
+            application = API.createApplication(api_client=self.api_client, **applicationdata)
+        for sourcedata in data.SOURCES:
+            source = API.createSource(api_client=self.api_client, **sourcedata)
+
 
     def tearDown(self):
         self.clean()
 
     def clean(self):
         for model_name, ids in self.IDS.items():
-            for i in range(len(ids)):
-                id = self.IDS[model_name].pop()
+            results = API.apiFn('list%s' % self.plurals[model_name], api_client=self.api_client)
+            for result in results:
                 try:
-                    API.apiFn('delete%s' % model_name, api_client=self.api_client, id=id)
+                    if model_name in ['Source', 'Application']:
+                        API.apiFn('delete%s' % model_name, api_client=self.api_client, name=result.name)
+                    else:
+                        API.apiFn('delete%s' % model_name, api_client=self.api_client, id=result.id)
                 except Exception as e:
                     print('Error deleting id %s: %s' % (str(id), str(e)))
 

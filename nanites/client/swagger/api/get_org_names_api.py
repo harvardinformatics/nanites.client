@@ -46,7 +46,7 @@ class GetOrgNamesApi(object):
         :param str search:
         :param str ranks:
         :param str org_tree:
-        :return: None
+        :return: list[GetOrgNames]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -70,7 +70,7 @@ class GetOrgNamesApi(object):
         :param str search:
         :param str ranks:
         :param str org_tree:
-        :return: None
+        :return: list[GetOrgNames]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -128,7 +128,7 @@ class GetOrgNamesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='list[GetOrgNames]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

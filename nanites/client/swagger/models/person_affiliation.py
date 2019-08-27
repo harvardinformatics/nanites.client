@@ -31,21 +31,26 @@ class PersonAffiliation(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'slug': 'str'
+        'slug': 'str',
+        'role': 'str'
     }
 
     attribute_map = {
-        'slug': 'slug'
+        'slug': 'slug',
+        'role': 'role'
     }
 
-    def __init__(self, slug=None):  # noqa: E501
+    def __init__(self, slug=None, role=None):  # noqa: E501
         """PersonAffiliation - a model defined in Swagger"""  # noqa: E501
 
         self._slug = None
+        self._role = None
         self.discriminator = None
 
         if slug is not None:
             self.slug = slug
+        if role is not None:
+            self.role = role
 
     @property
     def slug(self):
@@ -67,6 +72,27 @@ class PersonAffiliation(object):
         """
 
         self._slug = slug
+
+    @property
+    def role(self):
+        """Gets the role of this PersonAffiliation.  # noqa: E501
+
+
+        :return: The role of this PersonAffiliation.  # noqa: E501
+        :rtype: str
+        """
+        return self._role
+
+    @role.setter
+    def role(self, role):
+        """Sets the role of this PersonAffiliation.
+
+
+        :param role: The role of this PersonAffiliation.  # noqa: E501
+        :type: str
+        """
+
+        self._role = role
 
     def to_dict(self):
         """Returns the model properties as a dict"""

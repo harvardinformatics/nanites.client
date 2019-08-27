@@ -4,6 +4,23 @@
 Test data
 '''
 
+SOURCES = [
+    {
+        'name': 'test source',
+        'description': 'test source description'
+    },
+    {
+        'name': 'test2',
+        'description': 'another test'
+    }
+]
+
+APPLICATIONS = [
+    {
+        'name': 'CNS Admin Intranet',
+        'fields': '__all__',
+    }
+]
 
 ORGANIZATIONS = [
     {
@@ -15,6 +32,11 @@ ORGANIZATIONS = [
         'name': 'Slurpiston Lab',
         'rank': 'lab',
         'org_tree': 'Research Computing AD',
+        'parents': [
+            {
+                'parent': 'Derp (a Research Computing AD Department)',
+            },
+        ]
     },
 ]
 PEOPLE = [
@@ -41,6 +63,12 @@ PEOPLE = [
         'citizenship': 'Switzerland',
         'visa_details': 'Green card',
         'national_origin': 'Louisiana',
+        'affiliations': [
+            {
+                'slug': 'Slurpiston Lab (a Research Computing AD Laboratory)',
+                'role': 'pi',
+            }
+        ],
         'addresses': [
             {
                 'type': 'home',
@@ -81,5 +109,5 @@ LOGINS = [
         'username': 'dderpiston',
         'role': 'user',
         'application': 'CNS User Portal',
-    }
+    },
 ]

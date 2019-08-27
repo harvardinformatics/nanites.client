@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_basics_by_login_list**
-> get_basics_by_login_list(login=login)
+> list[GetBasicsByLogin] get_basics_by_login_list(login=login)
 
 
 
@@ -33,7 +33,8 @@ api_instance = nanites.client.swagger.GetBasicsByLoginApi(nanites.client.swagger
 login = 'login_example' # str |  (optional)
 
 try:
-    api_instance.get_basics_by_login_list(login=login)
+    api_response = api_instance.get_basics_by_login_list(login=login)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling GetBasicsByLoginApi->get_basics_by_login_list: %s\n" % e)
 ```
@@ -46,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**list[GetBasicsByLogin]**](GetBasicsByLogin.md)
 
 ### Authorization
 

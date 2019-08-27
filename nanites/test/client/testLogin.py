@@ -12,9 +12,9 @@ import os
 from copy import deepcopy
 from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
-from test.client import data, ApiTest
+from nanites.test.client import data, ApiTest
 
-DATABASE_LOGIN_TOTAL = 10202
+DATABASE_LOGIN_TOTAL = 1
 
 
 class TestLoginsApi(ApiTest):

@@ -169,9 +169,9 @@ class SwaggerClient(object):
                 id = data.pop('id')
                 return self.call_api_func(api, swagger_func_name.lower(), id=id, data=data, **kwargs)
         elif operation == 'delete':
-            if model_name == 'Source':
+            if model_name in ['Source', 'Application']:
                 if 'name' not in data:
-                    raise Exception('Source delete requires a name')
+                    raise Exception('%s delete requires a name' % model_name)
                 name = data.pop('name')
                 return self.call_api_func(api, swagger_func_name.lower(), name=name, **kwargs)
             else:
@@ -217,5 +217,14 @@ class SwaggerClient(object):
             )
         )
 
+    def getBasicsByLogin(self, login, *args, **kwargs):
+        '''
+        Special purpose getBasicsByLogin call
+        '''
+        api_client = kwargs.pop('api_client', None)
+        if not api_client:
+            api_client = self.api_client
+        api = GetBasicsByLoginApi(api_client=api_client)
+        return self.call_api_func(api, 'get_basics_by_login_list', *args, **kwargs)
 
 API = SwaggerClient()

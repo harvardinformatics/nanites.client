@@ -34,7 +34,11 @@ from nanites.client.swagger.configuration import Configuration
 # import models into sdk package
 from nanites.client.swagger.models.address import Address
 from nanites.client.swagger.models.application import Application
+from nanites.client.swagger.models.child_relation import ChildRelation
 from nanites.client.swagger.models.contact import Contact
+from nanites.client.swagger.models.get_basics_by_login import GetBasicsByLogin
+from nanites.client.swagger.models.get_org_names import GetOrgNames
+from nanites.client.swagger.models.get_pi_names import GetPiNames
 from nanites.client.swagger.models.inline_response200 import InlineResponse200
 from nanites.client.swagger.models.inline_response2001 import InlineResponse2001
 from nanites.client.swagger.models.inline_response2002 import InlineResponse2002
@@ -45,6 +49,7 @@ from nanites.client.swagger.models.inline_response2006 import InlineResponse2006
 from nanites.client.swagger.models.inline_response2007 import InlineResponse2007
 from nanites.client.swagger.models.login import Login
 from nanites.client.swagger.models.organization import Organization
+from nanites.client.swagger.models.parent_relation import ParentRelation
 from nanites.client.swagger.models.person import Person
 from nanites.client.swagger.models.person_address import PersonAddress
 from nanites.client.swagger.models.person_affiliation import PersonAffiliation

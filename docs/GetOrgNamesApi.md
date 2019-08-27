@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_org_names_list**
-> get_org_names_list(search=search, ranks=ranks, org_tree=org_tree)
+> list[GetOrgNames] get_org_names_list(search=search, ranks=ranks, org_tree=org_tree)
 
 
 
@@ -35,7 +35,8 @@ ranks = 'ranks_example' # str |  (optional)
 org_tree = 'org_tree_example' # str |  (optional)
 
 try:
-    api_instance.get_org_names_list(search=search, ranks=ranks, org_tree=org_tree)
+    api_response = api_instance.get_org_names_list(search=search, ranks=ranks, org_tree=org_tree)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling GetOrgNamesApi->get_org_names_list: %s\n" % e)
 ```
@@ -50,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**list[GetOrgNames]**](GetOrgNames.md)
 
 ### Authorization
 
