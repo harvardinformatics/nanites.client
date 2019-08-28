@@ -19,10 +19,20 @@ APPLICATIONS = [
     {
         'name': 'CNS Admin Intranet',
         'fields': '__all__',
+    },
+    {
+        'name': 'CNS User Portal',
+        'fields': '__all__',
     }
+
 ]
 
 ORGANIZATIONS = [
+    {
+        'name': 'University of Moscow',
+        'rank': 'institution',
+        'org_tree': 'Research Computing AD',
+    },
     {
         'name': 'Derp',
         'rank': 'department',
@@ -98,6 +108,14 @@ PEOPLE = [
             }
         ],
     },
+    {
+        'first_name': 'Denny',
+        'last_name': 'Dennison',
+        'full_name': 'Denny J. Dennison',
+        'primary_email': 'realDonaldTrump@twitter.com',
+        'change_comment': 'Initial entry',
+        'primary_affiliation': 'University of Moscow (a Research Computing AD Institution)',
+    },
 ]
 LOGINS = [
     { # Missing a Person so that it can be set in the test
@@ -107,6 +125,11 @@ LOGINS = [
     },
     {
         'username': 'dderpiston',
+        'role': 'user',
+        'application': 'CNS User Portal',
+    },
+    {
+        'username': 'ddennison',
         'role': 'user',
         'application': 'CNS User Portal',
     },

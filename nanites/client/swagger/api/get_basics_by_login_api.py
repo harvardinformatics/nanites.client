@@ -36,7 +36,7 @@ class GetBasicsByLoginApi(object):
     def get_basics_by_login_list(self, **kwargs):  # noqa: E501
         """get_basics_by_login_list  # noqa: E501
 
-        Retrieve basic information by login.  Used in p3 OfficeHoursSignIn.  # noqa: E501
+        Retrieve basic information by login.  Used in p3 OfficeHoursSignIn. Information will be returned even if they don't have a department or a PI.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_basics_by_login_list(async=True)
@@ -58,7 +58,7 @@ class GetBasicsByLoginApi(object):
     def get_basics_by_login_list_with_http_info(self, **kwargs):  # noqa: E501
         """get_basics_by_login_list  # noqa: E501
 
-        Retrieve basic information by login.  Used in p3 OfficeHoursSignIn.  # noqa: E501
+        Retrieve basic information by login.  Used in p3 OfficeHoursSignIn. Information will be returned even if they don't have a department or a PI.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_basics_by_login_list_with_http_info(async=True)

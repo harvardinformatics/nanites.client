@@ -159,8 +159,6 @@ class GetBasicsByLogin(object):
         :param lab_name: The lab_name of this GetBasicsByLogin.  # noqa: E501
         :type: str
         """
-        if lab_name is not None and len(lab_name) < 1:
-            raise ValueError("Invalid value for `lab_name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._lab_name = lab_name
 
@@ -182,8 +180,6 @@ class GetBasicsByLogin(object):
         :param pi_full_name: The pi_full_name of this GetBasicsByLogin.  # noqa: E501
         :type: str
         """
-        if pi_full_name is not None and len(pi_full_name) < 1:
-            raise ValueError("Invalid value for `pi_full_name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._pi_full_name = pi_full_name
 
@@ -205,8 +201,6 @@ class GetBasicsByLogin(object):
         :param department_name: The department_name of this GetBasicsByLogin.  # noqa: E501
         :type: str
         """
-        if department_name is not None and len(department_name) < 1:
-            raise ValueError("Invalid value for `department_name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._department_name = department_name
 

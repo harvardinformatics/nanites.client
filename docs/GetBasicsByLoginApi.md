@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieve basic information by login.  Used in p3 OfficeHoursSignIn.
+Retrieve basic information by login.  Used in p3 OfficeHoursSignIn. Information will be returned even if they don't have a department or a PI.
 
 ### Example
 ```python

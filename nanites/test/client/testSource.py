@@ -13,8 +13,6 @@ from nanites.test.client import data, ApiTest
 class TestSourcesApi(ApiTest):
     """SourcesApi unit test stubs"""
 
-
-
     def test_sources_delete(self):
         """Ensure that deleteSource works
         """
