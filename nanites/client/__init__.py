@@ -227,4 +227,15 @@ class SwaggerClient(object):
         api = GetBasicsByLoginApi(api_client=api_client)
         return self.call_api_func(api, 'get_basics_by_login_list', *args, **kwargs)
 
+    def getOrgNames(self, *args, **kwargs):
+        '''
+        Special purpose getOrgNames call.  Returns just the names, rather than the GetOrgNames objects.
+        '''
+        api_client = kwargs.pop('api_client', None)
+        if not api_client:
+            api_client = self.api_client
+        api = GetOrgNamesApi(api_client=api_client)
+        objs = self.call_api_func(api, 'get_org_names_list', *args, **kwargs)
+        return [obj.name for obj in objs]
+
 API = SwaggerClient()

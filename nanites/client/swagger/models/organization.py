@@ -38,6 +38,8 @@ class Organization(object):
         'name': 'str',
         'rank': 'str',
         'org_tree': 'str',
+        'code': 'str',
+        'application_key': 'str',
         'slug': 'str',
         'parents': 'list[ParentRelation]',
         'children': 'list[ChildRelation]'
@@ -48,18 +50,22 @@ class Organization(object):
         'name': 'name',
         'rank': 'rank',
         'org_tree': 'org_tree',
+        'code': 'code',
+        'application_key': 'application_key',
         'slug': 'slug',
         'parents': 'parents',
         'children': 'children'
     }
 
-    def __init__(self, id=None, name=None, rank=None, org_tree=None, slug=None, parents=None, children=None):  # noqa: E501
+    def __init__(self, id=None, name=None, rank=None, org_tree=None, code=None, application_key=None, slug=None, parents=None, children=None):  # noqa: E501
         """Organization - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._rank = None
         self._org_tree = None
+        self._code = None
+        self._application_key = None
         self._slug = None
         self._parents = None
         self._children = None
@@ -70,6 +76,10 @@ class Organization(object):
         self.name = name
         self.rank = rank
         self.org_tree = org_tree
+        if code is not None:
+            self.code = code
+        if application_key is not None:
+            self.application_key = application_key
         if slug is not None:
             self.slug = slug
         if parents is not None:
@@ -178,6 +188,56 @@ class Organization(object):
             raise ValueError("Invalid value for `org_tree`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._org_tree = org_tree
+
+    @property
+    def code(self):
+        """Gets the code of this Organization.  # noqa: E501
+
+
+        :return: The code of this Organization.  # noqa: E501
+        :rtype: str
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this Organization.
+
+
+        :param code: The code of this Organization.  # noqa: E501
+        :type: str
+        """
+        if code is not None and len(code) > 30:
+            raise ValueError("Invalid value for `code`, length must be less than or equal to `30`")  # noqa: E501
+        if code is not None and len(code) < 1:
+            raise ValueError("Invalid value for `code`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._code = code
+
+    @property
+    def application_key(self):
+        """Gets the application_key of this Organization.  # noqa: E501
+
+
+        :return: The application_key of this Organization.  # noqa: E501
+        :rtype: str
+        """
+        return self._application_key
+
+    @application_key.setter
+    def application_key(self, application_key):
+        """Sets the application_key of this Organization.
+
+
+        :param application_key: The application_key of this Organization.  # noqa: E501
+        :type: str
+        """
+        if application_key is not None and len(application_key) > 100:
+            raise ValueError("Invalid value for `application_key`, length must be less than or equal to `100`")  # noqa: E501
+        if application_key is not None and len(application_key) < 1:
+            raise ValueError("Invalid value for `application_key`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._application_key = application_key
 
     @property
     def slug(self):

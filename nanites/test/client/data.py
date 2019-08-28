@@ -32,6 +32,7 @@ ORGANIZATIONS = [
         'name': 'University of Moscow',
         'rank': 'institution',
         'org_tree': 'Research Computing AD',
+        'code': 'MSCW',
     },
     {
         'name': 'Derp',
@@ -47,6 +48,16 @@ ORGANIZATIONS = [
                 'parent': 'Derp (a Research Computing AD Department)',
             },
         ]
+    },
+    {
+        'name': 'Center for Advanced Derp',
+        'rank': 'center',
+        'org_tree': 'Research Computing AD',
+    },
+    {
+        'name': 'Derp Museum',
+        'rank': 'museum',
+        'org_tree': 'Research Computing AD',
     },
 ]
 PEOPLE = [

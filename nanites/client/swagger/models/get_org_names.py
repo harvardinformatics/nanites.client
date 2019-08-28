@@ -31,26 +31,21 @@ class GetOrgNames(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'code': 'str'
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'code': 'code'
+        'name': 'name'
     }
 
-    def __init__(self, name=None, code=None):  # noqa: E501
+    def __init__(self, name=None):  # noqa: E501
         """GetOrgNames - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
-        self._code = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
-        if code is not None:
-            self.code = code
 
     @property
     def name(self):
@@ -74,29 +69,6 @@ class GetOrgNames(object):
             raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def code(self):
-        """Gets the code of this GetOrgNames.  # noqa: E501
-
-
-        :return: The code of this GetOrgNames.  # noqa: E501
-        :rtype: str
-        """
-        return self._code
-
-    @code.setter
-    def code(self, code):
-        """Sets the code of this GetOrgNames.
-
-
-        :param code: The code of this GetOrgNames.  # noqa: E501
-        :type: str
-        """
-        if code is not None and len(code) < 1:
-            raise ValueError("Invalid value for `code`, length must be greater than or equal to `1`")  # noqa: E501
-
-        self._code = code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

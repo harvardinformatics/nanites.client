@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **rank** | **str** |  | 
 **org_tree** | **str** |  | 
+**code** | **str** |  | [optional] 
+**application_key** | **str** |  | [optional] 
 **slug** | **str** | Combination of org_tree, rank and name (e.g. CNS Institution Harvard (AA) | [optional] 
 **parents** | [**list[ParentRelation]**](ParentRelation.md) |  | [optional] 
 **children** | [**list[ChildRelation]**](ChildRelation.md) |  | [optional] 
