@@ -4,9 +4,6 @@
 Test base class.  Sets up things like Organizations and cleans out accumulated data
 '''
 
-
-from __future__ import absolute_import
-
 import unittest
 import os
 from copy import deepcopy
