@@ -218,7 +218,7 @@ class SwaggerClient(object):
             )
         )
 
-    def getBasicsByLogin(self, login, *args, **kwargs):
+    def getBasicsByLogin(self, *args, **kwargs):
         '''
         Special purpose getBasicsByLogin call
         '''
