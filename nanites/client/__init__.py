@@ -192,6 +192,7 @@ class SwaggerClient(object):
         Calls the API function and converts RESTy exceptions into something normalish
         '''
         try:
+            logger.debug('Calling %s on %s with args %s and kwargs %s' % (func_name, api, str(args), str(kwargs)))
             return getattr(api, func_name)(*args, **kwargs)
         except ApiException as e:
             logger.debug(str(e))
