@@ -34,23 +34,26 @@ class Application(object):
         'id': 'int',
         'name': 'str',
         'fields': 'str',
-        'description': 'str'
+        'description': 'str',
+        'auth': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
         'fields': 'fields',
-        'description': 'description'
+        'description': 'description',
+        'auth': 'auth'
     }
 
-    def __init__(self, id=None, name=None, fields=None, description=None):  # noqa: E501
+    def __init__(self, id=None, name=None, fields=None, description=None, auth=None):  # noqa: E501
         """Application - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._fields = None
         self._description = None
+        self._auth = None
         self.discriminator = None
 
         if id is not None:
@@ -61,6 +64,8 @@ class Application(object):
             self.fields = fields
         if description is not None:
             self.description = description
+        if auth is not None:
+            self.auth = auth
 
     @property
     def id(self):
@@ -161,6 +166,33 @@ class Application(object):
             raise ValueError("Invalid value for `description`, length must be less than or equal to `255`")  # noqa: E501
 
         self._description = description
+
+    @property
+    def auth(self):
+        """Gets the auth of this Application.  # noqa: E501
+
+        Authentication system (e.g. RC, HarvardKey, CNS User, CNS Staff, etc.)  # noqa: E501
+
+        :return: The auth of this Application.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth
+
+    @auth.setter
+    def auth(self, auth):
+        """Sets the auth of this Application.
+
+        Authentication system (e.g. RC, HarvardKey, CNS User, CNS Staff, etc.)  # noqa: E501
+
+        :param auth: The auth of this Application.  # noqa: E501
+        :type: str
+        """
+        if auth is not None and len(auth) > 20:
+            raise ValueError("Invalid value for `auth`, length must be less than or equal to `20`")  # noqa: E501
+        if auth is not None and len(auth) < 1:
+            raise ValueError("Invalid value for `auth`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._auth = auth
 
     def to_dict(self):
         """Returns the model properties as a dict"""

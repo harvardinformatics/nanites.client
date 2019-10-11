@@ -38,7 +38,7 @@ class TestGetOrgNamesApi(ApiTest):
 
         # Get the orgs and join into a string
         org_names = API.getOrgNames(org_tree='Research Computing AD')
-        teststr = ','.join(org_names)
+        teststr = ','.join([o.name for o in org_names])
 
         # Stripping the code to make them match
         teststr = teststr.replace(' (MSCW)', '')
@@ -52,7 +52,7 @@ class TestGetOrgNamesApi(ApiTest):
 
         # Get the orgs and join into a string
         org_names = API.getOrgNames(org_tree='Research Computing AD', search='MSCW')
-        self.assertTrue(','.join(org_names) == 'University of Moscow (MSCW)', 'Incorrect result: %s' % str(org_names))
+        self.assertTrue(','.join([o.name for o in org_names]) == 'University of Moscow (MSCW)', 'Incorrect result: %s' % str(org_names))
 
     def test_get_org_names_set_ranks(self):
         '''
@@ -61,7 +61,7 @@ class TestGetOrgNamesApi(ApiTest):
 
         # Get the orgs and join into a string
         org_names = API.getOrgNames(org_tree='Research Computing AD', ranks='Department')
-        self.assertTrue(','.join(org_names) == 'Derp', 'Incorrect result: %s' % str(org_names))
+        self.assertTrue(','.join([o.name for o in org_names]) == 'Derp', 'Incorrect result: %s' % str(org_names))
 
     def test_get_org_names_empty(self):
         '''

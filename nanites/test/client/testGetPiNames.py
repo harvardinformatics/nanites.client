@@ -28,7 +28,7 @@ class TestGetPiNamesApi(ApiTest):
         API.createPerson(api_client=self.api_client, **data.PEOPLE[0])
 
         pi_names = API.getPiNames()
-        self.assertTrue(','.join(pi_names) == 'Slurpy Slurpiston', 'Incorrect PI names returned: %s' % str(pi_names))
+        self.assertTrue(','.join([pi.full_name for pi in pi_names]) == 'Slurpy Slurpiston', 'Incorrect PI names returned: %s' % str(pi_names))
 
     def test_get_pi_names_empty(self):
         '''
@@ -46,7 +46,7 @@ class TestGetPiNamesApi(ApiTest):
         # Add the PI
         API.createPerson(api_client=self.api_client, **data.PEOPLE[1])
         pi_names = API.getPiNames(search='slurp')
-        self.assertTrue(','.join(pi_names) == 'Slurpy Slurpiston', 'Incorrect PI names returned: %s' % str(pi_names))
+        self.assertTrue(','.join([pi.full_name for pi in pi_names]) == 'Slurpy Slurpiston', 'Incorrect PI names returned: %s' % str(pi_names))
 
 
 if __name__ == '__main__':
