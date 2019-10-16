@@ -247,6 +247,7 @@ class PeopleApi(object):
         :param str username:
         :param str primary_email:
         :param str full_name:
+        :param str email:
         :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
@@ -274,12 +275,13 @@ class PeopleApi(object):
         :param str username:
         :param str primary_email:
         :param str full_name:
+        :param str email:
         :return: InlineResponse2005
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'page_size', 'login', 'username', 'primary_email', 'full_name']  # noqa: E501
+        all_params = ['page', 'page_size', 'login', 'username', 'primary_email', 'full_name', 'email']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -312,6 +314,8 @@ class PeopleApi(object):
             query_params.append(('primary_email', params['primary_email']))  # noqa: E501
         if 'full_name' in params:
             query_params.append(('full_name', params['full_name']))  # noqa: E501
+        if 'email' in params:
+            query_params.append(('email', params['email']))  # noqa: E501
 
         header_params = {}
 

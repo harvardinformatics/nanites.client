@@ -19,7 +19,6 @@ import six
 from nanites.client.swagger.models.contact import Contact  # noqa: F401,E501
 from nanites.client.swagger.models.person_address import PersonAddress  # noqa: F401,E501
 from nanites.client.swagger.models.person_affiliation import PersonAffiliation  # noqa: F401,E501
-from nanites.client.swagger.models.user import User  # noqa: F401,E501
 
 
 class Person(object):
@@ -59,8 +58,7 @@ class Person(object):
         'author': 'str',
         'addresses': 'list[PersonAddress]',
         'affiliations': 'list[PersonAffiliation]',
-        'contacts': 'list[Contact]',
-        'user': 'User'
+        'contacts': 'list[Contact]'
     }
 
     attribute_map = {
@@ -87,11 +85,10 @@ class Person(object):
         'author': 'author',
         'addresses': 'addresses',
         'affiliations': 'affiliations',
-        'contacts': 'contacts',
-        'user': 'user'
+        'contacts': 'contacts'
     }
 
-    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, race=None, ethnicity=None, gender='Unknown', is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, user=None):  # noqa: E501
+    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, race=None, ethnicity=None, gender='Unknown', is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, created=None, author=None, addresses=None, affiliations=None, contacts=None):  # noqa: E501
         """Person - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -118,7 +115,6 @@ class Person(object):
         self._addresses = None
         self._affiliations = None
         self._contacts = None
-        self._user = None
         self.discriminator = None
 
         if id is not None:
@@ -166,8 +162,6 @@ class Person(object):
             self.affiliations = affiliations
         if contacts is not None:
             self.contacts = contacts
-        if user is not None:
-            self.user = user
 
     @property
     def id(self):
@@ -758,27 +752,6 @@ class Person(object):
         """
 
         self._contacts = contacts
-
-    @property
-    def user(self):
-        """Gets the user of this Person.  # noqa: E501
-
-
-        :return: The user of this Person.  # noqa: E501
-        :rtype: User
-        """
-        return self._user
-
-    @user.setter
-    def user(self, user):
-        """Sets the user of this Person.
-
-
-        :param user: The user of this Person.  # noqa: E501
-        :type: User
-        """
-
-        self._user = user
 
     def to_dict(self):
         """Returns the model properties as a dict"""

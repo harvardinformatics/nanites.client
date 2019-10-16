@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **people_list**
-> InlineResponse2005 people_list(page=page, page_size=page_size, login=login, username=username, primary_email=primary_email, full_name=full_name)
+> InlineResponse2005 people_list(page=page, page_size=page_size, login=login, username=username, primary_email=primary_email, full_name=full_name, email=email)
 
 
 
@@ -146,9 +146,10 @@ login = 'login_example' # str |  (optional)
 username = 'username_example' # str |  (optional)
 primary_email = 'primary_email_example' # str |  (optional)
 full_name = 'full_name_example' # str |  (optional)
+email = 'email_example' # str |  (optional)
 
 try:
-    api_response = api_instance.people_list(page=page, page_size=page_size, login=login, username=username, primary_email=primary_email, full_name=full_name)
+    api_response = api_instance.people_list(page=page, page_size=page_size, login=login, username=username, primary_email=primary_email, full_name=full_name, email=email)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PeopleApi->people_list: %s\n" % e)
@@ -164,6 +165,7 @@ Name | Type | Description  | Notes
  **username** | **str**|  | [optional] 
  **primary_email** | **str**|  | [optional] 
  **full_name** | **str**|  | [optional] 
+ **email** | **str**|  | [optional] 
 
 ### Return type
 
