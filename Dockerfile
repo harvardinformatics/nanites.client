@@ -14,6 +14,10 @@ RUN pip install --upgrade pip && \
     pip install six && \
     pip install python_dateutil && \
     pip install urllib3 && \
-    pip install django-nose
+    pip install django-nose && \
+    pip install Sphinx>2 && \
+    pip install sphinx-py3doc-enhanced-theme>=2.4.0 && \
+    pip install recommonmark==0.5.0
+
 
 CMD ./wait4db.py && ./manage.py test -v 2

@@ -1,0 +1,38 @@
+div.document {
+  max-width: 1100px;
+  width: unset;
+}
+
+div.body {
+  max-width: 1000px;
+}
+
+.std,
+.std-ref {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+dl.field-list>dt {
+  font-size: 14px;
+  padding: 5px;
+  margin-top: 3px;
+  flex-basis: 30%;
+}
+
+dl.field-list>dd {
+  font-size: 14px;
+  padding: 5px;
+  flex-basis: 65%;
+}
+
+.field-odd {
+  background-color: #EFEFEF;
+}
+
+code {
+  background-color: white;
+}

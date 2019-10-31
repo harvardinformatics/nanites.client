@@ -25,10 +25,8 @@
     the Swagger code so you can use things like "async=True".  An ApiClient class can
     be specified as is done in the tests.
 
-
-
-
     Contact: ifx@fas.harvard.edu
+
 """
 import re
 import logging
