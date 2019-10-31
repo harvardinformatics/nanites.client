@@ -12,7 +12,7 @@ It runs like a Django application (i.e. ./manage.py test)
 
 docker-compose up is a little difficult to read, so I often just run
 
-    $ docker-compose run client
+    $ docker-compose run --rm client
 
 to see only the test output.  Sometimes, the REST API isn't quite ready when the client starts testing and you'll
 see a bunch of timeouts.  Just run the client again and it should clear up.
@@ -20,7 +20,7 @@ see a bunch of timeouts.  Just run the client again and it should clear up.
 ## Rebuilding the Swagger code
 If the Nanites REST changes, the Swagger code can be rebuilt using the Makefile that is included.  Just
 
-    $ make
+    $ make client
 
 should do it.  This runs the swagger-codegen container on the schema/swagger.json file.  It also cleans up some odd
 artifacts left by the process
@@ -50,3 +50,12 @@ persondata = person.to_dict()
 API.updatePerson(**persondata)
 
 API.deletePerson(id=person.id)
+
+
+## Sphinx docs
+I've setup Sphinx docs similar to the other Informatics projects.  You can build them by building the Docker container and running make html
+
+    $ docker build -t nanites.client .
+    $ docker run --rm -it -v `pwd`:/app make html
+
+
