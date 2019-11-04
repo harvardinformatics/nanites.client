@@ -35,7 +35,8 @@ class Application(object):
         'name': 'str',
         'fields': 'str',
         'description': 'str',
-        'auth': 'str'
+        'auth': 'str',
+        'update_user_url': 'str'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class Application(object):
         'name': 'name',
         'fields': 'fields',
         'description': 'description',
-        'auth': 'auth'
+        'auth': 'auth',
+        'update_user_url': 'update_user_url'
     }
 
-    def __init__(self, id=None, name=None, fields=None, description=None, auth=None):  # noqa: E501
+    def __init__(self, id=None, name=None, fields=None, description=None, auth=None, update_user_url=None):  # noqa: E501
         """Application - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -54,6 +56,7 @@ class Application(object):
         self._fields = None
         self._description = None
         self._auth = None
+        self._update_user_url = None
         self.discriminator = None
 
         if id is not None:
@@ -66,6 +69,8 @@ class Application(object):
             self.description = description
         if auth is not None:
             self.auth = auth
+        if update_user_url is not None:
+            self.update_user_url = update_user_url
 
     @property
     def id(self):
@@ -193,6 +198,31 @@ class Application(object):
             raise ValueError("Invalid value for `auth`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._auth = auth
+
+    @property
+    def update_user_url(self):
+        """Gets the update_user_url of this Application.  # noqa: E501
+
+        Url that can be called to update users.  Of the form <api name>:<url>, e.g. NICE_API_BASE:/update-users/  # noqa: E501
+
+        :return: The update_user_url of this Application.  # noqa: E501
+        :rtype: str
+        """
+        return self._update_user_url
+
+    @update_user_url.setter
+    def update_user_url(self, update_user_url):
+        """Sets the update_user_url of this Application.
+
+        Url that can be called to update users.  Of the form <api name>:<url>, e.g. NICE_API_BASE:/update-users/  # noqa: E501
+
+        :param update_user_url: The update_user_url of this Application.  # noqa: E501
+        :type: str
+        """
+        if update_user_url is not None and len(update_user_url) > 100:
+            raise ValueError("Invalid value for `update_user_url`, length must be less than or equal to `100`")  # noqa: E501
+
+        self._update_user_url = update_user_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""
