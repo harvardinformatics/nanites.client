@@ -179,8 +179,6 @@ class Login(object):
         """
         if application_key is not None and len(application_key) > 255:
             raise ValueError("Invalid value for `application_key`, length must be less than or equal to `255`")  # noqa: E501
-        if application_key is not None and len(application_key) < 1:
-            raise ValueError("Invalid value for `application_key`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._application_key = application_key
 

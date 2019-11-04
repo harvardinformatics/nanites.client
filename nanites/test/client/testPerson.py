@@ -83,14 +83,16 @@ class TestPersonApi(ApiTest):
     def test_update_person(self):
         '''Ensure that a person can be updated
         '''
-        person = API.createPerson(api_client=self.api_client, **data.PEOPLE[0])
+        person = API.createPerson(api_client=self.api_client, **data.PEOPLE[1])
         self.IDS['Person'] = [person.id]
-        self.assertTrue(person.full_name == data.PEOPLE[0]['full_name'], 'Incorrect person name: %s' % str(person))
+        self.assertTrue(person.full_name == data.PEOPLE[1]['full_name'], 'Incorrect person name: %s' % str(person))
 
         person.full_name = 'A new full name'
+        del(person.addresses[0])
         persondata = person.to_dict()
         updatedperson = API.updatePerson(api_client=self.api_client, **persondata)
         self.assertTrue(updatedperson.full_name == person.full_name, 'Incorrect person retrieved: %s' % str(updatedperson))
+        self.assertTrue(len(updatedperson.addresses) == 1, 'Incorrect number of addresses after update: %s' % str(updatedperson))
 
 if __name__ == '__main__':
     unittest.main()

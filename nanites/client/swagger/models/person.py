@@ -260,8 +260,6 @@ class Person(object):
         """
         if first_name is not None and len(first_name) > 100:
             raise ValueError("Invalid value for `first_name`, length must be less than or equal to `100`")  # noqa: E501
-        if first_name is not None and len(first_name) < 1:
-            raise ValueError("Invalid value for `first_name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._first_name = first_name
 
@@ -287,8 +285,6 @@ class Person(object):
         """
         if last_name is not None and len(last_name) > 100:
             raise ValueError("Invalid value for `last_name`, length must be less than or equal to `100`")  # noqa: E501
-        if last_name is not None and len(last_name) < 1:
-            raise ValueError("Invalid value for `last_name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._last_name = last_name
 
@@ -316,8 +312,6 @@ class Person(object):
             raise ValueError("Invalid value for `full_name`, must not be `None`")  # noqa: E501
         if full_name is not None and len(full_name) > 255:
             raise ValueError("Invalid value for `full_name`, length must be less than or equal to `255`")  # noqa: E501
-        if full_name is not None and len(full_name) < 1:
-            raise ValueError("Invalid value for `full_name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._full_name = full_name
 
@@ -372,8 +366,6 @@ class Person(object):
         """
         if race is not None and len(race) > 255:
             raise ValueError("Invalid value for `race`, length must be less than or equal to `255`")  # noqa: E501
-        if race is not None and len(race) < 1:
-            raise ValueError("Invalid value for `race`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._race = race
 
@@ -399,8 +391,6 @@ class Person(object):
         """
         if ethnicity is not None and len(ethnicity) > 100:
             raise ValueError("Invalid value for `ethnicity`, length must be less than or equal to `100`")  # noqa: E501
-        if ethnicity is not None and len(ethnicity) < 1:
-            raise ValueError("Invalid value for `ethnicity`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._ethnicity = ethnicity
 
@@ -426,8 +416,6 @@ class Person(object):
         """
         if gender is not None and len(gender) > 20:
             raise ValueError("Invalid value for `gender`, length must be less than or equal to `20`")  # noqa: E501
-        if gender is not None and len(gender) < 1:
-            raise ValueError("Invalid value for `gender`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._gender = gender
 
@@ -474,8 +462,6 @@ class Person(object):
         """
         if disability is not None and len(disability) > 255:
             raise ValueError("Invalid value for `disability`, length must be less than or equal to `255`")  # noqa: E501
-        if disability is not None and len(disability) < 1:
-            raise ValueError("Invalid value for `disability`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._disability = disability
 
@@ -501,8 +487,6 @@ class Person(object):
         """
         if citizenship is not None and len(citizenship) > 50:
             raise ValueError("Invalid value for `citizenship`, length must be less than or equal to `50`")  # noqa: E501
-        if citizenship is not None and len(citizenship) < 1:
-            raise ValueError("Invalid value for `citizenship`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._citizenship = citizenship
 
@@ -528,8 +512,6 @@ class Person(object):
         """
         if visa_details is not None and len(visa_details) > 255:
             raise ValueError("Invalid value for `visa_details`, length must be less than or equal to `255`")  # noqa: E501
-        if visa_details is not None and len(visa_details) < 1:
-            raise ValueError("Invalid value for `visa_details`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._visa_details = visa_details
 
@@ -555,8 +537,6 @@ class Person(object):
         """
         if national_origin is not None and len(national_origin) > 100:
             raise ValueError("Invalid value for `national_origin`, length must be less than or equal to `100`")  # noqa: E501
-        if national_origin is not None and len(national_origin) < 1:
-            raise ValueError("Invalid value for `national_origin`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._national_origin = national_origin
 

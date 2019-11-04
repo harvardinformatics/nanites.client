@@ -133,8 +133,6 @@ class Address(object):
         """
         if name is not None and len(name) > 50:
             raise ValueError("Invalid value for `name`, length must be less than or equal to `50`")  # noqa: E501
-        if name is not None and len(name) < 1:
-            raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._name = name
 
@@ -158,8 +156,6 @@ class Address(object):
         """
         if street1 is not None and len(street1) > 100:
             raise ValueError("Invalid value for `street1`, length must be less than or equal to `100`")  # noqa: E501
-        if street1 is not None and len(street1) < 1:
-            raise ValueError("Invalid value for `street1`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._street1 = street1
 
@@ -183,8 +179,6 @@ class Address(object):
         """
         if street2 is not None and len(street2) > 100:
             raise ValueError("Invalid value for `street2`, length must be less than or equal to `100`")  # noqa: E501
-        if street2 is not None and len(street2) < 1:
-            raise ValueError("Invalid value for `street2`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._street2 = street2
 
@@ -208,8 +202,6 @@ class Address(object):
         """
         if city is not None and len(city) > 100:
             raise ValueError("Invalid value for `city`, length must be less than or equal to `100`")  # noqa: E501
-        if city is not None and len(city) < 1:
-            raise ValueError("Invalid value for `city`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._city = city
 
@@ -233,8 +225,6 @@ class Address(object):
         """
         if state is not None and len(state) > 100:
             raise ValueError("Invalid value for `state`, length must be less than or equal to `100`")  # noqa: E501
-        if state is not None and len(state) < 1:
-            raise ValueError("Invalid value for `state`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._state = state
 
@@ -258,8 +248,6 @@ class Address(object):
         """
         if country is not None and len(country) > 100:
             raise ValueError("Invalid value for `country`, length must be less than or equal to `100`")  # noqa: E501
-        if country is not None and len(country) < 1:
-            raise ValueError("Invalid value for `country`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._country = country
 
@@ -283,8 +271,6 @@ class Address(object):
         """
         if postal_code is not None and len(postal_code) > 20:
             raise ValueError("Invalid value for `postal_code`, length must be less than or equal to `20`")  # noqa: E501
-        if postal_code is not None and len(postal_code) < 1:
-            raise ValueError("Invalid value for `postal_code`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._postal_code = postal_code
 
@@ -308,8 +294,6 @@ class Address(object):
         """
         if type is not None and len(type) > 20:
             raise ValueError("Invalid value for `type`, length must be less than or equal to `20`")  # noqa: E501
-        if type is not None and len(type) < 1:
-            raise ValueError("Invalid value for `type`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._type = type
 
@@ -333,8 +317,6 @@ class Address(object):
         """
         if person is not None and len(person) > 255:
             raise ValueError("Invalid value for `person`, length must be less than or equal to `255`")  # noqa: E501
-        if person is not None and len(person) < 1:
-            raise ValueError("Invalid value for `person`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._person = person
 

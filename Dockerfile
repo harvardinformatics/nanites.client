@@ -20,4 +20,4 @@ RUN pip install --upgrade pip && \
     pip install recommonmark==0.5.0
 
 
-CMD ./wait4db.py && ./manage.py test -v 2
+CMD ./wait-for-it.sh nanites-db:3306 && ./manage.py test -v 2
