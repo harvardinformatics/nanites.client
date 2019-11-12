@@ -178,10 +178,19 @@ class SwaggerClient(object):
                 id = data.pop('id')
                 return self.call_api_func(api, swagger_func_name.lower(), id=id, **kwargs)
         elif operation == 'list':
+            kwargs['page'] = 1
             if 'page_size' not in kwargs:
                 kwargs['page_size'] = DEFAULT_LIST_PAGE_SIZE
             response = self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
-            return response.results
+            results = response.results
+
+            # Use paging to get the total.  Because the default list page is so high,
+            # this will probably only happen when pageing is set
+            while response.count > len(results):
+                kwargs['page'] += 1
+                response = self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
+                results.extend(response.results)
+            return results
         else:
             return self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
 

@@ -15,8 +15,6 @@ from nanites.client import API
 from nanites.test.client import data, ApiTest
 
 
-DATABASE_PEOPLE_TOTAL = 10017
-
 class TestPersonApi(ApiTest):
 
     def test_create_minimal_person(self):
@@ -39,12 +37,13 @@ class TestPersonApi(ApiTest):
         self.assertTrue(len(person.contacts) == 3, 'Incorrect number of contacts: %d' % len(person.contacts))
         self.assertTrue(len(person.affiliations) == 1, 'Incorrect number of contacts: %d' % len(person.affiliations))
 
-    @unittest.skipUnless(os.environ.get('ENABLE_LONG_TESTS'), "Must set ENABLE_LONG_TESTS")
     def test_people_list(self):
-        '''Ensure that all people can be returned by listPeople.  Total depends on what's in the database :)
+        '''Ensure that all people can be returned by listPeople.  Paging is tested.
         '''
-        peoplelist = API.listPeople(api_client=self.api_client)
-        self.assertTrue(len(peoplelist) == DATABASE_PEOPLE_TOTAL, 'Incorrect number of people %d' % (len(peoplelist)))
+        for persondata in data.PEOPLE:
+            API.createPerson(api_client=self.api_client, **persondata)
+        peoplelist = API.listPeople(api_client=self.api_client, page_size=2)
+        self.assertTrue(len(peoplelist) == len(data.PEOPLE), 'Incorrect number of people %d' % (len(peoplelist)))
 
     def test_people_list_by_primary_email(self):
         '''Ensure that a person can be retrieved by primary email from listPeople
