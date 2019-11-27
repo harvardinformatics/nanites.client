@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from nanites.client.swagger.models.source import Source  # noqa: F401,E501
+from nanites.client.swagger.models.person_change import PersonChange  # noqa: F401,E501
 
 
 class InlineResponse2006(object):
@@ -36,7 +36,7 @@ class InlineResponse2006(object):
         'count': 'int',
         'next': 'str',
         'previous': 'str',
-        'results': 'list[Source]'
+        'results': 'list[PersonChange]'
     }
 
     attribute_map = {
@@ -133,7 +133,7 @@ class InlineResponse2006(object):
 
 
         :return: The results of this InlineResponse2006.  # noqa: E501
-        :rtype: list[Source]
+        :rtype: list[PersonChange]
         """
         return self._results
 
@@ -143,7 +143,7 @@ class InlineResponse2006(object):
 
 
         :param results: The results of this InlineResponse2006.  # noqa: E501
-        :type: list[Source]
+        :type: list[PersonChange]
         """
         if results is None:
             raise ValueError("Invalid value for `results`, must not be `None`")  # noqa: E501

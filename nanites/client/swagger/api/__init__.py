@@ -12,5 +12,6 @@ from nanites.client.swagger.api.get_pi_names_api import GetPiNamesApi
 from nanites.client.swagger.api.logins_api import LoginsApi
 from nanites.client.swagger.api.organizations_api import OrganizationsApi
 from nanites.client.swagger.api.people_api import PeopleApi
+from nanites.client.swagger.api.person_changes_api import PersonChangesApi
 from nanites.client.swagger.api.sources_api import SourcesApi
 from nanites.client.swagger.api.users_api import UsersApi

@@ -25,6 +25,7 @@ from nanites.client.swagger.api.get_pi_names_api import GetPiNamesApi
 from nanites.client.swagger.api.logins_api import LoginsApi
 from nanites.client.swagger.api.organizations_api import OrganizationsApi
 from nanites.client.swagger.api.people_api import PeopleApi
+from nanites.client.swagger.api.person_changes_api import PersonChangesApi
 from nanites.client.swagger.api.sources_api import SourcesApi
 from nanites.client.swagger.api.users_api import UsersApi
 
@@ -47,6 +48,7 @@ from nanites.client.swagger.models.inline_response2004 import InlineResponse2004
 from nanites.client.swagger.models.inline_response2005 import InlineResponse2005
 from nanites.client.swagger.models.inline_response2006 import InlineResponse2006
 from nanites.client.swagger.models.inline_response2007 import InlineResponse2007
+from nanites.client.swagger.models.inline_response2008 import InlineResponse2008
 from nanites.client.swagger.models.login import Login
 from nanites.client.swagger.models.login_list import LoginList
 from nanites.client.swagger.models.organization import Organization
@@ -54,5 +56,6 @@ from nanites.client.swagger.models.parent_relation import ParentRelation
 from nanites.client.swagger.models.person import Person
 from nanites.client.swagger.models.person_address import PersonAddress
 from nanites.client.swagger.models.person_affiliation import PersonAffiliation
+from nanites.client.swagger.models.person_change import PersonChange
 from nanites.client.swagger.models.source import Source
 from nanites.client.swagger.models.user import User
