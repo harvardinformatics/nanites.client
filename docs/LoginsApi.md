@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **logins_list**
-> InlineResponse2003 logins_list(page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email)
+> InlineResponse2003 logins_list(ordering=ordering, page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email)
 
 
 
@@ -140,6 +140,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.LoginsApi(nanites.client.swagger.ApiClient(configuration))
+ordering = 'ordering_example' # str | Which field to use when ordering the results. (optional)
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
 login = 'login_example' # str |  (optional)
@@ -148,7 +149,7 @@ ifxid = 'ifxid_example' # str |  (optional)
 primary_email = 'primary_email_example' # str |  (optional)
 
 try:
-    api_response = api_instance.logins_list(page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email)
+    api_response = api_instance.logins_list(ordering=ordering, page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LoginsApi->logins_list: %s\n" % e)
@@ -158,6 +159,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ordering** | **str**| Which field to use when ordering the results. | [optional] 
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
  **login** | **str**|  | [optional] 

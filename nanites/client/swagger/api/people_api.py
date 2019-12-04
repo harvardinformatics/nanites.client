@@ -241,6 +241,7 @@ class PeopleApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str ordering: Which field to use when ordering the results.
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
         :param str login:
@@ -269,6 +270,7 @@ class PeopleApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param str ordering: Which field to use when ordering the results.
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
         :param str login:
@@ -281,7 +283,7 @@ class PeopleApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'page_size', 'login', 'username', 'primary_email', 'full_name', 'email']  # noqa: E501
+        all_params = ['ordering', 'page', 'page_size', 'login', 'username', 'primary_email', 'full_name', 'email']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -302,6 +304,8 @@ class PeopleApi(object):
         path_params = {}
 
         query_params = []
+        if 'ordering' in params:
+            query_params.append(('ordering', params['ordering']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
         if 'page_size' in params:
