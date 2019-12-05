@@ -197,7 +197,6 @@ class SwaggerClient(object):
                 results.extend(response.results)
             return results
         elif operation == 'plist':
-            kwargs['page'] = 1
             if 'page_size' not in kwargs:
                 kwargs['page_size'] = DEFAULT_LIST_PAGE_SIZE
             response = self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
