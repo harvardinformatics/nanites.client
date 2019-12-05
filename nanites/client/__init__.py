@@ -56,6 +56,7 @@ OPERATIONS = [
     'create',
     'delete',
     'list',
+    'plist',
     'update',
     'read'
 ]
@@ -77,6 +78,7 @@ class SwaggerClient(object):
             for operation in ['create', 'delete', 'read', 'update']:
                 self.fnames.append('%s%s' % (operation, singular))
             self.fnames.append('list%s' % plural)
+            self.fnames.append('plist%s' % plural)
 
         # Setup a regex for splitting the model name and operation from the function name
         singulars_and_plurals = list(MODEL_NAMES.keys()) + list(MODEL_NAMES.values())
@@ -148,7 +150,10 @@ class SwaggerClient(object):
         api_class = globals()['%sApi' % MODEL_NAMES[model_name]]
         api = api_class(api_client=api_client)
 
-        swagger_func_name = '%s_%s' % (MODEL_NAMES[model_name], operation)
+        if operation == 'plist':
+            swagger_func_name = '%s_%s' % (MODEL_NAMES[model_name], 'list')
+        else:
+            swagger_func_name = '%s_%s' % (MODEL_NAMES[model_name], operation)
 
         # Run in correct form.  updates and deletes require an id in most cases
         # though for "Source" it's a name
@@ -191,6 +196,12 @@ class SwaggerClient(object):
                 response = self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
                 results.extend(response.results)
             return results
+        elif operation == 'plist':
+            kwargs['page'] = 1
+            if 'page_size' not in kwargs:
+                kwargs['page_size'] = DEFAULT_LIST_PAGE_SIZE
+            response = self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
+            return response
         else:
             return self.call_api_func(api, swagger_func_name.lower(), **data, **kwargs)
 

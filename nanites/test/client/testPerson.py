@@ -51,8 +51,17 @@ class TestPersonApi(ApiTest):
         for persondata in data.PEOPLE:
             API.createPerson(api_client=self.api_client, **persondata)
 
-        peoplelist = API.listPeople(api_client=self.api_client, ordering='-full_name')
+        peoplelist = API.listPeople(api_client=self.api_client, ordering='-last_name')
         self.assertTrue(peoplelist[0].last_name == 'Slurpiston', 'First person is incorrect: %s' % str(peoplelist[0]))
+
+    def test_people_plist(self):
+        '''Ensure that all people can be returned by plistPeople in full response form (with count).
+        '''
+        for persondata in data.PEOPLE:
+            API.createPerson(api_client=self.api_client, **persondata)
+
+        plist = API.plistPeople(api_client=self.api_client)
+        self.assertTrue(plist.count == 3, 'Incorrect count of results: %s' % str(plist))
 
     def test_people_list_by_primary_email(self):
         '''Ensure that a person can be retrieved by primary email from listPeople
