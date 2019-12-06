@@ -156,7 +156,7 @@ While this will not provide results one page at a time (plist is for that), it w
 not time out.
 
 List operations can be passed an "ordering" parameter.  This is based on the
-`Django REST Frameowork OrderingFilter <https://www.django-rest-framework.org/api-guide/filtering/#orderingfilter>`
+`Django REST Framework OrderingFilter <https://www.django-rest-framework.org/api-guide/filtering/#orderingfilter>`_
 and uses that syntax for ascending, descending, and multiple fields::
 
     >>> people = API.listPeople(login='nice', ordering='-last_name')
