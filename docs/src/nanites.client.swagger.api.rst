@@ -20,5 +20,6 @@ Submodules
    nanites.client.swagger.api.logins_api
    nanites.client.swagger.api.organizations_api
    nanites.client.swagger.api.people_api
+   nanites.client.swagger.api.person_changes_api
    nanites.client.swagger.api.sources_api
    nanites.client.swagger.api.users_api

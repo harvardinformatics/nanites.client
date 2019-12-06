@@ -26,6 +26,7 @@ Submodules
    nanites.client.swagger.models.inline_response2005
    nanites.client.swagger.models.inline_response2006
    nanites.client.swagger.models.inline_response2007
+   nanites.client.swagger.models.inline_response2008
    nanites.client.swagger.models.login
    nanites.client.swagger.models.login_list
    nanites.client.swagger.models.organization
@@ -33,5 +34,6 @@ Submodules
    nanites.client.swagger.models.person
    nanites.client.swagger.models.person_address
    nanites.client.swagger.models.person_affiliation
+   nanites.client.swagger.models.person_change
    nanites.client.swagger.models.source
    nanites.client.swagger.models.user
