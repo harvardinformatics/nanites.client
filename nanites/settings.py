@@ -76,25 +76,15 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-NANITES_USERNAME = os.environ.get('NANITES_USERNAME', 'nanites')
-NANITES_PASSWORD = os.environ.get('NANITES_PASSWORD')
-NANITES_DATABASE = os.environ.get('NANITES_DATABASE', 'nanites')
-NANITES_HOSTNAME = os.environ.get('NANITES_HOSTNAME', 'localhost')
-
 DATABASES = {
     'default': {
-        'ENGINE':       'django.db.backends.mysql',
-        'NAME':         NANITES_DATABASE,
-        'USER':         NANITES_USERNAME,
-        'PASSWORD':     NANITES_PASSWORD,
-        'HOST':         NANITES_HOSTNAME,
-        'PORT':         3306,
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-            'use_unicode': True,
-            'init_command': 'SET storage_engine=INNODB,character_set_connection=utf8mb4,collation_connection=utf8mb4_unicode_ci,group_concat_max_len=50000'
-        },
-    },
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'sqlite3.db',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
 }
 
 # Password validation

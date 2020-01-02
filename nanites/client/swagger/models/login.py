@@ -42,7 +42,8 @@ class Login(object):
         'is_enabled': 'bool',
         'created': 'datetime',
         'author': 'str',
-        'person': 'Person'
+        'person': 'Person',
+        'contacts': 'list[int]'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class Login(object):
         'is_enabled': 'is_enabled',
         'created': 'created',
         'author': 'author',
-        'person': 'person'
+        'person': 'person',
+        'contacts': 'contacts'
     }
 
-    def __init__(self, id=None, ifxid=None, application=None, application_key=None, username=None, role='user', is_enabled=True, created=None, author=None, person=None):  # noqa: E501
+    def __init__(self, id=None, ifxid=None, application=None, application_key=None, username=None, role='user', is_enabled=True, created=None, author=None, person=None, contacts=None):  # noqa: E501
         """Login - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -71,6 +73,7 @@ class Login(object):
         self._created = None
         self._author = None
         self._person = None
+        self._contacts = None
         self.discriminator = None
 
         if id is not None:
@@ -91,6 +94,8 @@ class Login(object):
             self.author = author
         if person is not None:
             self.person = person
+        if contacts is not None:
+            self.contacts = contacts
 
     @property
     def id(self):
@@ -325,6 +330,27 @@ class Login(object):
         """
 
         self._person = person
+
+    @property
+    def contacts(self):
+        """Gets the contacts of this Login.  # noqa: E501
+
+
+        :return: The contacts of this Login.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._contacts
+
+    @contacts.setter
+    def contacts(self, contacts):
+        """Sets the contacts of this Login.
+
+
+        :param contacts: The contacts of this Login.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._contacts = contacts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

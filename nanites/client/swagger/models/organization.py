@@ -17,6 +17,7 @@ import re  # noqa: F401
 import six
 
 from nanites.client.swagger.models.child_relation import ChildRelation  # noqa: F401,E501
+from nanites.client.swagger.models.organization_contact import OrganizationContact  # noqa: F401,E501
 from nanites.client.swagger.models.parent_relation import ParentRelation  # noqa: F401,E501
 
 
@@ -42,7 +43,8 @@ class Organization(object):
         'application_key': 'str',
         'slug': 'str',
         'parents': 'list[ParentRelation]',
-        'children': 'list[ChildRelation]'
+        'children': 'list[ChildRelation]',
+        'contacts': 'list[OrganizationContact]'
     }
 
     attribute_map = {
@@ -54,10 +56,11 @@ class Organization(object):
         'application_key': 'application_key',
         'slug': 'slug',
         'parents': 'parents',
-        'children': 'children'
+        'children': 'children',
+        'contacts': 'contacts'
     }
 
-    def __init__(self, id=None, name=None, rank=None, org_tree=None, code=None, application_key=None, slug=None, parents=None, children=None):  # noqa: E501
+    def __init__(self, id=None, name=None, rank=None, org_tree=None, code=None, application_key=None, slug=None, parents=None, children=None, contacts=None):  # noqa: E501
         """Organization - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -69,6 +72,7 @@ class Organization(object):
         self._slug = None
         self._parents = None
         self._children = None
+        self._contacts = None
         self.discriminator = None
 
         if id is not None:
@@ -86,6 +90,8 @@ class Organization(object):
             self.parents = parents
         if children is not None:
             self.children = children
+        if contacts is not None:
+            self.contacts = contacts
 
     @property
     def id(self):
@@ -305,6 +311,27 @@ class Organization(object):
         """
 
         self._children = children
+
+    @property
+    def contacts(self):
+        """Gets the contacts of this Organization.  # noqa: E501
+
+
+        :return: The contacts of this Organization.  # noqa: E501
+        :rtype: list[OrganizationContact]
+        """
+        return self._contacts
+
+    @contacts.setter
+    def contacts(self, contacts):
+        """Sets the contacts of this Organization.
+
+
+        :param contacts: The contacts of this Organization.  # noqa: E501
+        :type: list[OrganizationContact]
+        """
+
+        self._contacts = contacts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

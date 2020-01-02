@@ -110,12 +110,18 @@ PEOPLE = [
         ],
         'contacts': [
             {
-                'type': 'email',
-                'detail': 'slurpy@hotmail.com',
+                'contact': {
+                    'type': 'email',
+                    'detail': 'slurpy@hotmail.com',
+                },
+                'role': 'Additional email'
             },
             {
-                'type': 'phone',
-                'detail': '123-1233'
+                'contact': {
+                    'type': 'phone',
+                    'detail': '123-1233'
+                },
+                'role': 'phone'
             }
         ],
     },
