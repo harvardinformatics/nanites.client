@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **created** | **datetime** |  | [optional] 
 **author** | **str** |  | [optional] 
 **person** | [**Person**](Person.md) |  | [optional] 
+**contacts** | **list[int]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

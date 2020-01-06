@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **author** | **str** |  | [optional] 
 **addresses** | [**list[PersonAddress]**](PersonAddress.md) |  | [optional] 
 **affiliations** | [**list[PersonAffiliation]**](PersonAffiliation.md) |  | [optional] 
-**contacts** | [**list[Contact]**](Contact.md) |  | [optional] 
+**contacts** | [**list[PersonContact]**](PersonContact.md) |  | [optional] 
 **logins** | [**list[LoginList]**](LoginList.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

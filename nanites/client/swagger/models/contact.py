@@ -32,39 +32,45 @@ class Contact(object):
     """
     swagger_types = {
         'id': 'int',
-        'person': 'str',
+        'name': 'str',
         'type': 'str',
         'detail': 'str',
-        'is_valid': 'bool'
+        'is_valid': 'bool',
+        'created': 'datetime'
     }
 
     attribute_map = {
         'id': 'id',
-        'person': 'person',
+        'name': 'name',
         'type': 'type',
         'detail': 'detail',
-        'is_valid': 'is_valid'
+        'is_valid': 'is_valid',
+        'created': 'created'
     }
 
-    def __init__(self, id=None, person=None, type=None, detail=None, is_valid=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, detail=None, is_valid=None, created=None):  # noqa: E501
         """Contact - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._person = None
+        self._name = None
         self._type = None
         self._detail = None
         self._is_valid = None
+        self._created = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        self.person = person
+        if name is not None:
+            self.name = name
         if type is not None:
             self.type = type
         if detail is not None:
             self.detail = detail
         if is_valid is not None:
             self.is_valid = is_valid
+        if created is not None:
+            self.created = created
 
     @property
     def id(self):
@@ -88,27 +94,29 @@ class Contact(object):
         self._id = id
 
     @property
-    def person(self):
-        """Gets the person of this Contact.  # noqa: E501
+    def name(self):
+        """Gets the name of this Contact.  # noqa: E501
 
+        Name of a person when used as an Organization contact, or Primary Email  # noqa: E501
 
-        :return: The person of this Contact.  # noqa: E501
+        :return: The name of this Contact.  # noqa: E501
         :rtype: str
         """
-        return self._person
+        return self._name
 
-    @person.setter
-    def person(self, person):
-        """Sets the person of this Contact.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Contact.
 
+        Name of a person when used as an Organization contact, or Primary Email  # noqa: E501
 
-        :param person: The person of this Contact.  # noqa: E501
+        :param name: The name of this Contact.  # noqa: E501
         :type: str
         """
-        if person is None:
-            raise ValueError("Invalid value for `person`, must not be `None`")  # noqa: E501
+        if name is not None and len(name) > 100:
+            raise ValueError("Invalid value for `name`, length must be less than or equal to `100`")  # noqa: E501
 
-        self._person = person
+        self._name = name
 
     @property
     def type(self):
@@ -186,6 +194,29 @@ class Contact(object):
         """
 
         self._is_valid = is_valid
+
+    @property
+    def created(self):
+        """Gets the created of this Contact.  # noqa: E501
+
+        Date created  # noqa: E501
+
+        :return: The created of this Contact.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this Contact.
+
+        Date created  # noqa: E501
+
+        :param created: The created of this Contact.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created = created
 
     def to_dict(self):
         """Returns the model properties as a dict"""

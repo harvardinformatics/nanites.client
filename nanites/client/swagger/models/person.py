@@ -16,10 +16,10 @@ import re  # noqa: F401
 
 import six
 
-from nanites.client.swagger.models.contact import Contact  # noqa: F401,E501
 from nanites.client.swagger.models.login_list import LoginList  # noqa: F401,E501
 from nanites.client.swagger.models.person_address import PersonAddress  # noqa: F401,E501
 from nanites.client.swagger.models.person_affiliation import PersonAffiliation  # noqa: F401,E501
+from nanites.client.swagger.models.person_contact import PersonContact  # noqa: F401,E501
 
 
 class Person(object):
@@ -59,7 +59,7 @@ class Person(object):
         'author': 'str',
         'addresses': 'list[PersonAddress]',
         'affiliations': 'list[PersonAffiliation]',
-        'contacts': 'list[Contact]',
+        'contacts': 'list[PersonContact]',
         'logins': 'list[LoginList]'
     }
 
@@ -724,7 +724,7 @@ class Person(object):
 
 
         :return: The contacts of this Person.  # noqa: E501
-        :rtype: list[Contact]
+        :rtype: list[PersonContact]
         """
         return self._contacts
 
@@ -734,7 +734,7 @@ class Person(object):
 
 
         :param contacts: The contacts of this Person.  # noqa: E501
-        :type: list[Contact]
+        :type: list[PersonContact]
         """
 
         self._contacts = contacts

@@ -20,4 +20,4 @@ RUN pip install --upgrade pip && \
     pip install recommonmark==0.5.0
 
 
-CMD ./wait-for-it.sh nanites:80 && ./manage.py test -v 2
+CMD ./wait-for-it.sh -t 30 nanites:80 && ./manage.py test -v 2
