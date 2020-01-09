@@ -74,6 +74,17 @@ class TestPersonApi(ApiTest):
         self.assertTrue(len(peoplelist) == 1, 'Incorrect number of people %d' % (len(peoplelist)))
         self.assertTrue(peoplelist[0].full_name == person.full_name, 'Incorrect person returned %s' % str(peoplelist))
 
+    def test_people_list_by_contact_email(self):
+        '''Ensure that a person can be retrieved by contact (email) from listPeople
+        '''
+        person = API.createPerson(api_client=self.api_client, **data.PEOPLE[0])
+        self.IDS['Person'] = [person.id]
+        self.assertTrue(person.full_name == data.PEOPLE[0]['full_name'], 'Incorrect person name: %s' % str(person))
+
+        peoplelist = API.listPeople(api_client=self.api_client, email=person.primary_email)
+        self.assertTrue(len(peoplelist) == 1, 'Incorrect number of people %d' % (len(peoplelist)))
+        self.assertTrue(peoplelist[0].full_name == person.full_name, 'Incorrect person returned %s' % str(peoplelist))
+
     def test_people_list_by_login_username(self):
         '''Ensure that a person can be retrieved by login and username from listPeople
         '''
