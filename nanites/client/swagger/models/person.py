@@ -43,6 +43,7 @@ class Person(object):
         'last_name': 'str',
         'full_name': 'str',
         'primary_email': 'str',
+        'title': 'str',
         'race': 'str',
         'ethnicity': 'str',
         'gender': 'str',
@@ -71,6 +72,7 @@ class Person(object):
         'last_name': 'last_name',
         'full_name': 'full_name',
         'primary_email': 'primary_email',
+        'title': 'title',
         'race': 'race',
         'ethnicity': 'ethnicity',
         'gender': 'gender',
@@ -91,7 +93,7 @@ class Person(object):
         'logins': 'logins'
     }
 
-    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, race=None, ethnicity=None, gender='Unknown', is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None):  # noqa: E501
+    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, title=None, race=None, ethnicity=None, gender='Unknown', is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None):  # noqa: E501
         """Person - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -101,6 +103,7 @@ class Person(object):
         self._last_name = None
         self._full_name = None
         self._primary_email = None
+        self._title = None
         self._race = None
         self._ethnicity = None
         self._gender = None
@@ -133,6 +136,8 @@ class Person(object):
             self.last_name = last_name
         self.full_name = full_name
         self.primary_email = primary_email
+        if title is not None:
+            self.title = title
         if race is not None:
             self.race = race
         if ethnicity is not None:
@@ -343,6 +348,31 @@ class Person(object):
             raise ValueError("Invalid value for `primary_email`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._primary_email = primary_email
+
+    @property
+    def title(self):
+        """Gets the title of this Person.  # noqa: E501
+
+        Title (e.g. Dr.)  # noqa: E501
+
+        :return: The title of this Person.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this Person.
+
+        Title (e.g. Dr.)  # noqa: E501
+
+        :param title: The title of this Person.  # noqa: E501
+        :type: str
+        """
+        if title is not None and len(title) > 20:
+            raise ValueError("Invalid value for `title`, length must be less than or equal to `20`")  # noqa: E501
+
+        self._title = title
 
     @property
     def race(self):

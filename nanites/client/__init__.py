@@ -61,6 +61,111 @@ OPERATIONS = [
     'read'
 ]
 
+common_doc = '''
+        Default authentication uses settings.IFX_APP['token'] value.  Alternate token can be used by
+        creating a new ApiClient with a new Configuration
+
+        >>> from nanites.client.swagger import ApiClient, Configuration
+        >>> from nanites.client import API
+        >>> configuration = Configuration()
+        >>> configuration.api_key = 'mynewtokenthatwillneverwork'
+        >>> api_client = ApiClient(configuration=configuration)
+        >>> API.listSomething(api_client=api_client)
+'''
+
+DOCS = {
+    'createPerson': '''
+        Create a Person.  Data dictionary input may include
+        %s
+    ''' % common_doc,
+    'listPeople': '''
+        Retrieve a list of rich Person objects, including contacts, addresses, and affiliations.
+        People may be retrieved by username and login:
+
+           people = listPeople(username='akitzmiller', login='RC AD')
+
+        by primary email
+
+           people = listPeople(primary_email='akitzmiller@g.harvard.edu')
+
+        by any email contact associated with the user
+
+           people = listPeople(email='aaron.kitzmiller@gmail.com')
+
+        and can be sorted using the 'ordering' parameter with standard Django model conventions
+
+           people = listPeople(ordering='-created')
+
+        Because full objects are retrieved, large lists may take a long time.  For more efficient
+        retrieval of large sets use the paged listing function (plistPeople) or specialized queries
+        (getBasicsByLogin).
+        %s
+    ''' % common_doc,
+    'plistPeople': '''
+        Retrieve a list of people with explicit paging support.  Total matching records is always returned.
+
+            >>> people_page = plistPeople(page_size=15, page=1)
+            >>> people_page.count
+            10030
+            >>> len(people_page.results)
+            15
+            >>> people_page.results[0].full_name
+            'Aaron J Kitzmiller'
+            >>> people_page = API.plistPeople(page_size=15, page=2)
+            >>> people_page.results[0].full_name
+            'Mike Stopa'
+
+        Results should be explicitly ordered when possible to ensure that pages are consistent.
+
+            >>> people_page = API.plistPeople(page_size=15, page=1, ordering='-last_name')
+            >>> people_page.results[0].full_name
+            'David Zwicker'
+        %s
+    ''' % common_doc,
+    'readPerson': '''
+        Retrieve a single Person object by id.
+
+            >>> person = API.readPerson(id=1)
+            >>> person.full_name
+            'Aaron J Kitzmiller'
+
+        A full object is returned with contacts, affiliations, addresses, and logins
+
+            >>> person.contacts[0].role
+            'Primary Email'
+            >>> person.contacts[0].contact.detail
+            'akitzmiller@g.harvard.edu'
+            >>> person.logins[0].username
+            'akitzmiller'
+
+        An exception is thrown for non-existent records.
+
+            >>> try:
+            ...     person = API.readPerson(id=10000000)
+            ... except Exception as e:
+            ...     print(e)
+            ...
+            Item not found in call to people_read using {'id': 10000000}
+            >>>
+        %s
+    ''' % common_doc,
+    'updateSource': '''
+        Update a Source record.  The Source data must be a dictionary (not Source object)
+
+            >>> source = API.readSource(name='nnin2person.py admin')
+            >>> source.description = 'Automatically converted from NNIN database using nnin_admin as a source'
+            >>> source_dict = source.to_dict()
+            >>> updated = API.updateSource(**source_dict)
+            >>> updated
+            {'description': 'Automatically converted from NNIN database using nnin_admin '
+                            'as a source',
+            'id': 1,
+            'name': 'Manual entry'}
+            >>>
+        %s
+    ''' % common_doc,
+}
+
 
 DEFAULT_LIST_PAGE_SIZE = 1000000000
 
@@ -100,10 +205,9 @@ class SwaggerClient(object):
             class_dict = {
                 '__init__': init,
                 '__call__': call,
-                '__doc__': 'This is a callable class that simulates a %s() method.' % fname,
+                '__doc__': DOCS.get(fname, 'This is a callable class that simulates a %s() method.' % fname),
             }
             self.types[fname] = type(fname, (object,), class_dict)
-
 
     def apiFn(self, api_func_name, *args, **kwargs):
         '''
@@ -220,7 +324,6 @@ class SwaggerClient(object):
             else:
                 raise
 
-
     def __getattr__(self, name):
         if name in self.fnames:
             functionByName = self.types[name](self.apiFn)
@@ -237,7 +340,9 @@ class SwaggerClient(object):
 
     def getBasicsByLogin(self, *args, **kwargs):
         '''
-        Special purpose getBasicsByLogin call
+        Used by the Office Hours Sign In application, this method returns the
+        username, full_name, primary_email, and lab_name for the user along with
+        pi_full_name, and department_name.
         '''
         api_client = kwargs.pop('api_client', None)
         if not api_client:
@@ -247,7 +352,17 @@ class SwaggerClient(object):
 
     def getOrgNames(self, *args, **kwargs):
         '''
-        Special purpose getOrgNames call.  Returns just the names, rather than the GetOrgNames objects.
+        Used by the Office Hours Sign In application, retrieves the full list of organization names
+        for a specified org tree.
+
+        By default organizational units are sorted so that the lower ranking units (e.g. Laboratory) are
+        returned before higher ranking units (e.g. Institution).  This is to encourage users to be as specific as
+        possible.
+
+        Order and returned ranks can be changed by setting the ranks parameter to an comma separated list of
+        org ranks in the order needed.  To return just departments and laboratories, department first:
+
+        >>> orgs = API.getOrgNames(ranks='Department,Laboratory')
         '''
         api_client = kwargs.pop('api_client', None)
         if not api_client:
