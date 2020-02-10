@@ -20,6 +20,7 @@ from nanites.client.swagger.models.application import Application
 from nanites.client.swagger.models.child_relation import ChildRelation
 from nanites.client.swagger.models.contact import Contact
 from nanites.client.swagger.models.get_basics_by_login import GetBasicsByLogin
+from nanites.client.swagger.models.get_location_info import GetLocationInfo
 from nanites.client.swagger.models.get_org_names import GetOrgNames
 from nanites.client.swagger.models.get_pi_names import GetPiNames
 from nanites.client.swagger.models.inline_response200 import InlineResponse200
