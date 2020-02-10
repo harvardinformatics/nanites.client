@@ -382,5 +382,14 @@ class SwaggerClient(object):
         objs = self.call_api_func(api, 'get_pi_names_list', *args, **kwargs)
         return objs
 
+    def getLocationInfo(self, *args, **kwargs):
+        '''
+        Location info based on user input
+        '''
+        api_client = kwargs.pop('api_client', None)
+        if not api_client:
+            api_client = self.api_client
+        api = GetLocationInfoApi(api_client=api_client)
+        return self.call_api_func(api, 'get_location_info_list', *args, **kwargs)
 
 API = SwaggerClient()
