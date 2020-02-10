@@ -20,6 +20,7 @@ from nanites.client.swagger.api.addresses_api import AddressesApi
 from nanites.client.swagger.api.applications_api import ApplicationsApi
 from nanites.client.swagger.api.contacts_api import ContactsApi
 from nanites.client.swagger.api.get_basics_by_login_api import GetBasicsByLoginApi
+from nanites.client.swagger.api.get_location_info_api import GetLocationInfoApi
 from nanites.client.swagger.api.get_org_names_api import GetOrgNamesApi
 from nanites.client.swagger.api.get_pi_names_api import GetPiNamesApi
 from nanites.client.swagger.api.logins_api import LoginsApi

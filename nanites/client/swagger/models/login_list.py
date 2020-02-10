@@ -56,8 +56,10 @@ class LoginList(object):
         if username is not None:
             self.username = username
         self.application = application
-        self.role = role
-        self.is_enabled = is_enabled
+        if role is not None:
+            self.role = role
+        if is_enabled is not None:
+            self.is_enabled = is_enabled
 
     @property
     def username(self):
@@ -113,6 +115,7 @@ class LoginList(object):
     def role(self):
         """Gets the role of this LoginList.  # noqa: E501
 
+        Role in the application (e.g. superuser)  # noqa: E501
 
         :return: The role of this LoginList.  # noqa: E501
         :rtype: str
@@ -123,14 +126,15 @@ class LoginList(object):
     def role(self, role):
         """Sets the role of this LoginList.
 
+        Role in the application (e.g. superuser)  # noqa: E501
 
         :param role: The role of this LoginList.  # noqa: E501
         :type: str
         """
-        if role is None:
-            raise ValueError("Invalid value for `role`, must not be `None`")  # noqa: E501
         if role is not None and len(role) > 100:
             raise ValueError("Invalid value for `role`, length must be less than or equal to `100`")  # noqa: E501
+        if role is not None and len(role) < 1:
+            raise ValueError("Invalid value for `role`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._role = role
 
@@ -138,6 +142,7 @@ class LoginList(object):
     def is_enabled(self):
         """Gets the is_enabled of this LoginList.  # noqa: E501
 
+        Should this login be enabled?  # noqa: E501
 
         :return: The is_enabled of this LoginList.  # noqa: E501
         :rtype: bool
@@ -148,12 +153,11 @@ class LoginList(object):
     def is_enabled(self, is_enabled):
         """Sets the is_enabled of this LoginList.
 
+        Should this login be enabled?  # noqa: E501
 
         :param is_enabled: The is_enabled of this LoginList.  # noqa: E501
         :type: bool
         """
-        if is_enabled is None:
-            raise ValueError("Invalid value for `is_enabled`, must not be `None`")  # noqa: E501
 
         self._is_enabled = is_enabled
 
@@ -178,6 +182,9 @@ class LoginList(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(LoginList, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

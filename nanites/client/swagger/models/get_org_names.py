@@ -91,6 +91,9 @@ class GetOrgNames(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetOrgNames, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

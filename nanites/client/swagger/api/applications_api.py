@@ -38,18 +38,18 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_create(data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_create(data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Application data: (required)
         :return: Application
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.applications_create_with_http_info(data, **kwargs)  # noqa: E501
         else:
             (data) = self.applications_create_with_http_info(data, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_create_with_http_info(data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_create_with_http_info(data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Application data: (required)
         :return: Application
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class ApplicationsApi(object):
         """
 
         all_params = ['data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class ApplicationsApi(object):
             files=local_var_files,
             response_type='Application',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_delete(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_delete(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.applications_delete_with_http_info(name, **kwargs)  # noqa: E501
         else:
             (data) = self.applications_delete_with_http_info(name, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_delete_with_http_info(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_delete_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :return: None
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class ApplicationsApi(object):
         """
 
         all_params = ['name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -190,7 +190,7 @@ class ApplicationsApi(object):
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `applications_delete`")  # noqa: E501
 
-        if 'name' in params and not re.search('[^\/]+', params['name']):  # noqa: E501
+        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_delete`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 
@@ -227,7 +227,7 @@ class ApplicationsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -238,11 +238,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
         :return: InlineResponse2001
@@ -250,7 +250,7 @@ class ApplicationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.applications_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.applications_list_with_http_info(**kwargs)  # noqa: E501
@@ -261,11 +261,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
         :return: InlineResponse2001
@@ -274,7 +274,7 @@ class ApplicationsApi(object):
         """
 
         all_params = ['page', 'page_size']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -326,7 +326,7 @@ class ApplicationsApi(object):
             files=local_var_files,
             response_type='InlineResponse2001',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -337,11 +337,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_partial_update(name, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_partial_update(name, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :param Application data: (required)
         :return: Application
@@ -349,7 +349,7 @@ class ApplicationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.applications_partial_update_with_http_info(name, data, **kwargs)  # noqa: E501
         else:
             (data) = self.applications_partial_update_with_http_info(name, data, **kwargs)  # noqa: E501
@@ -360,11 +360,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_partial_update_with_http_info(name, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_partial_update_with_http_info(name, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :param Application data: (required)
         :return: Application
@@ -373,7 +373,7 @@ class ApplicationsApi(object):
         """
 
         all_params = ['name', 'data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -396,7 +396,7 @@ class ApplicationsApi(object):
                 params['data'] is None):
             raise ValueError("Missing the required parameter `data` when calling `applications_partial_update`")  # noqa: E501
 
-        if 'name' in params and not re.search('[^\/]+', params['name']):  # noqa: E501
+        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_partial_update`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 
@@ -435,7 +435,7 @@ class ApplicationsApi(object):
             files=local_var_files,
             response_type='Application',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -446,18 +446,18 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_read(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_read(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :return: Application
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.applications_read_with_http_info(name, **kwargs)  # noqa: E501
         else:
             (data) = self.applications_read_with_http_info(name, **kwargs)  # noqa: E501
@@ -468,11 +468,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_read_with_http_info(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_read_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :return: Application
                  If the method is called asynchronously,
@@ -480,7 +480,7 @@ class ApplicationsApi(object):
         """
 
         all_params = ['name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -499,7 +499,7 @@ class ApplicationsApi(object):
                 params['name'] is None):
             raise ValueError("Missing the required parameter `name` when calling `applications_read`")  # noqa: E501
 
-        if 'name' in params and not re.search('[^\/]+', params['name']):  # noqa: E501
+        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_read`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 
@@ -536,7 +536,7 @@ class ApplicationsApi(object):
             files=local_var_files,
             response_type='Application',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -547,11 +547,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_update(name, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_update(name, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :param Application data: (required)
         :return: Application
@@ -559,7 +559,7 @@ class ApplicationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.applications_update_with_http_info(name, data, **kwargs)  # noqa: E501
         else:
             (data) = self.applications_update_with_http_info(name, data, **kwargs)  # noqa: E501
@@ -570,11 +570,11 @@ class ApplicationsApi(object):
 
         Application ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_update_with_http_info(name, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_update_with_http_info(name, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: Name of the application (required)
         :param Application data: (required)
         :return: Application
@@ -583,7 +583,7 @@ class ApplicationsApi(object):
         """
 
         all_params = ['name', 'data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -606,7 +606,7 @@ class ApplicationsApi(object):
                 params['data'] is None):
             raise ValueError("Missing the required parameter `data` when calling `applications_update`")  # noqa: E501
 
-        if 'name' in params and not re.search('[^\/]+', params['name']):  # noqa: E501
+        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_update`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 
@@ -645,7 +645,7 @@ class ApplicationsApi(object):
             files=local_var_files,
             response_type='Application',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
