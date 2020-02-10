@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_location_info_list**
-> list[GetLocationInfo] get_location_info_list(target=target, country=country, state=state, city=city, postal_code=postal_code)
+> GetLocationInfo get_location_info_list(target=target, country=country, state=state, city=city, postal_code=postal_code)
 
 
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[GetLocationInfo]**](GetLocationInfo.md)
+[**GetLocationInfo**](GetLocationInfo.md)
 
 ### Authorization
 
