@@ -31,148 +31,42 @@ class GetLocationInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'target': 'str',
-        'country': 'str',
-        'state': 'str',
-        'city': 'str',
-        'postal_code': 'str'
+        'location_info': 'list[str]'
     }
 
     attribute_map = {
-        'target': 'target',
-        'country': 'country',
-        'state': 'state',
-        'city': 'city',
-        'postal_code': 'postal_code'
+        'location_info': 'location_info'
     }
 
-    def __init__(self, target=None, country=None, state=None, city=None, postal_code=None):  # noqa: E501
+    def __init__(self, location_info=None):  # noqa: E501
         """GetLocationInfo - a model defined in Swagger"""  # noqa: E501
 
-        self._target = None
-        self._country = None
-        self._state = None
-        self._city = None
-        self._postal_code = None
+        self._location_info = None
         self.discriminator = None
 
-        if target is not None:
-            self.target = target
-        if country is not None:
-            self.country = country
-        if state is not None:
-            self.state = state
-        if city is not None:
-            self.city = city
-        if postal_code is not None:
-            self.postal_code = postal_code
+        if location_info is not None:
+            self.location_info = location_info
 
     @property
-    def target(self):
-        """Gets the target of this GetLocationInfo.  # noqa: E501
+    def location_info(self):
+        """Gets the location_info of this GetLocationInfo.  # noqa: E501
 
 
-        :return: The target of this GetLocationInfo.  # noqa: E501
-        :rtype: str
+        :return: The location_info of this GetLocationInfo.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._target
+        return self._location_info
 
-    @target.setter
-    def target(self, target):
-        """Sets the target of this GetLocationInfo.
-
-
-        :param target: The target of this GetLocationInfo.  # noqa: E501
-        :type: str
-        """
-        if target is not None and len(target) < 1:
-            raise ValueError("Invalid value for `target`, length must be greater than or equal to `1`")  # noqa: E501
-
-        self._target = target
-
-    @property
-    def country(self):
-        """Gets the country of this GetLocationInfo.  # noqa: E501
+    @location_info.setter
+    def location_info(self, location_info):
+        """Sets the location_info of this GetLocationInfo.
 
 
-        :return: The country of this GetLocationInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._country
-
-    @country.setter
-    def country(self, country):
-        """Sets the country of this GetLocationInfo.
-
-
-        :param country: The country of this GetLocationInfo.  # noqa: E501
-        :type: str
+        :param location_info: The location_info of this GetLocationInfo.  # noqa: E501
+        :type: list[str]
         """
 
-        self._country = country
-
-    @property
-    def state(self):
-        """Gets the state of this GetLocationInfo.  # noqa: E501
-
-
-        :return: The state of this GetLocationInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """Sets the state of this GetLocationInfo.
-
-
-        :param state: The state of this GetLocationInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._state = state
-
-    @property
-    def city(self):
-        """Gets the city of this GetLocationInfo.  # noqa: E501
-
-
-        :return: The city of this GetLocationInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._city
-
-    @city.setter
-    def city(self, city):
-        """Sets the city of this GetLocationInfo.
-
-
-        :param city: The city of this GetLocationInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._city = city
-
-    @property
-    def postal_code(self):
-        """Gets the postal_code of this GetLocationInfo.  # noqa: E501
-
-
-        :return: The postal_code of this GetLocationInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._postal_code
-
-    @postal_code.setter
-    def postal_code(self, postal_code):
-        """Sets the postal_code of this GetLocationInfo.
-
-
-        :param postal_code: The postal_code of this GetLocationInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._postal_code = postal_code
+        self._location_info = location_info
 
     def to_dict(self):
         """Returns the model properties as a dict"""
