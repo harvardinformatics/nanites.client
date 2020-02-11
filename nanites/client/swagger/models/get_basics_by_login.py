@@ -36,7 +36,10 @@ class GetBasicsByLogin(object):
         'primary_email': 'str',
         'lab_name': 'str',
         'pi_full_name': 'str',
-        'department_name': 'str'
+        'department_name': 'str',
+        'department_code': 'str',
+        'department_id': 'str',
+        'department_slug': 'str'
     }
 
     attribute_map = {
@@ -45,10 +48,13 @@ class GetBasicsByLogin(object):
         'primary_email': 'primary_email',
         'lab_name': 'lab_name',
         'pi_full_name': 'pi_full_name',
-        'department_name': 'department_name'
+        'department_name': 'department_name',
+        'department_code': 'department_code',
+        'department_id': 'department_id',
+        'department_slug': 'department_slug'
     }
 
-    def __init__(self, username=None, full_name=None, primary_email=None, lab_name=None, pi_full_name=None, department_name=None):  # noqa: E501
+    def __init__(self, username=None, full_name=None, primary_email=None, lab_name=None, pi_full_name=None, department_name=None, department_code=None, department_id=None, department_slug=None):  # noqa: E501
         """GetBasicsByLogin - a model defined in Swagger"""  # noqa: E501
 
         self._username = None
@@ -57,6 +63,9 @@ class GetBasicsByLogin(object):
         self._lab_name = None
         self._pi_full_name = None
         self._department_name = None
+        self._department_code = None
+        self._department_id = None
+        self._department_slug = None
         self.discriminator = None
 
         if username is not None:
@@ -71,6 +80,12 @@ class GetBasicsByLogin(object):
             self.pi_full_name = pi_full_name
         if department_name is not None:
             self.department_name = department_name
+        if department_code is not None:
+            self.department_code = department_code
+        if department_id is not None:
+            self.department_id = department_id
+        if department_slug is not None:
+            self.department_slug = department_slug
 
     @property
     def username(self):
@@ -203,6 +218,69 @@ class GetBasicsByLogin(object):
         """
 
         self._department_name = department_name
+
+    @property
+    def department_code(self):
+        """Gets the department_code of this GetBasicsByLogin.  # noqa: E501
+
+
+        :return: The department_code of this GetBasicsByLogin.  # noqa: E501
+        :rtype: str
+        """
+        return self._department_code
+
+    @department_code.setter
+    def department_code(self, department_code):
+        """Sets the department_code of this GetBasicsByLogin.
+
+
+        :param department_code: The department_code of this GetBasicsByLogin.  # noqa: E501
+        :type: str
+        """
+
+        self._department_code = department_code
+
+    @property
+    def department_id(self):
+        """Gets the department_id of this GetBasicsByLogin.  # noqa: E501
+
+
+        :return: The department_id of this GetBasicsByLogin.  # noqa: E501
+        :rtype: str
+        """
+        return self._department_id
+
+    @department_id.setter
+    def department_id(self, department_id):
+        """Sets the department_id of this GetBasicsByLogin.
+
+
+        :param department_id: The department_id of this GetBasicsByLogin.  # noqa: E501
+        :type: str
+        """
+
+        self._department_id = department_id
+
+    @property
+    def department_slug(self):
+        """Gets the department_slug of this GetBasicsByLogin.  # noqa: E501
+
+
+        :return: The department_slug of this GetBasicsByLogin.  # noqa: E501
+        :rtype: str
+        """
+        return self._department_slug
+
+    @department_slug.setter
+    def department_slug(self, department_slug):
+        """Sets the department_slug of this GetBasicsByLogin.
+
+
+        :param department_slug: The department_slug of this GetBasicsByLogin.  # noqa: E501
+        :type: str
+        """
+
+        self._department_slug = department_slug
 
     def to_dict(self):
         """Returns the model properties as a dict"""
