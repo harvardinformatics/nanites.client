@@ -44,6 +44,9 @@ class GetUserListApi(object):
 
         :param async bool
         :param str search:
+        :param int offset:
+        :param int limit:
+        :param str order_by:
         :return: list[GetUserList]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,12 +69,15 @@ class GetUserListApi(object):
 
         :param async bool
         :param str search:
+        :param int offset:
+        :param int limit:
+        :param str order_by:
         :return: list[GetUserList]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['search']  # noqa: E501
+        all_params = ['search', 'offset', 'limit', 'order_by']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,6 +100,12 @@ class GetUserListApi(object):
         query_params = []
         if 'search' in params:
             query_params.append(('search', params['search']))  # noqa: E501
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))  # noqa: E501
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
 
         header_params = {}
 
