@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_user_list_list**
-> list[GetUserList] get_user_list_list(search=search, offset=offset, limit=limit, order_by=order_by)
+> list[GetUserList] get_user_list_list(search=search, org_tree=org_tree, offset=offset, limit=limit, order_by=order_by)
 
 
 
@@ -31,12 +31,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = nanites.client.swagger.GetUserListApi(nanites.client.swagger.ApiClient(configuration))
 search = 'search_example' # str |  (optional)
+org_tree = 'org_tree_example' # str |  (optional)
 offset = 56 # int |  (optional)
 limit = 56 # int |  (optional)
 order_by = 'order_by_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_user_list_list(search=search, offset=offset, limit=limit, order_by=order_by)
+    api_response = api_instance.get_user_list_list(search=search, org_tree=org_tree, offset=offset, limit=limit, order_by=order_by)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GetUserListApi->get_user_list_list: %s\n" % e)
@@ -47,6 +48,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **search** | **str**|  | [optional] 
+ **org_tree** | **str**|  | [optional] 
  **offset** | **int**|  | [optional] 
  **limit** | **int**|  | [optional] 
  **order_by** | **str**|  | [optional] 

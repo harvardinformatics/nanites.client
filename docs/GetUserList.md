@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **lab_name** | **str** |  | [optional] 
 **pi_full_name** | **str** |  | [optional] 
 **department_slug** | **str** |  | [optional] 
+**person_enabled** | **bool** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**first_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -36,7 +36,10 @@ class GetUserList(object):
         'primary_email': 'str',
         'lab_name': 'str',
         'pi_full_name': 'str',
-        'department_slug': 'str'
+        'department_slug': 'str',
+        'person_enabled': 'bool',
+        'last_name': 'str',
+        'first_name': 'str'
     }
 
     attribute_map = {
@@ -45,10 +48,13 @@ class GetUserList(object):
         'primary_email': 'primary_email',
         'lab_name': 'lab_name',
         'pi_full_name': 'pi_full_name',
-        'department_slug': 'department_slug'
+        'department_slug': 'department_slug',
+        'person_enabled': 'person_enabled',
+        'last_name': 'last_name',
+        'first_name': 'first_name'
     }
 
-    def __init__(self, username_status=None, full_name=None, primary_email=None, lab_name=None, pi_full_name=None, department_slug=None):  # noqa: E501
+    def __init__(self, username_status=None, full_name=None, primary_email=None, lab_name=None, pi_full_name=None, department_slug=None, person_enabled=None, last_name=None, first_name=None):  # noqa: E501
         """GetUserList - a model defined in Swagger"""  # noqa: E501
 
         self._username_status = None
@@ -57,6 +63,9 @@ class GetUserList(object):
         self._lab_name = None
         self._pi_full_name = None
         self._department_slug = None
+        self._person_enabled = None
+        self._last_name = None
+        self._first_name = None
         self.discriminator = None
 
         if username_status is not None:
@@ -71,6 +80,12 @@ class GetUserList(object):
             self.pi_full_name = pi_full_name
         if department_slug is not None:
             self.department_slug = department_slug
+        if person_enabled is not None:
+            self.person_enabled = person_enabled
+        if last_name is not None:
+            self.last_name = last_name
+        if first_name is not None:
+            self.first_name = first_name
 
     @property
     def username_status(self):
@@ -203,6 +218,73 @@ class GetUserList(object):
         """
 
         self._department_slug = department_slug
+
+    @property
+    def person_enabled(self):
+        """Gets the person_enabled of this GetUserList.  # noqa: E501
+
+
+        :return: The person_enabled of this GetUserList.  # noqa: E501
+        :rtype: bool
+        """
+        return self._person_enabled
+
+    @person_enabled.setter
+    def person_enabled(self, person_enabled):
+        """Sets the person_enabled of this GetUserList.
+
+
+        :param person_enabled: The person_enabled of this GetUserList.  # noqa: E501
+        :type: bool
+        """
+
+        self._person_enabled = person_enabled
+
+    @property
+    def last_name(self):
+        """Gets the last_name of this GetUserList.  # noqa: E501
+
+
+        :return: The last_name of this GetUserList.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_name
+
+    @last_name.setter
+    def last_name(self, last_name):
+        """Sets the last_name of this GetUserList.
+
+
+        :param last_name: The last_name of this GetUserList.  # noqa: E501
+        :type: str
+        """
+        if last_name is not None and len(last_name) < 1:
+            raise ValueError("Invalid value for `last_name`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._last_name = last_name
+
+    @property
+    def first_name(self):
+        """Gets the first_name of this GetUserList.  # noqa: E501
+
+
+        :return: The first_name of this GetUserList.  # noqa: E501
+        :rtype: str
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, first_name):
+        """Sets the first_name of this GetUserList.
+
+
+        :param first_name: The first_name of this GetUserList.  # noqa: E501
+        :type: str
+        """
+        if first_name is not None and len(first_name) < 1:
+            raise ValueError("Invalid value for `first_name`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._first_name = first_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""
