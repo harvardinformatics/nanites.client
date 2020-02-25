@@ -39,7 +39,8 @@ class GetUserList(object):
         'department_slug': 'str',
         'person_enabled': 'bool',
         'last_name': 'str',
-        'first_name': 'str'
+        'first_name': 'str',
+        'ifxid': 'str'
     }
 
     attribute_map = {
@@ -51,10 +52,11 @@ class GetUserList(object):
         'department_slug': 'department_slug',
         'person_enabled': 'person_enabled',
         'last_name': 'last_name',
-        'first_name': 'first_name'
+        'first_name': 'first_name',
+        'ifxid': 'ifxid'
     }
 
-    def __init__(self, username_status=None, full_name=None, primary_email=None, lab_name=None, pi_full_name=None, department_slug=None, person_enabled=None, last_name=None, first_name=None):  # noqa: E501
+    def __init__(self, username_status=None, full_name=None, primary_email=None, lab_name=None, pi_full_name=None, department_slug=None, person_enabled=None, last_name=None, first_name=None, ifxid=None):  # noqa: E501
         """GetUserList - a model defined in Swagger"""  # noqa: E501
 
         self._username_status = None
@@ -66,6 +68,7 @@ class GetUserList(object):
         self._person_enabled = None
         self._last_name = None
         self._first_name = None
+        self._ifxid = None
         self.discriminator = None
 
         if username_status is not None:
@@ -86,6 +89,8 @@ class GetUserList(object):
             self.last_name = last_name
         if first_name is not None:
             self.first_name = first_name
+        if ifxid is not None:
+            self.ifxid = ifxid
 
     @property
     def username_status(self):
@@ -285,6 +290,29 @@ class GetUserList(object):
             raise ValueError("Invalid value for `first_name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._first_name = first_name
+
+    @property
+    def ifxid(self):
+        """Gets the ifxid of this GetUserList.  # noqa: E501
+
+
+        :return: The ifxid of this GetUserList.  # noqa: E501
+        :rtype: str
+        """
+        return self._ifxid
+
+    @ifxid.setter
+    def ifxid(self, ifxid):
+        """Sets the ifxid of this GetUserList.
+
+
+        :param ifxid: The ifxid of this GetUserList.  # noqa: E501
+        :type: str
+        """
+        if ifxid is not None and len(ifxid) < 1:
+            raise ValueError("Invalid value for `ifxid`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._ifxid = ifxid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

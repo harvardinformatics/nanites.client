@@ -45,6 +45,7 @@ class GetUserListApi(object):
         :param async bool
         :param str search:
         :param str org_tree:
+        :param int include_disabled:
         :param int offset:
         :param int limit:
         :param str order_by:
@@ -71,6 +72,7 @@ class GetUserListApi(object):
         :param async bool
         :param str search:
         :param str org_tree:
+        :param int include_disabled:
         :param int offset:
         :param int limit:
         :param str order_by:
@@ -79,7 +81,7 @@ class GetUserListApi(object):
                  returns the request thread.
         """
 
-        all_params = ['search', 'org_tree', 'offset', 'limit', 'order_by']  # noqa: E501
+        all_params = ['search', 'org_tree', 'include_disabled', 'offset', 'limit', 'order_by']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -104,6 +106,8 @@ class GetUserListApi(object):
             query_params.append(('search', params['search']))  # noqa: E501
         if 'org_tree' in params:
             query_params.append(('org_tree', params['org_tree']))  # noqa: E501
+        if 'include_disabled' in params:
+            query_params.append(('include_disabled', params['include_disabled']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('offset', params['offset']))  # noqa: E501
         if 'limit' in params:
