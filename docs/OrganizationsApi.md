@@ -88,7 +88,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this organization.
+id = 'id_example' # str | 
 
 try:
     api_instance.organizations_delete(id)
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this organization. | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_list**
-> InlineResponse2004 organizations_list(page=page, page_size=page_size)
+> InlineResponse2004 organizations_list(page=page, page_size=page_size, org_tree=org_tree, rank=rank, name=name)
 
 
 
@@ -142,9 +142,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
+org_tree = 'org_tree_example' # str | Organization tree (e.g. Research Computing AD) (optional)
+rank = 'rank_example' # str | Organization unit rank (e.g. Department) (optional)
+name = 'name_example' # str | Organization name (e.g. Informatics) (optional)
 
 try:
-    api_response = api_instance.organizations_list(page=page, page_size=page_size)
+    api_response = api_instance.organizations_list(page=page, page_size=page_size, org_tree=org_tree, rank=rank, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganizationsApi->organizations_list: %s\n" % e)
@@ -156,6 +159,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **org_tree** | **str**| Organization tree (e.g. Research Computing AD) | [optional] 
+ **rank** | **str**| Organization unit rank (e.g. Department) | [optional] 
+ **name** | **str**| Organization name (e.g. Informatics) | [optional] 
 
 ### Return type
 
@@ -195,7 +201,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this organization.
+id = 'id_example' # str | 
 data = nanites.client.swagger.Organization() # Organization | 
 
 try:
@@ -209,7 +215,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this organization. | 
+ **id** | **str**|  | 
  **data** | [**Organization**](Organization.md)|  | 
 
 ### Return type
@@ -250,7 +256,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this organization.
+id = 'id_example' # str | 
 
 try:
     api_response = api_instance.organizations_read(id)
@@ -263,7 +269,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this organization. | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -303,7 +309,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this organization.
+id = 'id_example' # str | 
 data = nanites.client.swagger.Organization() # Organization | 
 
 try:
@@ -317,7 +323,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this organization. | 
+ **id** | **str**|  | 
  **data** | [**Organization**](Organization.md)|  | 
 
 ### Return type
