@@ -657,8 +657,6 @@ class Person(object):
             raise ValueError("Invalid value for `change_comment`, must not be `None`")  # noqa: E501
         if change_comment is not None and len(change_comment) > 255:
             raise ValueError("Invalid value for `change_comment`, length must be less than or equal to `255`")  # noqa: E501
-        if change_comment is not None and len(change_comment) < 1:
-            raise ValueError("Invalid value for `change_comment`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._change_comment = change_comment
 
