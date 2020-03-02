@@ -19,5 +19,4 @@ RUN pip install --upgrade pip && \
     pip install sphinx-py3doc-enhanced-theme>=2.4.0 && \
     pip install recommonmark==0.5.0
 
-
 CMD ./wait-for-it.sh -t 30 nanites:80 && ./manage.py test -v 2

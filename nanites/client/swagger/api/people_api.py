@@ -38,18 +38,18 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_create(data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_create(data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Person data: (required)
         :return: Person
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.people_create_with_http_info(data, **kwargs)  # noqa: E501
         else:
             (data) = self.people_create_with_http_info(data, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_create_with_http_info(data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_create_with_http_info(data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Person data: (required)
         :return: Person
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class PeopleApi(object):
         """
 
         all_params = ['data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class PeopleApi(object):
             files=local_var_files,
             response_type='Person',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_delete(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_delete(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.people_delete_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.people_delete_with_http_info(id, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_delete_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_delete_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class PeopleApi(object):
         """
 
         all_params = ['id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class PeopleApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,11 +236,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ordering: Which field to use when ordering the results.
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
@@ -254,7 +254,7 @@ class PeopleApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.people_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.people_list_with_http_info(**kwargs)  # noqa: E501
@@ -265,11 +265,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ordering: Which field to use when ordering the results.
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
@@ -284,7 +284,7 @@ class PeopleApi(object):
         """
 
         all_params = ['ordering', 'page', 'page_size', 'login', 'username', 'primary_email', 'full_name', 'email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -348,7 +348,7 @@ class PeopleApi(object):
             files=local_var_files,
             response_type='InlineResponse2005',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -359,11 +359,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_partial_update(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_partial_update(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Person data: (required)
         :return: Person
@@ -371,7 +371,7 @@ class PeopleApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.people_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
         else:
             (data) = self.people_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
@@ -382,11 +382,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_partial_update_with_http_info(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_partial_update_with_http_info(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Person data: (required)
         :return: Person
@@ -395,7 +395,7 @@ class PeopleApi(object):
         """
 
         all_params = ['id', 'data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -455,7 +455,7 @@ class PeopleApi(object):
             files=local_var_files,
             response_type='Person',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -466,18 +466,18 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_read(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_read(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: Person
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.people_read_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.people_read_with_http_info(id, **kwargs)  # noqa: E501
@@ -488,11 +488,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_read_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_read_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: Person
                  If the method is called asynchronously,
@@ -500,7 +500,7 @@ class PeopleApi(object):
         """
 
         all_params = ['id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -554,7 +554,7 @@ class PeopleApi(object):
             files=local_var_files,
             response_type='Person',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -565,11 +565,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_update(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_update(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Person data: (required)
         :return: Person
@@ -577,7 +577,7 @@ class PeopleApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.people_update_with_http_info(id, data, **kwargs)  # noqa: E501
         else:
             (data) = self.people_update_with_http_info(id, data, **kwargs)  # noqa: E501
@@ -588,11 +588,11 @@ class PeopleApi(object):
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.people_update_with_http_info(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.people_update_with_http_info(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Person data: (required)
         :return: Person
@@ -601,7 +601,7 @@ class PeopleApi(object):
         """
 
         all_params = ['id', 'data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -661,7 +661,7 @@ class PeopleApi(object):
             files=local_var_files,
             response_type='Person',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

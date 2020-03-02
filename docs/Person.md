@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **last_name** | **str** | Last name.  Can be None, but one of first name or last name should have something. | [optional] 
 **full_name** | **str** | Full name.  Usually first and last, but may include middle initial, etc. to ensure uniqueness | 
 **primary_email** | **str** | Primary email address.  There may be more. | 
-**title** | **str** | Title (e.g. Dr.) | [optional] 
 **race** | **str** | One or more race codes or text?? | [optional] 
 **ethnicity** | **str** | Ethnicity.  Generally just Hispanic or not. | [optional] 
 **gender** | **str** | Gender.  Using controlled-ish vocab. (Male, Female, Non-binary) | [optional] [default to 'Unknown']

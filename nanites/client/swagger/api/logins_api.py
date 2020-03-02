@@ -38,18 +38,18 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_create(data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_create(data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Login data: (required)
         :return: Login
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logins_create_with_http_info(data, **kwargs)  # noqa: E501
         else:
             (data) = self.logins_create_with_http_info(data, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_create_with_http_info(data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_create_with_http_info(data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Login data: (required)
         :return: Login
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class LoginsApi(object):
         """
 
         all_params = ['data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class LoginsApi(object):
             files=local_var_files,
             response_type='Login',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_delete(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_delete(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logins_delete_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.logins_delete_with_http_info(id, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_delete_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_delete_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: None
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class LoginsApi(object):
         """
 
         all_params = ['id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class LoginsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,11 +236,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ordering: Which field to use when ordering the results.
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
@@ -253,7 +253,7 @@ class LoginsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logins_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.logins_list_with_http_info(**kwargs)  # noqa: E501
@@ -264,11 +264,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ordering: Which field to use when ordering the results.
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
@@ -282,7 +282,7 @@ class LoginsApi(object):
         """
 
         all_params = ['ordering', 'page', 'page_size', 'login', 'username', 'ifxid', 'primary_email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -344,7 +344,7 @@ class LoginsApi(object):
             files=local_var_files,
             response_type='InlineResponse2003',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -355,11 +355,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_partial_update(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_partial_update(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Login data: (required)
         :return: Login
@@ -367,7 +367,7 @@ class LoginsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logins_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
         else:
             (data) = self.logins_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
@@ -378,11 +378,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_partial_update_with_http_info(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_partial_update_with_http_info(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Login data: (required)
         :return: Login
@@ -391,7 +391,7 @@ class LoginsApi(object):
         """
 
         all_params = ['id', 'data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -451,7 +451,7 @@ class LoginsApi(object):
             files=local_var_files,
             response_type='Login',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -462,18 +462,18 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_read(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_read(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: Login
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logins_read_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.logins_read_with_http_info(id, **kwargs)  # noqa: E501
@@ -484,11 +484,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_read_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_read_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :return: Login
                  If the method is called asynchronously,
@@ -496,7 +496,7 @@ class LoginsApi(object):
         """
 
         all_params = ['id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -550,7 +550,7 @@ class LoginsApi(object):
             files=local_var_files,
             response_type='Login',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -561,11 +561,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_update(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_update(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Login data: (required)
         :return: Login
@@ -573,7 +573,7 @@ class LoginsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logins_update_with_http_info(id, data, **kwargs)  # noqa: E501
         else:
             (data) = self.logins_update_with_http_info(id, data, **kwargs)  # noqa: E501
@@ -584,11 +584,11 @@ class LoginsApi(object):
 
         Viewset for Logins  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logins_update_with_http_info(id, data, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logins_update_with_http_info(id, data, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param Login data: (required)
         :return: Login
@@ -597,7 +597,7 @@ class LoginsApi(object):
         """
 
         all_params = ['id', 'data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -657,7 +657,7 @@ class LoginsApi(object):
             files=local_var_files,
             response_type='Login',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

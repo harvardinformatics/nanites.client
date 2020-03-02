@@ -38,11 +38,11 @@ class GetOrgNamesApi(object):
 
         Return org names for autocomplete list.  Department names are followed by Schools, Museums, Institutes, and Centers  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_org_names_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_org_names_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str search:
         :param str ranks:
         :param str org_tree:
@@ -51,7 +51,7 @@ class GetOrgNamesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_org_names_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_org_names_list_with_http_info(**kwargs)  # noqa: E501
@@ -62,11 +62,11 @@ class GetOrgNamesApi(object):
 
         Return org names for autocomplete list.  Department names are followed by Schools, Museums, Institutes, and Centers  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_org_names_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_org_names_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str search:
         :param str ranks:
         :param str org_tree:
@@ -76,7 +76,7 @@ class GetOrgNamesApi(object):
         """
 
         all_params = ['search', 'ranks', 'org_tree']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -130,7 +130,7 @@ class GetOrgNamesApi(object):
             files=local_var_files,
             response_type='list[GetOrgNames]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
