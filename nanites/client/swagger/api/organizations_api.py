@@ -243,6 +243,9 @@ class OrganizationsApi(object):
         :param async_req bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
+        :param str org_tree: Organization tree (e.g. Research Computing AD)
+        :param str rank: Organization unit rank (e.g. Department)
+        :param str name: Organization name (e.g. Informatics)
         :return: InlineResponse2004
                  If the method is called asynchronously,
                  returns the request thread.
@@ -266,6 +269,9 @@ class OrganizationsApi(object):
         :param async_req bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
+        :param str org_tree: Organization tree (e.g. Research Computing AD)
+        :param str rank: Organization unit rank (e.g. Department)
+        :param str name: Organization name (e.g. Informatics)
         :return: InlineResponse2004
                  If the method is called asynchronously,
                  returns the request thread.
@@ -296,6 +302,12 @@ class OrganizationsApi(object):
             query_params.append(('page', params['page']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
+        if 'org_tree' in params:
+            query_params.append(('org_tree', params['org_tree']))  # noqa: E501
+        if 'rank' in params:
+            query_params.append(('rank', params['rank']))  # noqa: E501
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
 
         header_params = {}
 
@@ -467,7 +479,7 @@ class OrganizationsApi(object):
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.organizations_read_with_http_info(id, async_req=True)
         >>> result = thread.get()
-
+        
         :param async_req bool
         :param int id: A unique integer value identifying this organization. (required)
         :return: Organization

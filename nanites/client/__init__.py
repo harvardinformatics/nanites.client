@@ -350,6 +350,18 @@ class SwaggerClient(object):
         api = GetBasicsByLoginApi(api_client=api_client)
         return self.call_api_func(api, 'get_basics_by_login_list', *args, **kwargs)
 
+    def getUserList(self, *args, **kwargs):
+        '''
+        Used by the RC user list, this method returns the
+        username:is_enabled, full_name, primary_email, and lab_name for the user along with
+        pi_full_name, and department_slug.  A search term may be provided.
+        '''
+        api_client = kwargs.pop('api_client', None)
+        if not api_client:
+            api_client = self.api_client
+        api = GetUserListApi(api_client=api_client)
+        return self.call_api_func(api, 'get_user_list_list', *args, **kwargs)
+
     def getOrgNames(self, *args, **kwargs):
         '''
         Used by the Office Hours Sign In application, retrieves the full list of organization names
