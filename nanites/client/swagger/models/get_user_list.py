@@ -335,6 +335,9 @@ class GetUserList(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetUserList, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

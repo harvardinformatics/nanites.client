@@ -142,7 +142,7 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,7 +164,7 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -277,7 +277,7 @@ class OrganizationsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'page_size']  # noqa: E501
+        all_params = ['page', 'page_size', 'org_tree', 'rank', 'name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -352,7 +352,7 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
@@ -375,7 +375,7 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
@@ -459,7 +459,7 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :return: Organization
                  If the method is called asynchronously,
                  returns the request thread.
@@ -479,9 +479,9 @@ class OrganizationsApi(object):
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.organizations_read_with_http_info(id, async_req=True)
         >>> result = thread.get()
-        
+
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :return: Organization
                  If the method is called asynchronously,
                  returns the request thread.
@@ -558,7 +558,7 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
@@ -581,7 +581,7 @@ class OrganizationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this organization. (required)
+        :param str id: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
