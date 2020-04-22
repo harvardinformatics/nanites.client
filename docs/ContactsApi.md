@@ -88,7 +88,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this contact.
+id = 'id_example' # str | 
 
 try:
     api_instance.contacts_delete(id)
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this contact. | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contacts_list**
-> InlineResponse2002 contacts_list(page=page, page_size=page_size)
+> InlineResponse2002 contacts_list(page=page, page_size=page_size, type=type, detail=detail, email=email, name=name)
 
 
 
@@ -142,9 +142,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
 page = 56 # int | A page number within the paginated result set. (optional)
 page_size = 56 # int | Number of results to return per page. (optional)
+type = 'type_example' # str | Contact type (e.g. email) (optional)
+detail = 'detail_example' # str | Contact detail (e.g dderpiston@gmail.com) (optional)
+email = 'email_example' # str | Short cut for searching by email (optional)
+name = 'name_example' # str | Search by name (full name for primary contact records) (optional)
 
 try:
-    api_response = api_instance.contacts_list(page=page, page_size=page_size)
+    api_response = api_instance.contacts_list(page=page, page_size=page_size, type=type, detail=detail, email=email, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->contacts_list: %s\n" % e)
@@ -156,6 +160,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| A page number within the paginated result set. | [optional] 
  **page_size** | **int**| Number of results to return per page. | [optional] 
+ **type** | **str**| Contact type (e.g. email) | [optional] 
+ **detail** | **str**| Contact detail (e.g dderpiston@gmail.com) | [optional] 
+ **email** | **str**| Short cut for searching by email | [optional] 
+ **name** | **str**| Search by name (full name for primary contact records) | [optional] 
 
 ### Return type
 
@@ -195,7 +203,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this contact.
+id = 'id_example' # str | 
 data = nanites.client.swagger.Contact() # Contact | 
 
 try:
@@ -209,7 +217,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this contact. | 
+ **id** | **str**|  | 
  **data** | [**Contact**](Contact.md)|  | 
 
 ### Return type
@@ -250,7 +258,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this contact.
+id = 'id_example' # str | 
 
 try:
     api_response = api_instance.contacts_read(id)
@@ -263,7 +271,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this contact. | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -303,7 +311,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 56 # int | A unique integer value identifying this contact.
+id = 'id_example' # str | 
 data = nanites.client.swagger.Contact() # Contact | 
 
 try:
@@ -317,7 +325,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| A unique integer value identifying this contact. | 
+ **id** | **str**|  | 
  **data** | [**Contact**](Contact.md)|  | 
 
 ### Return type

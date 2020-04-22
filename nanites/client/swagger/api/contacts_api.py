@@ -142,7 +142,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,7 +164,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -243,6 +243,10 @@ class ContactsApi(object):
         :param async_req bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
+        :param str type: Contact type (e.g. email)
+        :param str detail: Contact detail (e.g dderpiston@gmail.com)
+        :param str email: Short cut for searching by email
+        :param str name: Search by name (full name for primary contact records)
         :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
@@ -266,12 +270,16 @@ class ContactsApi(object):
         :param async_req bool
         :param int page: A page number within the paginated result set.
         :param int page_size: Number of results to return per page.
+        :param str type: Contact type (e.g. email)
+        :param str detail: Contact detail (e.g dderpiston@gmail.com)
+        :param str email: Short cut for searching by email
+        :param str name: Search by name (full name for primary contact records)
         :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'page_size']  # noqa: E501
+        all_params = ['page', 'page_size', 'type', 'detail', 'email', 'name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -296,6 +304,14 @@ class ContactsApi(object):
             query_params.append(('page', params['page']))  # noqa: E501
         if 'page_size' in params:
             query_params.append(('page_size', params['page_size']))  # noqa: E501
+        if 'type' in params:
+            query_params.append(('type', params['type']))  # noqa: E501
+        if 'detail' in params:
+            query_params.append(('detail', params['detail']))  # noqa: E501
+        if 'email' in params:
+            query_params.append(('email', params['email']))  # noqa: E501
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
 
         header_params = {}
 
@@ -340,7 +356,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,
@@ -363,7 +379,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,
@@ -447,7 +463,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -469,7 +485,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -546,7 +562,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,
@@ -569,7 +585,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int id: A unique integer value identifying this contact. (required)
+        :param str id: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,

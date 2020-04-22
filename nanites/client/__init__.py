@@ -74,6 +74,21 @@ common_doc = '''
 '''
 
 DOCS = {
+    'listContacts': '''
+        Retrieve a list of Contact objects
+        Contacts may be retrieved by type and detail
+
+            contacts = listContacts(type='Email', detail='dderpiston@gmail.com')
+
+        by name (works for primary email contact records or other with an explicit name)
+
+            contacts = listContacts(name='Derpy Derpiston')
+
+        or by email (a convenience for type='Email')
+
+            contacts = listContacts(email='dderpiston@gmail.com')
+        %s
+    ''' % common_doc,
     'createPerson': '''
         Create a Person.  Data dictionary input may include
         %s
