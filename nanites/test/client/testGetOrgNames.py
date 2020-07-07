@@ -54,6 +54,15 @@ class TestGetOrgNamesApi(ApiTest):
         org_names = API.getOrgNames(org_tree='Research Computing AD', search='MSCW')
         self.assertTrue(','.join([o.name for o in org_names]) == 'University of Moscow (MSCW)', 'Incorrect result: %s' % str(org_names))
 
+    def test_get_org_names_return_slug(self):
+        '''
+        Ensure that org slug is returned
+        '''
+
+        # Get the orgs and join into a string
+        org_names = API.getOrgNames(org_tree='Research Computing AD', search='MSCW')
+        self.assertTrue(org_names[0].slug == 'University of Moscow (a Research Computing AD Institution)', 'Incorrect result: %s' % str(org_names))
+
     def test_get_org_names_set_ranks(self):
         '''
         Ensure that ranks can be set

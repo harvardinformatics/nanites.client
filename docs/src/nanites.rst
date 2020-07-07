@@ -12,6 +12,8 @@ Subpackages
 .. toctree::
 
    nanites.client
+   nanites.management
+   nanites.migrations
    nanites.test
 
 Submodules
@@ -19,5 +21,7 @@ Submodules
 
 .. toctree::
 
+   nanites.init
+   nanites.initDev
    nanites.settings
    nanites.urls

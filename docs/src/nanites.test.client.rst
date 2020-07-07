@@ -12,6 +12,7 @@ Submodules
 .. toctree::
 
    nanites.test.client.data
+   nanites.test.client.testContact
    nanites.test.client.testGetBasicsByLogin
    nanites.test.client.testGetOrgNames
    nanites.test.client.testGetPiNames

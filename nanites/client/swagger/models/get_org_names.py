@@ -31,21 +31,26 @@ class GetOrgNames(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str'
+        'name': 'str',
+        'slug': 'str'
     }
 
     attribute_map = {
-        'name': 'name'
+        'name': 'name',
+        'slug': 'slug'
     }
 
-    def __init__(self, name=None):  # noqa: E501
+    def __init__(self, name=None, slug=None):  # noqa: E501
         """GetOrgNames - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
+        self._slug = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
+        if slug is not None:
+            self.slug = slug
 
     @property
     def name(self):
@@ -69,6 +74,29 @@ class GetOrgNames(object):
             raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def slug(self):
+        """Gets the slug of this GetOrgNames.  # noqa: E501
+
+
+        :return: The slug of this GetOrgNames.  # noqa: E501
+        :rtype: str
+        """
+        return self._slug
+
+    @slug.setter
+    def slug(self, slug):
+        """Sets the slug of this GetOrgNames.
+
+
+        :param slug: The slug of this GetOrgNames.  # noqa: E501
+        :type: str
+        """
+        if slug is not None and len(slug) < 1:
+            raise ValueError("Invalid value for `slug`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._slug = slug
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -16,8 +16,10 @@ Submodules
    nanites.client.swagger.models.child_relation
    nanites.client.swagger.models.contact
    nanites.client.swagger.models.get_basics_by_login
+   nanites.client.swagger.models.get_location_info
    nanites.client.swagger.models.get_org_names
    nanites.client.swagger.models.get_pi_names
+   nanites.client.swagger.models.get_user_list
    nanites.client.swagger.models.inline_response200
    nanites.client.swagger.models.inline_response2001
    nanites.client.swagger.models.inline_response2002
@@ -30,10 +32,12 @@ Submodules
    nanites.client.swagger.models.login
    nanites.client.swagger.models.login_list
    nanites.client.swagger.models.organization
+   nanites.client.swagger.models.organization_contact
    nanites.client.swagger.models.parent_relation
    nanites.client.swagger.models.person
    nanites.client.swagger.models.person_address
    nanites.client.swagger.models.person_affiliation
    nanites.client.swagger.models.person_change
+   nanites.client.swagger.models.person_contact
    nanites.client.swagger.models.source
    nanites.client.swagger.models.user
