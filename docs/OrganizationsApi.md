@@ -5,11 +5,11 @@ All URIs are relative to *http://localhost:8765/nanites/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**organizations_create**](OrganizationsApi.md#organizations_create) | **POST** /organizations/ | 
-[**organizations_delete**](OrganizationsApi.md#organizations_delete) | **DELETE** /organizations/{id}/ | 
+[**organizations_delete**](OrganizationsApi.md#organizations_delete) | **DELETE** /organizations/{ifxorg}/ | 
 [**organizations_list**](OrganizationsApi.md#organizations_list) | **GET** /organizations/ | 
-[**organizations_partial_update**](OrganizationsApi.md#organizations_partial_update) | **PATCH** /organizations/{id}/ | 
-[**organizations_read**](OrganizationsApi.md#organizations_read) | **GET** /organizations/{id}/ | 
-[**organizations_update**](OrganizationsApi.md#organizations_update) | **PUT** /organizations/{id}/ | 
+[**organizations_partial_update**](OrganizationsApi.md#organizations_partial_update) | **PATCH** /organizations/{ifxorg}/ | 
+[**organizations_read**](OrganizationsApi.md#organizations_read) | **GET** /organizations/{ifxorg}/ | 
+[**organizations_update**](OrganizationsApi.md#organizations_update) | **PUT** /organizations/{ifxorg}/ | 
 
 
 # **organizations_create**
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_delete**
-> organizations_delete(id)
+> organizations_delete(ifxorg)
 
 
 
@@ -88,10 +88,10 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxorg = 'ifxorg_example' # str | 
 
 try:
-    api_instance.organizations_delete(id)
+    api_instance.organizations_delete(ifxorg)
 except ApiException as e:
     print("Exception when calling OrganizationsApi->organizations_delete: %s\n" % e)
 ```
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxorg** | **str**|  | 
 
 ### Return type
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_partial_update**
-> Organization organizations_partial_update(id, data)
+> Organization organizations_partial_update(ifxorg, data)
 
 
 
@@ -201,11 +201,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxorg = 'ifxorg_example' # str | 
 data = nanites.client.swagger.Organization() # Organization | 
 
 try:
-    api_response = api_instance.organizations_partial_update(id, data)
+    api_response = api_instance.organizations_partial_update(ifxorg, data)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganizationsApi->organizations_partial_update: %s\n" % e)
@@ -215,7 +215,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxorg** | **str**|  | 
  **data** | [**Organization**](Organization.md)|  | 
 
 ### Return type
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_read**
-> Organization organizations_read(id)
+> Organization organizations_read(ifxorg)
 
 
 
@@ -256,10 +256,10 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxorg = 'ifxorg_example' # str | 
 
 try:
-    api_response = api_instance.organizations_read(id)
+    api_response = api_instance.organizations_read(ifxorg)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganizationsApi->organizations_read: %s\n" % e)
@@ -269,7 +269,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxorg** | **str**|  | 
 
 ### Return type
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **organizations_update**
-> Organization organizations_update(id, data)
+> Organization organizations_update(ifxorg, data)
 
 
 
@@ -309,11 +309,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.OrganizationsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxorg = 'ifxorg_example' # str | 
 data = nanites.client.swagger.Organization() # Organization | 
 
 try:
-    api_response = api_instance.organizations_update(id, data)
+    api_response = api_instance.organizations_update(ifxorg, data)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganizationsApi->organizations_update: %s\n" % e)
@@ -323,7 +323,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxorg** | **str**|  | 
  **data** | [**Organization**](Organization.md)|  | 
 
 ### Return type

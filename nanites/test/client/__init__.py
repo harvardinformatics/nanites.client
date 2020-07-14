@@ -3,13 +3,15 @@
 '''
 Test base class.  Sets up things like Organizations and cleans out accumulated data
 '''
-
+import logging
 import unittest
 import os
 from copy import deepcopy
 from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
 from nanites.test.client import data
+
+logger = logging.getLogger(__name__)
 
 
 class ApiTest(unittest.TestCase):
@@ -66,6 +68,10 @@ class ApiTest(unittest.TestCase):
                 try:
                     if model_name in ['Source', 'Application']:
                         API.apiFn('delete%s' % model_name, api_client=self.api_client, name=result.name)
+                    elif model_name == 'Person':
+                        API.apiFn('deletePerson', api_client=self.api_client, ifxid=result.ifxid)
+                    elif model_name == 'Organization':
+                        API.apiFn('deleteOrganization', api_client=self.api_client, ifxorg=result.ifxorg)
                     else:
                         API.apiFn('delete%s' % model_name, api_client=self.api_client, id=result.id)
                 except Exception as e:

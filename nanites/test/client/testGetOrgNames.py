@@ -69,7 +69,7 @@ class TestGetOrgNamesApi(ApiTest):
         '''
 
         # Get the orgs and join into a string
-        org_names = API.getOrgNames(org_tree='Research Computing AD', ranks='Department')
+        org_names = API.getOrgNames(org_tree='Research Computing AD', ranks='department')
         self.assertTrue(','.join([o.name for o in org_names]) == 'Derp', 'Incorrect result: %s' % str(org_names))
 
     def test_get_org_names_empty(self):

@@ -30,7 +30,7 @@ services:
     ports:
       - 8765:80
   client:
-    build: .
+    image: nanites-client
     depends_on:
       - nanites
       - nanites-db

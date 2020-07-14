@@ -32,6 +32,7 @@ class Organization(object):
     """
     swagger_types = {
         'id': 'int',
+        'ifxorg': 'str',
         'name': 'str',
         'rank': 'str',
         'org_tree': 'str',
@@ -45,6 +46,7 @@ class Organization(object):
 
     attribute_map = {
         'id': 'id',
+        'ifxorg': 'ifxorg',
         'name': 'name',
         'rank': 'rank',
         'org_tree': 'org_tree',
@@ -56,10 +58,11 @@ class Organization(object):
         'contacts': 'contacts'
     }
 
-    def __init__(self, id=None, name=None, rank=None, org_tree=None, code=None, application_key=None, slug=None, parents=None, children=None, contacts=None):  # noqa: E501
+    def __init__(self, id=None, ifxorg=None, name=None, rank=None, org_tree=None, code=None, application_key=None, slug=None, parents=None, children=None, contacts=None):  # noqa: E501
         """Organization - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
+        self._ifxorg = None
         self._name = None
         self._rank = None
         self._org_tree = None
@@ -73,6 +76,8 @@ class Organization(object):
 
         if id is not None:
             self.id = id
+        if ifxorg is not None:
+            self.ifxorg = ifxorg
         self.name = name
         self.rank = rank
         self.org_tree = org_tree
@@ -109,6 +114,31 @@ class Organization(object):
         """
 
         self._id = id
+
+    @property
+    def ifxorg(self):
+        """Gets the ifxorg of this Organization.  # noqa: E501
+
+
+        :return: The ifxorg of this Organization.  # noqa: E501
+        :rtype: str
+        """
+        return self._ifxorg
+
+    @ifxorg.setter
+    def ifxorg(self, ifxorg):
+        """Sets the ifxorg of this Organization.
+
+
+        :param ifxorg: The ifxorg of this Organization.  # noqa: E501
+        :type: str
+        """
+        if ifxorg is not None and len(ifxorg) > 16:
+            raise ValueError("Invalid value for `ifxorg`, length must be less than or equal to `16`")  # noqa: E501
+        if ifxorg is not None and len(ifxorg) < 1:
+            raise ValueError("Invalid value for `ifxorg`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._ifxorg = ifxorg
 
     @property
     def name(self):

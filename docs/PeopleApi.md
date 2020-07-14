@@ -5,11 +5,11 @@ All URIs are relative to *http://localhost:8765/nanites/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**people_create**](PeopleApi.md#people_create) | **POST** /people/ | 
-[**people_delete**](PeopleApi.md#people_delete) | **DELETE** /people/{id}/ | 
+[**people_delete**](PeopleApi.md#people_delete) | **DELETE** /people/{ifxid}/ | 
 [**people_list**](PeopleApi.md#people_list) | **GET** /people/ | 
-[**people_partial_update**](PeopleApi.md#people_partial_update) | **PATCH** /people/{id}/ | 
-[**people_read**](PeopleApi.md#people_read) | **GET** /people/{id}/ | 
-[**people_update**](PeopleApi.md#people_update) | **PUT** /people/{id}/ | 
+[**people_partial_update**](PeopleApi.md#people_partial_update) | **PATCH** /people/{ifxid}/ | 
+[**people_read**](PeopleApi.md#people_read) | **GET** /people/{ifxid}/ | 
+[**people_update**](PeopleApi.md#people_update) | **PUT** /people/{ifxid}/ | 
 
 
 # **people_create**
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **people_delete**
-> people_delete(id)
+> people_delete(ifxid)
 
 
 
@@ -88,10 +88,10 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxid = 'ifxid_example' # str | 
 
 try:
-    api_instance.people_delete(id)
+    api_instance.people_delete(ifxid)
 except ApiException as e:
     print("Exception when calling PeopleApi->people_delete: %s\n" % e)
 ```
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxid** | **str**|  | 
 
 ### Return type
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **people_partial_update**
-> Person people_partial_update(id, data)
+> Person people_partial_update(ifxid, data)
 
 
 
@@ -207,11 +207,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxid = 'ifxid_example' # str | 
 data = nanites.client.swagger.Person() # Person | 
 
 try:
-    api_response = api_instance.people_partial_update(id, data)
+    api_response = api_instance.people_partial_update(ifxid, data)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PeopleApi->people_partial_update: %s\n" % e)
@@ -221,7 +221,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxid** | **str**|  | 
  **data** | [**Person**](Person.md)|  | 
 
 ### Return type
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **people_read**
-> Person people_read(id)
+> Person people_read(ifxid)
 
 
 
@@ -262,10 +262,10 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxid = 'ifxid_example' # str | 
 
 try:
-    api_response = api_instance.people_read(id)
+    api_response = api_instance.people_read(ifxid)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PeopleApi->people_read: %s\n" % e)
@@ -275,7 +275,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxid** | **str**|  | 
 
 ### Return type
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **people_update**
-> Person people_update(id, data)
+> Person people_update(ifxid, data)
 
 
 
@@ -315,11 +315,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.PeopleApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxid = 'ifxid_example' # str | 
 data = nanites.client.swagger.Person() # Person | 
 
 try:
-    api_response = api_instance.people_update(id, data)
+    api_response = api_instance.people_update(ifxid, data)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PeopleApi->people_update: %s\n" % e)
@@ -329,7 +329,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxid** | **str**|  | 
  **data** | [**Person**](Person.md)|  | 
 
 ### Return type

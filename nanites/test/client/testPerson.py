@@ -99,13 +99,13 @@ class TestPersonApi(ApiTest):
         self.assertTrue(peoplelist[0].full_name == logindata['person']['full_name'], 'Incorrect person returned %s' % str(peoplelist))
 
     def test_read_person(self):
-        '''Ensure that a person can be read by id
+        '''Ensure that a person can be read by ifxid
         '''
         person = API.createPerson(api_client=self.api_client, **data.PEOPLE[0])
-        self.IDS['Person'] = [person.id]
+        self.IDS['Person'] = [person.ifxid]
         self.assertTrue(person.full_name == data.PEOPLE[0]['full_name'], 'Incorrect person name: %s' % str(person))
 
-        fetchedperson = API.readPerson(api_client=self.api_client, id=person.id)
+        fetchedperson = API.readPerson(api_client=self.api_client, ifxid=person.ifxid)
         self.assertTrue(fetchedperson.full_name == person.full_name, 'Incorrect person retrieved: %s' % str(fetchedperson))
 
     def test_update_person(self):

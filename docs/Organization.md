@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
+**ifxorg** | **str** |  | [optional] 
 **name** | **str** |  | 
 **rank** | **str** |  | 
 **org_tree** | **str** |  | 

@@ -132,45 +132,45 @@ class PeopleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def people_delete(self, id, **kwargs):  # noqa: E501
+    def people_delete(self, ifxid, **kwargs):  # noqa: E501
         """people_delete  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_delete(id, async_req=True)
+        >>> thread = api.people_delete(ifxid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.people_delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.people_delete_with_http_info(ifxid, **kwargs)  # noqa: E501
         else:
-            (data) = self.people_delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.people_delete_with_http_info(ifxid, **kwargs)  # noqa: E501
             return data
 
-    def people_delete_with_http_info(self, id, **kwargs):  # noqa: E501
+    def people_delete_with_http_info(self, ifxid, **kwargs):  # noqa: E501
         """people_delete  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_delete_with_http_info(id, async_req=True)
+        >>> thread = api.people_delete_with_http_info(ifxid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['ifxid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -185,16 +185,18 @@ class PeopleApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `people_delete`")  # noqa: E501
+        # verify the required parameter 'ifxid' is set
+        if ('ifxid' not in params or
+                params['ifxid'] is None):
+            raise ValueError("Missing the required parameter `ifxid` when calling `people_delete`")  # noqa: E501
 
+        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `ifxid` when calling `people_delete`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxid' in params:
+            path_params['ifxid'] = params['ifxid']  # noqa: E501
 
         query_params = []
 
@@ -216,7 +218,7 @@ class PeopleApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/people/{id}/', 'DELETE',
+            '/people/{ifxid}/', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -354,17 +356,17 @@ class PeopleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def people_partial_update(self, id, data, **kwargs):  # noqa: E501
+    def people_partial_update(self, ifxid, data, **kwargs):  # noqa: E501
         """people_partial_update  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_partial_update(id, data, async_req=True)
+        >>> thread = api.people_partial_update(ifxid, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :param Person data: (required)
         :return: Person
                  If the method is called asynchronously,
@@ -372,29 +374,29 @@ class PeopleApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.people_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            return self.people_partial_update_with_http_info(ifxid, data, **kwargs)  # noqa: E501
         else:
-            (data) = self.people_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            (data) = self.people_partial_update_with_http_info(ifxid, data, **kwargs)  # noqa: E501
             return data
 
-    def people_partial_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
+    def people_partial_update_with_http_info(self, ifxid, data, **kwargs):  # noqa: E501
         """people_partial_update  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_partial_update_with_http_info(id, data, async_req=True)
+        >>> thread = api.people_partial_update_with_http_info(ifxid, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :param Person data: (required)
         :return: Person
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'data']  # noqa: E501
+        all_params = ['ifxid', 'data']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -409,20 +411,22 @@ class PeopleApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `people_partial_update`")  # noqa: E501
+        # verify the required parameter 'ifxid' is set
+        if ('ifxid' not in params or
+                params['ifxid'] is None):
+            raise ValueError("Missing the required parameter `ifxid` when calling `people_partial_update`")  # noqa: E501
         # verify the required parameter 'data' is set
         if ('data' not in params or
                 params['data'] is None):
             raise ValueError("Missing the required parameter `data` when calling `people_partial_update`")  # noqa: E501
 
+        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `ifxid` when calling `people_partial_update`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxid' in params:
+            path_params['ifxid'] = params['ifxid']  # noqa: E501
 
         query_params = []
 
@@ -446,7 +450,7 @@ class PeopleApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/people/{id}/', 'PATCH',
+            '/people/{ifxid}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -461,45 +465,45 @@ class PeopleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def people_read(self, id, **kwargs):  # noqa: E501
+    def people_read(self, ifxid, **kwargs):  # noqa: E501
         """people_read  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_read(id, async_req=True)
+        >>> thread = api.people_read(ifxid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :return: Person
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.people_read_with_http_info(id, **kwargs)  # noqa: E501
+            return self.people_read_with_http_info(ifxid, **kwargs)  # noqa: E501
         else:
-            (data) = self.people_read_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.people_read_with_http_info(ifxid, **kwargs)  # noqa: E501
             return data
 
-    def people_read_with_http_info(self, id, **kwargs):  # noqa: E501
+    def people_read_with_http_info(self, ifxid, **kwargs):  # noqa: E501
         """people_read  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_read_with_http_info(id, async_req=True)
+        >>> thread = api.people_read_with_http_info(ifxid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :return: Person
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['ifxid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -514,16 +518,18 @@ class PeopleApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `people_read`")  # noqa: E501
+        # verify the required parameter 'ifxid' is set
+        if ('ifxid' not in params or
+                params['ifxid'] is None):
+            raise ValueError("Missing the required parameter `ifxid` when calling `people_read`")  # noqa: E501
 
+        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `ifxid` when calling `people_read`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxid' in params:
+            path_params['ifxid'] = params['ifxid']  # noqa: E501
 
         query_params = []
 
@@ -545,7 +551,7 @@ class PeopleApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/people/{id}/', 'GET',
+            '/people/{ifxid}/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -560,17 +566,17 @@ class PeopleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def people_update(self, id, data, **kwargs):  # noqa: E501
+    def people_update(self, ifxid, data, **kwargs):  # noqa: E501
         """people_update  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_update(id, data, async_req=True)
+        >>> thread = api.people_update(ifxid, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :param Person data: (required)
         :return: Person
                  If the method is called asynchronously,
@@ -578,29 +584,29 @@ class PeopleApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.people_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            return self.people_update_with_http_info(ifxid, data, **kwargs)  # noqa: E501
         else:
-            (data) = self.people_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            (data) = self.people_update_with_http_info(ifxid, data, **kwargs)  # noqa: E501
             return data
 
-    def people_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
+    def people_update_with_http_info(self, ifxid, data, **kwargs):  # noqa: E501
         """people_update  # noqa: E501
 
         Viewset for the Person object  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.people_update_with_http_info(id, data, async_req=True)
+        >>> thread = api.people_update_with_http_info(ifxid, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxid: (required)
         :param Person data: (required)
         :return: Person
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'data']  # noqa: E501
+        all_params = ['ifxid', 'data']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -615,20 +621,22 @@ class PeopleApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `people_update`")  # noqa: E501
+        # verify the required parameter 'ifxid' is set
+        if ('ifxid' not in params or
+                params['ifxid'] is None):
+            raise ValueError("Missing the required parameter `ifxid` when calling `people_update`")  # noqa: E501
         # verify the required parameter 'data' is set
         if ('data' not in params or
                 params['data'] is None):
             raise ValueError("Missing the required parameter `data` when calling `people_update`")  # noqa: E501
 
+        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `ifxid` when calling `people_update`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxid' in params:
+            path_params['ifxid'] = params['ifxid']  # noqa: E501
 
         query_params = []
 
@@ -652,7 +660,7 @@ class PeopleApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/people/{id}/', 'PUT',
+            '/people/{ifxid}/', 'PUT',
             path_params,
             query_params,
             header_params,

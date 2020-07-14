@@ -21,6 +21,7 @@ help:
 .PHONY: help test Makefile docs
 
 test:
+	docker build -t nanites-client .
 	docker-compose run client; docker-compose down
 
 docs:
