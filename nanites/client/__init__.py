@@ -184,6 +184,7 @@ DOCS = {
 
 DEFAULT_LIST_PAGE_SIZE = 1000000000
 
+
 class SwaggerClient(object):
 
     def __init__(self, api_client=None):
@@ -285,22 +286,42 @@ class SwaggerClient(object):
                     raise Exception('Source update requires a name')
                 name = data.pop('name')
                 return self.call_api_func(api, swagger_func_name.lower(), name=name, data=data, **kwargs)
+            elif model_name == 'Person':
+                if 'ifxid' not in data:
+                    raise Exception('Person update requires an ifxid')
+                ifxid = data.pop('ifxid')
+                return self.call_api_func(api, swagger_func_name.lower(), ifxid=ifxid, data=data, **kwargs)
+            elif model_name == 'Organization':
+                if 'ifxorg' not in data:
+                    raise Exception('Organization update requires an ifxorg')
+                ifxorg = data.pop('ifxorg')
+                return self.call_api_func(api, swagger_func_name.lower(), ifxorg=ifxorg, data=data, **kwargs)
             else:
                 if 'id' not in data:
                     raise Exception('id required to update %s' % model_name)
-                id = data.pop('id')
-                return self.call_api_func(api, swagger_func_name.lower(), id=id, data=data, **kwargs)
+                pk = data.pop('id')
+                return self.call_api_func(api, swagger_func_name.lower(), id=pk, data=data, **kwargs)
         elif operation == 'delete':
             if model_name in ['Source', 'Application']:
                 if 'name' not in data:
                     raise Exception('%s delete requires a name' % model_name)
                 name = data.pop('name')
                 return self.call_api_func(api, swagger_func_name.lower(), name=name, **kwargs)
+            elif model_name == 'Person':
+                if 'ifxid' not in data:
+                    raise Exception('ifxid required to delete Persons')
+                ifxid = data.pop('ifxid')
+                return self.call_api_func(api, swagger_func_name.lower(), ifxid=ifxid, **kwargs)
+            elif model_name == 'Organization':
+                if 'ifxorg' not in data:
+                    raise Exception('ifxorg required to delete Organizations')
+                ifxorg = data.pop('ifxorg')
+                return self.call_api_func(api, swagger_func_name.lower(), ifxorg=ifxorg, **kwargs)
             else:
                 if 'id' not in data:
                     raise Exception('id required to delete %s' % model_name)
-                id = data.pop('id')
-                return self.call_api_func(api, swagger_func_name.lower(), id=id, **kwargs)
+                pk = data.pop('id')
+                return self.call_api_func(api, swagger_func_name.lower(), id=pk, **kwargs)
         elif operation == 'list':
             kwargs['page'] = 1
             if 'page_size' not in kwargs:

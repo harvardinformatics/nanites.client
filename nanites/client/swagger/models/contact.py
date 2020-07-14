@@ -35,6 +35,8 @@ class Contact(object):
         'name': 'str',
         'type': 'str',
         'detail': 'str',
+        'phone': 'str',
+        'address': 'str',
         'is_valid': 'bool',
         'created': 'datetime'
     }
@@ -44,17 +46,21 @@ class Contact(object):
         'name': 'name',
         'type': 'type',
         'detail': 'detail',
+        'phone': 'phone',
+        'address': 'address',
         'is_valid': 'is_valid',
         'created': 'created'
     }
 
-    def __init__(self, id=None, name=None, type=None, detail=None, is_valid=None, created=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, detail=None, phone=None, address=None, is_valid=None, created=None):  # noqa: E501
         """Contact - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._type = None
         self._detail = None
+        self._phone = None
+        self._address = None
         self._is_valid = None
         self._created = None
         self.discriminator = None
@@ -67,6 +73,10 @@ class Contact(object):
             self.type = type
         if detail is not None:
             self.detail = detail
+        if phone is not None:
+            self.phone = phone
+        if address is not None:
+            self.address = address
         if is_valid is not None:
             self.is_valid = is_valid
         if created is not None:
@@ -149,7 +159,7 @@ class Contact(object):
     def detail(self):
         """Gets the detail of this Contact.  # noqa: E501
 
-        Actual contact info (e.g. email address)  # noqa: E501
+        Actual contact info (e.g. email address).  If this is an org contact, this should be email.  # noqa: E501
 
         :return: The detail of this Contact.  # noqa: E501
         :rtype: str
@@ -160,7 +170,7 @@ class Contact(object):
     def detail(self, detail):
         """Sets the detail of this Contact.
 
-        Actual contact info (e.g. email address)  # noqa: E501
+        Actual contact info (e.g. email address).  If this is an org contact, this should be email.  # noqa: E501
 
         :param detail: The detail of this Contact.  # noqa: E501
         :type: str
@@ -171,6 +181,56 @@ class Contact(object):
             raise ValueError("Invalid value for `detail`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._detail = detail
+
+    @property
+    def phone(self):
+        """Gets the phone of this Contact.  # noqa: E501
+
+        Phone number or numbers  # noqa: E501
+
+        :return: The phone of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone
+
+    @phone.setter
+    def phone(self, phone):
+        """Sets the phone of this Contact.
+
+        Phone number or numbers  # noqa: E501
+
+        :param phone: The phone of this Contact.  # noqa: E501
+        :type: str
+        """
+        if phone is not None and len(phone) > 255:
+            raise ValueError("Invalid value for `phone`, length must be less than or equal to `255`")  # noqa: E501
+
+        self._phone = phone
+
+    @property
+    def address(self):
+        """Gets the address of this Contact.  # noqa: E501
+
+        Large text field for address lines  # noqa: E501
+
+        :return: The address of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._address
+
+    @address.setter
+    def address(self, address):
+        """Sets the address of this Contact.
+
+        Large text field for address lines  # noqa: E501
+
+        :param address: The address of this Contact.  # noqa: E501
+        :type: str
+        """
+        if address is not None and len(address) > 255:
+            raise ValueError("Invalid value for `address`, length must be less than or equal to `255`")  # noqa: E501
+
+        self._address = address
 
     @property
     def is_valid(self):

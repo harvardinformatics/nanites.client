@@ -132,45 +132,45 @@ class OrganizationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def organizations_delete(self, id, **kwargs):  # noqa: E501
+    def organizations_delete(self, ifxorg, **kwargs):  # noqa: E501
         """organizations_delete  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_delete(id, async_req=True)
+        >>> thread = api.organizations_delete(ifxorg, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.organizations_delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.organizations_delete_with_http_info(ifxorg, **kwargs)  # noqa: E501
         else:
-            (data) = self.organizations_delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.organizations_delete_with_http_info(ifxorg, **kwargs)  # noqa: E501
             return data
 
-    def organizations_delete_with_http_info(self, id, **kwargs):  # noqa: E501
+    def organizations_delete_with_http_info(self, ifxorg, **kwargs):  # noqa: E501
         """organizations_delete  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_delete_with_http_info(id, async_req=True)
+        >>> thread = api.organizations_delete_with_http_info(ifxorg, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['ifxorg']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -185,16 +185,16 @@ class OrganizationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `organizations_delete`")  # noqa: E501
+        # verify the required parameter 'ifxorg' is set
+        if ('ifxorg' not in params or
+                params['ifxorg'] is None):
+            raise ValueError("Missing the required parameter `ifxorg` when calling `organizations_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxorg' in params:
+            path_params['ifxorg'] = params['ifxorg']  # noqa: E501
 
         query_params = []
 
@@ -216,7 +216,7 @@ class OrganizationsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/organizations/{id}/', 'DELETE',
+            '/organizations/{ifxorg}/', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -342,17 +342,17 @@ class OrganizationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def organizations_partial_update(self, id, data, **kwargs):  # noqa: E501
+    def organizations_partial_update(self, ifxorg, data, **kwargs):  # noqa: E501
         """organizations_partial_update  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_partial_update(id, data, async_req=True)
+        >>> thread = api.organizations_partial_update(ifxorg, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
@@ -360,29 +360,29 @@ class OrganizationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.organizations_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            return self.organizations_partial_update_with_http_info(ifxorg, data, **kwargs)  # noqa: E501
         else:
-            (data) = self.organizations_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            (data) = self.organizations_partial_update_with_http_info(ifxorg, data, **kwargs)  # noqa: E501
             return data
 
-    def organizations_partial_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
+    def organizations_partial_update_with_http_info(self, ifxorg, data, **kwargs):  # noqa: E501
         """organizations_partial_update  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_partial_update_with_http_info(id, data, async_req=True)
+        >>> thread = api.organizations_partial_update_with_http_info(ifxorg, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'data']  # noqa: E501
+        all_params = ['ifxorg', 'data']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -397,10 +397,10 @@ class OrganizationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `organizations_partial_update`")  # noqa: E501
+        # verify the required parameter 'ifxorg' is set
+        if ('ifxorg' not in params or
+                params['ifxorg'] is None):
+            raise ValueError("Missing the required parameter `ifxorg` when calling `organizations_partial_update`")  # noqa: E501
         # verify the required parameter 'data' is set
         if ('data' not in params or
                 params['data'] is None):
@@ -409,8 +409,8 @@ class OrganizationsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxorg' in params:
+            path_params['ifxorg'] = params['ifxorg']  # noqa: E501
 
         query_params = []
 
@@ -434,7 +434,7 @@ class OrganizationsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/organizations/{id}/', 'PATCH',
+            '/organizations/{ifxorg}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -449,45 +449,45 @@ class OrganizationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def organizations_read(self, id, **kwargs):  # noqa: E501
+    def organizations_read(self, ifxorg, **kwargs):  # noqa: E501
         """organizations_read  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_read(id, async_req=True)
+        >>> thread = api.organizations_read(ifxorg, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :return: Organization
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.organizations_read_with_http_info(id, **kwargs)  # noqa: E501
+            return self.organizations_read_with_http_info(ifxorg, **kwargs)  # noqa: E501
         else:
-            (data) = self.organizations_read_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.organizations_read_with_http_info(ifxorg, **kwargs)  # noqa: E501
             return data
 
-    def organizations_read_with_http_info(self, id, **kwargs):  # noqa: E501
+    def organizations_read_with_http_info(self, ifxorg, **kwargs):  # noqa: E501
         """organizations_read  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_read_with_http_info(id, async_req=True)
+        >>> thread = api.organizations_read_with_http_info(ifxorg, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :return: Organization
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['ifxorg']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -502,16 +502,16 @@ class OrganizationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `organizations_read`")  # noqa: E501
+        # verify the required parameter 'ifxorg' is set
+        if ('ifxorg' not in params or
+                params['ifxorg'] is None):
+            raise ValueError("Missing the required parameter `ifxorg` when calling `organizations_read`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxorg' in params:
+            path_params['ifxorg'] = params['ifxorg']  # noqa: E501
 
         query_params = []
 
@@ -533,7 +533,7 @@ class OrganizationsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/organizations/{id}/', 'GET',
+            '/organizations/{ifxorg}/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -548,17 +548,17 @@ class OrganizationsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def organizations_update(self, id, data, **kwargs):  # noqa: E501
+    def organizations_update(self, ifxorg, data, **kwargs):  # noqa: E501
         """organizations_update  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_update(id, data, async_req=True)
+        >>> thread = api.organizations_update(ifxorg, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
@@ -566,29 +566,29 @@ class OrganizationsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.organizations_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            return self.organizations_update_with_http_info(ifxorg, data, **kwargs)  # noqa: E501
         else:
-            (data) = self.organizations_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            (data) = self.organizations_update_with_http_info(ifxorg, data, **kwargs)  # noqa: E501
             return data
 
-    def organizations_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
+    def organizations_update_with_http_info(self, ifxorg, data, **kwargs):  # noqa: E501
         """organizations_update  # noqa: E501
 
         Organization ViewSet  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.organizations_update_with_http_info(id, data, async_req=True)
+        >>> thread = api.organizations_update_with_http_info(ifxorg, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxorg: (required)
         :param Organization data: (required)
         :return: Organization
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'data']  # noqa: E501
+        all_params = ['ifxorg', 'data']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -603,10 +603,10 @@ class OrganizationsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `organizations_update`")  # noqa: E501
+        # verify the required parameter 'ifxorg' is set
+        if ('ifxorg' not in params or
+                params['ifxorg'] is None):
+            raise ValueError("Missing the required parameter `ifxorg` when calling `organizations_update`")  # noqa: E501
         # verify the required parameter 'data' is set
         if ('data' not in params or
                 params['data'] is None):
@@ -615,8 +615,8 @@ class OrganizationsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxorg' in params:
+            path_params['ifxorg'] = params['ifxorg']  # noqa: E501
 
         query_params = []
 
@@ -640,7 +640,7 @@ class OrganizationsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/organizations/{id}/', 'PUT',
+            '/organizations/{ifxorg}/', 'PUT',
             path_params,
             query_params,
             header_params,
