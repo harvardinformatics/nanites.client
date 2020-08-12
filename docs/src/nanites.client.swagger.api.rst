@@ -17,6 +17,7 @@ Submodules
    nanites.client.swagger.api.get_basics_by_login_api
    nanites.client.swagger.api.get_location_info_api
    nanites.client.swagger.api.get_org_names_api
+   nanites.client.swagger.api.get_person_affiliations_api
    nanites.client.swagger.api.get_pi_names_api
    nanites.client.swagger.api.get_user_list_api
    nanites.client.swagger.api.logins_api

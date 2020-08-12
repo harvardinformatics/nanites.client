@@ -18,6 +18,7 @@ Submodules
    nanites.client.swagger.models.get_basics_by_login
    nanites.client.swagger.models.get_location_info
    nanites.client.swagger.models.get_org_names
+   nanites.client.swagger.models.get_person_affiliations
    nanites.client.swagger.models.get_pi_names
    nanites.client.swagger.models.get_user_list
    nanites.client.swagger.models.inline_response200

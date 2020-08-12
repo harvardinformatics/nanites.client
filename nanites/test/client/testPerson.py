@@ -8,15 +8,15 @@ Test Source
 from __future__ import absolute_import
 
 import unittest
-import os
 from copy import deepcopy
-from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
 from nanites.test.client import data, ApiTest
 
 
 class TestPersonApi(ApiTest):
-
+    '''
+    Test for persons
+    '''
     def test_create_minimal_person(self):
         ''' Create a person with a minimal set of information
         '''
@@ -35,7 +35,7 @@ class TestPersonApi(ApiTest):
 
         self.assertTrue(len(person.addresses) == 2, 'Incorrect number of addresses %d' % len(person.addresses))
         self.assertTrue(len(person.contacts) == 3, 'Incorrect number of contacts: %d' % len(person.contacts))
-        self.assertTrue(len(person.affiliations) == 1, 'Incorrect number of contacts: %d' % len(person.affiliations))
+        self.assertTrue(len(person.affiliations) == 2, 'Incorrect number of contacts: %d' % len(person.affiliations))
 
     def test_people_list(self):
         '''Ensure that all people can be returned by listPeople.  Paging is tested.
@@ -121,6 +121,7 @@ class TestPersonApi(ApiTest):
         updatedperson = API.updatePerson(api_client=self.api_client, **persondata)
         self.assertTrue(updatedperson.full_name == person.full_name, 'Incorrect person retrieved: %s' % str(updatedperson))
         self.assertTrue(len(updatedperson.addresses) == 1, 'Incorrect number of addresses after update: %s' % str(updatedperson))
+
 
 if __name__ == '__main__':
     unittest.main()

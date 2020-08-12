@@ -440,4 +440,14 @@ class SwaggerClient(object):
         api = GetLocationInfoApi(api_client=api_client)
         return self.call_api_func(api, 'get_location_info_list', *args, **kwargs)
 
+    def getPersonAffiliations(self, *args, **kwargs):
+        '''
+        Person affiliations
+        '''
+        api_client = kwargs.pop('api_client', None)
+        if not api_client:
+            api_client = self.api_client
+        api = GetPersonAffiliationsApi(api_client=api_client)
+        return self.call_api_func(api, 'get_person_affiliations_list', *args, **kwargs)
+
 API = SwaggerClient()

@@ -88,6 +88,10 @@ PEOPLE = [
             {
                 'slug': 'Slurpiston Lab (a Research Computing AD Laboratory)',
                 'role': 'pi',
+            },
+            {
+                'slug': 'Center for Advanced Derp (a Research Computing AD Center)',
+                'role': 'member',
             }
         ],
         'addresses': [

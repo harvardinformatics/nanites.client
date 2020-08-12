@@ -18,14 +18,16 @@ client:
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help test Makefile docs
+.PHONY: help test Makefile docs clean
 
-test:
+test: clean
 	docker build -t nanites-client .
 	docker-compose run client; docker-compose down
 
 docs:
 	docker-compose run client make html; docker-compose down
+clean:
+	find . -name "*.pyc" -print0 | xargs -0 rm -f
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

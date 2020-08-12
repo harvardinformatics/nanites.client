@@ -15,6 +15,7 @@ Submodules
    nanites.test.client.testContact
    nanites.test.client.testGetBasicsByLogin
    nanites.test.client.testGetOrgNames
+   nanites.test.client.testGetPersonAffiliations
    nanites.test.client.testGetPiNames
    nanites.test.client.testLogin
    nanites.test.client.testPerson
