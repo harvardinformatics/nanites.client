@@ -32,6 +32,7 @@ class Contact(object):
     """
     swagger_types = {
         'id': 'int',
+        'ifxcon': 'str',
         'name': 'str',
         'type': 'str',
         'detail': 'str',
@@ -43,6 +44,7 @@ class Contact(object):
 
     attribute_map = {
         'id': 'id',
+        'ifxcon': 'ifxcon',
         'name': 'name',
         'type': 'type',
         'detail': 'detail',
@@ -52,10 +54,11 @@ class Contact(object):
         'created': 'created'
     }
 
-    def __init__(self, id=None, name=None, type=None, detail=None, phone=None, address=None, is_valid=None, created=None):  # noqa: E501
+    def __init__(self, id=None, ifxcon=None, name=None, type=None, detail=None, phone=None, address=None, is_valid=None, created=None):  # noqa: E501
         """Contact - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
+        self._ifxcon = None
         self._name = None
         self._type = None
         self._detail = None
@@ -67,6 +70,8 @@ class Contact(object):
 
         if id is not None:
             self.id = id
+        if ifxcon is not None:
+            self.ifxcon = ifxcon
         if name is not None:
             self.name = name
         if type is not None:
@@ -102,6 +107,31 @@ class Contact(object):
         """
 
         self._id = id
+
+    @property
+    def ifxcon(self):
+        """Gets the ifxcon of this Contact.  # noqa: E501
+
+        Contact identifier  # noqa: E501
+
+        :return: The ifxcon of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._ifxcon
+
+    @ifxcon.setter
+    def ifxcon(self, ifxcon):
+        """Sets the ifxcon of this Contact.
+
+        Contact identifier  # noqa: E501
+
+        :param ifxcon: The ifxcon of this Contact.  # noqa: E501
+        :type: str
+        """
+        if ifxcon is not None and len(ifxcon) > 16:
+            raise ValueError("Invalid value for `ifxcon`, length must be less than or equal to `16`")  # noqa: E501
+
+        self._ifxcon = ifxcon
 
     @property
     def name(self):
