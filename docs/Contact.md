@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**ifxcon** | **str** | Contact identifier | [optional] 
+**ifxcon** | **str** |  | [optional] 
 **name** | **str** | Name of a person when used as an Organization contact, or Primary Email | [optional] 
 **type** | **str** | Type of contact (e.g. email, phone) | [optional] 
 **detail** | **str** | Actual contact info (e.g. email address).  If this is an org contact, this should be email. | [optional] 

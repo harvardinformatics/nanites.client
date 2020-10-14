@@ -112,7 +112,6 @@ class Contact(object):
     def ifxcon(self):
         """Gets the ifxcon of this Contact.  # noqa: E501
 
-        Contact identifier  # noqa: E501
 
         :return: The ifxcon of this Contact.  # noqa: E501
         :rtype: str
@@ -123,13 +122,10 @@ class Contact(object):
     def ifxcon(self, ifxcon):
         """Sets the ifxcon of this Contact.
 
-        Contact identifier  # noqa: E501
 
         :param ifxcon: The ifxcon of this Contact.  # noqa: E501
         :type: str
         """
-        if ifxcon is not None and len(ifxcon) > 16:
-            raise ValueError("Invalid value for `ifxcon`, length must be less than or equal to `16`")  # noqa: E501
 
         self._ifxcon = ifxcon
 
