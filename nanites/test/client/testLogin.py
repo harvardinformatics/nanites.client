@@ -19,6 +19,30 @@ DATABASE_LOGIN_TOTAL = 1
 
 class TestLoginsApi(ApiTest):
 
+    def setUp(self):
+        '''
+        clean up
+        '''
+        super().setUp()
+        self.clean()
+
+
+    def tearDown(self):
+        '''
+        clean up
+        '''
+        super().tearDown()
+        self.clean()
+
+    def clean(self):
+        '''
+        clean up
+        '''
+        people = API.listPeople()
+        for person in people:
+            API.deletePerson(ifxid=person.ifxid)
+
+
     def test_login_create(self):
         '''Create a login with a person attached using createLogin method
         '''
@@ -143,6 +167,29 @@ class TestLoginsApi(ApiTest):
             self.assertTrue(False, 'Actually fetched a login!')
         except Exception as e:
             self.assertTrue('Item not found' in str(e), 'Incorrect error message: %s' % str(e))
+
+    def test_list_enabled_login(self):
+        '''
+        Ensure that listLogins returns only enabled logins
+        '''
+        persondata = deepcopy(data.PEOPLE[0])
+        persondata['logins'] = [
+            deepcopy(data.LOGINS[2]),
+            deepcopy(data.LOGINS[3])
+        ]
+        API.createPerson(api_client=self.api_client, **persondata)
+
+        logins = API.listLogins(primary_email=data.PEOPLE[0]['primary_email'])
+        self.assertTrue(len(logins) == 2, f'Incorrect number of total logins {len(logins)}')
+
+        logins = API.listLogins(is_enabled=True, primary_email=data.PEOPLE[0]['primary_email'])
+        self.assertTrue(len(logins) == 1, f'Incorrect number of total logins {logins}')
+        self.assertTrue(logins[0].username == 'ddennison', f'Incorrect login returned {logins[0]}')
+
+        logins = API.listLogins(is_enabled=False, primary_email=data.PEOPLE[0]['primary_email'])
+        self.assertTrue(len(logins) == 1, f'Incorrect number of total logins {logins}')
+        self.assertTrue(logins[0].username == 'ddennison2', f'Incorrect login returned {logins[0]}')
+
 
 
 if __name__ == '__main__':

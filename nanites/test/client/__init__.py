@@ -29,33 +29,42 @@ class ApiTest(unittest.TestCase):
         self.configuration.debug = False
         self.api_client = ApiClient(configuration=self.configuration)
         self.IDS = {
+            'Contact': [],
             'Person': [],
             'Login': [],
             'Organization': [],
             'Address': [],
             'Source': [],
             'Application': [],
-            'Contact': [],
         }
         self.plurals = {
+            'Contact': 'Contacts',
             'Person': 'People',
             'Login': 'Logins',
             'Organization': 'Organizations',
             'Address': 'Addresses',
             'Source': 'Sources',
             'Application': 'Applications',
-            'Contact': 'Contacts',
         }
 
     def setUp(self):
         self.clean()
         for orgdata in data.ORGANIZATIONS:
-            org = API.createOrganization(api_client=self.api_client, **orgdata)
-            self.IDS['Organization'].append(org.id)
+            try:
+                org = API.createOrganization(api_client=self.api_client, **orgdata)
+                self.IDS['Organization'].append(org.id)
+            except Exception:
+                pass
         for applicationdata in data.APPLICATIONS:
-            application = API.createApplication(api_client=self.api_client, **applicationdata)
+            try:
+                application = API.createApplication(api_client=self.api_client, **applicationdata)
+            except Exception:
+                pass
         for sourcedata in data.SOURCES:
-            source = API.createSource(api_client=self.api_client, **sourcedata)
+            try:
+                source = API.createSource(api_client=self.api_client, **sourcedata)
+            except Exception:
+                pass
 
 
     def tearDown(self):

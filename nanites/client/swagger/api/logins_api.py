@@ -248,6 +248,7 @@ class LoginsApi(object):
         :param str username:
         :param str ifxid:
         :param str primary_email:
+        :param bool is_enabled:
         :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
@@ -276,12 +277,13 @@ class LoginsApi(object):
         :param str username:
         :param str ifxid:
         :param str primary_email:
+        :param bool is_enabled:
         :return: InlineResponse2003
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ordering', 'page', 'page_size', 'login', 'username', 'ifxid', 'primary_email']  # noqa: E501
+        all_params = ['ordering', 'page', 'page_size', 'login', 'username', 'ifxid', 'primary_email', 'is_enabled']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -316,6 +318,8 @@ class LoginsApi(object):
             query_params.append(('ifxid', params['ifxid']))  # noqa: E501
         if 'primary_email' in params:
             query_params.append(('primary_email', params['primary_email']))  # noqa: E501
+        if 'is_enabled' in params:
+            query_params.append(('is_enabled', params['is_enabled']))  # noqa: E501
 
         header_params = {}
 

@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **logins_list**
-> InlineResponse2003 logins_list(ordering=ordering, page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email)
+> InlineResponse2003 logins_list(ordering=ordering, page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email, is_enabled=is_enabled)
 
 
 
@@ -147,9 +147,10 @@ login = 'login_example' # str |  (optional)
 username = 'username_example' # str |  (optional)
 ifxid = 'ifxid_example' # str |  (optional)
 primary_email = 'primary_email_example' # str |  (optional)
+is_enabled = true # bool |  (optional)
 
 try:
-    api_response = api_instance.logins_list(ordering=ordering, page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email)
+    api_response = api_instance.logins_list(ordering=ordering, page=page, page_size=page_size, login=login, username=username, ifxid=ifxid, primary_email=primary_email, is_enabled=is_enabled)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LoginsApi->logins_list: %s\n" % e)
@@ -166,6 +167,7 @@ Name | Type | Description  | Notes
  **username** | **str**|  | [optional] 
  **ifxid** | **str**|  | [optional] 
  **primary_email** | **str**|  | [optional] 
+ **is_enabled** | **bool**|  | [optional] 
 
 ### Return type
 

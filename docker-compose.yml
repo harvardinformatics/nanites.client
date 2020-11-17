@@ -20,7 +20,7 @@ services:
       - NANITES_PASSWORD=nanites
       - NANITES_HOSTNAME=nanites-db
       - NANITES_DATABASE=nanites
-#      - NANITES_DEBUG=TRUE
+      - NANITES_DEBUG=TRUE
       - NANITES_LOGLEVEL=DEBUG
       - IFX_AUTH_META_KEY=HTTP_X_REMOTE_USER
     links:

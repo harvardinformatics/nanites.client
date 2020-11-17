@@ -153,5 +153,12 @@ LOGINS = [
         'username': 'ddennison',
         'role': 'user',
         'application': 'CNS User Portal',
+        'is_enabled': True,
+    },
+    {
+        'username': 'ddennison2',
+        'role': 'user',
+        'application': 'CNS User Portal',
+        'is_enabled': False
     },
 ]
