@@ -17,6 +17,7 @@ from __future__ import absolute_import
 
 # import apis into sdk package
 from nanites.client.swagger.api.addresses_api import AddressesApi
+from nanites.client.swagger.api.all_the_things_api import AllTheThingsApi
 from nanites.client.swagger.api.applications_api import ApplicationsApi
 from nanites.client.swagger.api.contacts_api import ContactsApi
 from nanites.client.swagger.api.get_basics_by_login_api import GetBasicsByLoginApi
@@ -57,6 +58,7 @@ from nanites.client.swagger.models.inline_response2007 import InlineResponse2007
 from nanites.client.swagger.models.inline_response2008 import InlineResponse2008
 from nanites.client.swagger.models.login import Login
 from nanites.client.swagger.models.login_list import LoginList
+from nanites.client.swagger.models.member import Member
 from nanites.client.swagger.models.organization import Organization
 from nanites.client.swagger.models.organization_contact import OrganizationContact
 from nanites.client.swagger.models.parent_relation import ParentRelation
@@ -65,5 +67,6 @@ from nanites.client.swagger.models.person_address import PersonAddress
 from nanites.client.swagger.models.person_affiliation import PersonAffiliation
 from nanites.client.swagger.models.person_change import PersonChange
 from nanites.client.swagger.models.person_contact import PersonContact
+from nanites.client.swagger.models.person_member import PersonMember
 from nanites.client.swagger.models.source import Source
 from nanites.client.swagger.models.user import User

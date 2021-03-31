@@ -41,7 +41,8 @@ class Organization(object):
         'slug': 'str',
         'parents': 'list[ParentRelation]',
         'children': 'list[ChildRelation]',
-        'contacts': 'list[OrganizationContact]'
+        'contacts': 'list[OrganizationContact]',
+        'members': 'list[Member]'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class Organization(object):
         'slug': 'slug',
         'parents': 'parents',
         'children': 'children',
-        'contacts': 'contacts'
+        'contacts': 'contacts',
+        'members': 'members'
     }
 
-    def __init__(self, id=None, ifxorg=None, name=None, rank=None, org_tree=None, code=None, application_key=None, slug=None, parents=None, children=None, contacts=None):  # noqa: E501
+    def __init__(self, id=None, ifxorg=None, name=None, rank=None, org_tree=None, code=None, application_key=None, slug=None, parents=None, children=None, contacts=None, members=None):  # noqa: E501
         """Organization - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -72,6 +74,7 @@ class Organization(object):
         self._parents = None
         self._children = None
         self._contacts = None
+        self._members = None
         self.discriminator = None
 
         if id is not None:
@@ -93,6 +96,8 @@ class Organization(object):
             self.children = children
         if contacts is not None:
             self.contacts = contacts
+        if members is not None:
+            self.members = members
 
     @property
     def id(self):
@@ -358,6 +363,27 @@ class Organization(object):
         """
 
         self._contacts = contacts
+
+    @property
+    def members(self):
+        """Gets the members of this Organization.  # noqa: E501
+
+
+        :return: The members of this Organization.  # noqa: E501
+        :rtype: list[Member]
+        """
+        return self._members
+
+    @members.setter
+    def members(self, members):
+        """Sets the members of this Organization.
+
+
+        :param members: The members of this Organization.  # noqa: E501
+        :type: list[Member]
+        """
+
+        self._members = members
 
     def to_dict(self):
         """Returns the model properties as a dict"""

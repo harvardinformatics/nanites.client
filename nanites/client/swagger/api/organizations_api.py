@@ -246,6 +246,8 @@ class OrganizationsApi(object):
         :param str org_tree: Organization tree (e.g. Research Computing AD)
         :param str rank: Organization unit rank (e.g. Department)
         :param str name: Organization name (e.g. Informatics)
+        :param str member: IFXID of person that may be an org member
+        :param str member_role: Members role
         :return: InlineResponse2004
                  If the method is called asynchronously,
                  returns the request thread.
@@ -272,12 +274,14 @@ class OrganizationsApi(object):
         :param str org_tree: Organization tree (e.g. Research Computing AD)
         :param str rank: Organization unit rank (e.g. Department)
         :param str name: Organization name (e.g. Informatics)
+        :param str member: IFXID of person that may be an org member
+        :param str member_role: Members role
         :return: InlineResponse2004
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'page_size', 'org_tree', 'rank', 'name']  # noqa: E501
+        all_params = ['page', 'page_size', 'org_tree', 'rank', 'name', 'member', 'member_role']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -308,6 +312,10 @@ class OrganizationsApi(object):
             query_params.append(('rank', params['rank']))  # noqa: E501
         if 'name' in params:
             query_params.append(('name', params['name']))  # noqa: E501
+        if 'member' in params:
+            query_params.append(('member', params['member']))  # noqa: E501
+        if 'member_role' in params:
+            query_params.append(('member_role', params['member_role']))  # noqa: E501
 
         header_params = {}
 
