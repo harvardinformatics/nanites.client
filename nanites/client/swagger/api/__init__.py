@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from nanites.client.swagger.api.addresses_api import AddressesApi
+from nanites.client.swagger.api.all_the_things_api import AllTheThingsApi
 from nanites.client.swagger.api.applications_api import ApplicationsApi
 from nanites.client.swagger.api.contacts_api import ContactsApi
 from nanites.client.swagger.api.get_basics_by_login_api import GetBasicsByLoginApi
