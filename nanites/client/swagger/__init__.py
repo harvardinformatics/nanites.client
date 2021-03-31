@@ -22,6 +22,7 @@ from nanites.client.swagger.api.applications_api import ApplicationsApi
 from nanites.client.swagger.api.contacts_api import ContactsApi
 from nanites.client.swagger.api.get_basics_by_login_api import GetBasicsByLoginApi
 from nanites.client.swagger.api.get_location_info_api import GetLocationInfoApi
+from nanites.client.swagger.api.get_org_list_api import GetOrgListApi
 from nanites.client.swagger.api.get_org_names_api import GetOrgNamesApi
 from nanites.client.swagger.api.get_person_affiliations_api import GetPersonAffiliationsApi
 from nanites.client.swagger.api.get_pi_names_api import GetPiNamesApi
@@ -43,6 +44,7 @@ from nanites.client.swagger.models.child_relation import ChildRelation
 from nanites.client.swagger.models.contact import Contact
 from nanites.client.swagger.models.get_basics_by_login import GetBasicsByLogin
 from nanites.client.swagger.models.get_location_info import GetLocationInfo
+from nanites.client.swagger.models.get_org_list import GetOrgList
 from nanites.client.swagger.models.get_org_names import GetOrgNames
 from nanites.client.swagger.models.get_person_affiliations import GetPersonAffiliations
 from nanites.client.swagger.models.get_pi_names import GetPiNames
