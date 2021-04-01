@@ -10,7 +10,6 @@ Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
 
    nanites.client
    nanites.management
@@ -21,7 +20,6 @@ Submodules
 ----------
 
 .. toctree::
-   :maxdepth: 4
 
    nanites.init
    nanites.initDev

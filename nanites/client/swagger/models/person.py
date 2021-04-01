@@ -51,12 +51,14 @@ class Person(object):
         'is_enabled': 'bool',
         'source': 'str',
         'change_comment': 'str',
+        'comment_by': 'str',
         'created': 'datetime',
         'author': 'str',
         'addresses': 'list[PersonAddress]',
         'affiliations': 'list[PersonAffiliation]',
         'contacts': 'list[PersonContact]',
-        'logins': 'list[LoginList]'
+        'logins': 'list[LoginList]',
+        'changes': 'list[PersonChange]'
     }
 
     attribute_map = {
@@ -80,15 +82,17 @@ class Person(object):
         'is_enabled': 'is_enabled',
         'source': 'source',
         'change_comment': 'change_comment',
+        'comment_by': 'comment_by',
         'created': 'created',
         'author': 'author',
         'addresses': 'addresses',
         'affiliations': 'affiliations',
         'contacts': 'contacts',
-        'logins': 'logins'
+        'logins': 'logins',
+        'changes': 'changes'
     }
 
-    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, title=None, race=None, ethnicity=None, gender='Unknown', is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None):  # noqa: E501
+    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, title=None, race=None, ethnicity=None, gender='Unknown', is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, comment_by=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None, changes=None):  # noqa: E501
         """Person - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -111,12 +115,14 @@ class Person(object):
         self._is_enabled = None
         self._source = None
         self._change_comment = None
+        self._comment_by = None
         self._created = None
         self._author = None
         self._addresses = None
         self._affiliations = None
         self._contacts = None
         self._logins = None
+        self._changes = None
         self.discriminator = None
 
         if id is not None:
@@ -156,6 +162,8 @@ class Person(object):
         if source is not None:
             self.source = source
         self.change_comment = change_comment
+        if comment_by is not None:
+            self.comment_by = comment_by
         if created is not None:
             self.created = created
         if author is not None:
@@ -168,6 +176,8 @@ class Person(object):
             self.contacts = contacts
         if logins is not None:
             self.logins = logins
+        if changes is not None:
+            self.changes = changes
 
     @property
     def id(self):
@@ -656,6 +666,29 @@ class Person(object):
         self._change_comment = change_comment
 
     @property
+    def comment_by(self):
+        """Gets the comment_by of this Person.  # noqa: E501
+
+
+        :return: The comment_by of this Person.  # noqa: E501
+        :rtype: str
+        """
+        return self._comment_by
+
+    @comment_by.setter
+    def comment_by(self, comment_by):
+        """Sets the comment_by of this Person.
+
+
+        :param comment_by: The comment_by of this Person.  # noqa: E501
+        :type: str
+        """
+        if comment_by is not None and len(comment_by) > 255:
+            raise ValueError("Invalid value for `comment_by`, length must be less than or equal to `255`")  # noqa: E501
+
+        self._comment_by = comment_by
+
+    @property
     def created(self):
         """Gets the created of this Person.  # noqa: E501
 
@@ -782,6 +815,27 @@ class Person(object):
         """
 
         self._logins = logins
+
+    @property
+    def changes(self):
+        """Gets the changes of this Person.  # noqa: E501
+
+
+        :return: The changes of this Person.  # noqa: E501
+        :rtype: list[PersonChange]
+        """
+        return self._changes
+
+    @changes.setter
+    def changes(self, changes):
+        """Sets the changes of this Person.
+
+
+        :param changes: The changes of this Person.  # noqa: E501
+        :type: list[PersonChange]
+        """
+
+        self._changes = changes
 
     def to_dict(self):
         """Returns the model properties as a dict"""

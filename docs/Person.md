@@ -23,12 +23,14 @@ Name | Type | Description | Notes
 **is_enabled** | **bool** |  | [optional] [default to True]
 **source** | **str** |  | [optional] 
 **change_comment** | **str** | Most recent change comment | 
+**comment_by** | **str** |  | [optional] 
 **created** | **datetime** |  | [optional] 
 **author** | **str** |  | [optional] 
 **addresses** | [**list[PersonAddress]**](PersonAddress.md) |  | [optional] 
 **affiliations** | [**list[PersonAffiliation]**](PersonAffiliation.md) |  | [optional] 
 **contacts** | [**list[PersonContact]**](PersonContact.md) |  | [optional] 
 **logins** | [**list[LoginList]**](LoginList.md) |  | [optional] 
+**changes** | [**list[PersonChange]**](PersonChange.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

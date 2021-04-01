@@ -10,6 +10,5 @@ Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
 
    nanites.test.client

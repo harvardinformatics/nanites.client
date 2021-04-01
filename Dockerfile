@@ -7,7 +7,7 @@ EXPOSE 80
 WORKDIR /app
 ENV DJANGO_SETTINGS_MODULE=nanites.settings
 RUN pip install --upgrade pip && \
-    pip install Django>2.1 && \
+    pip install 'Django>2.1,<3' && \
     pip install requests && \
     pip install mysqlclient && \
     pip install nose && \

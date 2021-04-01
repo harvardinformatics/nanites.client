@@ -10,7 +10,6 @@ Submodules
 ----------
 
 .. toctree::
-   :maxdepth: 4
 
    nanites.client.swagger.models.address
    nanites.client.swagger.models.application

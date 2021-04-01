@@ -34,7 +34,6 @@ from nanites.client.swagger.models.inline_response2004 import InlineResponse2004
 from nanites.client.swagger.models.inline_response2005 import InlineResponse2005
 from nanites.client.swagger.models.inline_response2006 import InlineResponse2006
 from nanites.client.swagger.models.inline_response2007 import InlineResponse2007
-from nanites.client.swagger.models.inline_response2008 import InlineResponse2008
 from nanites.client.swagger.models.login import Login
 from nanites.client.swagger.models.login_list import LoginList
 from nanites.client.swagger.models.member import Member

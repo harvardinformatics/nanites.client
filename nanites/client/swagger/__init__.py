@@ -30,7 +30,6 @@ from nanites.client.swagger.api.get_user_list_api import GetUserListApi
 from nanites.client.swagger.api.logins_api import LoginsApi
 from nanites.client.swagger.api.organizations_api import OrganizationsApi
 from nanites.client.swagger.api.people_api import PeopleApi
-from nanites.client.swagger.api.person_changes_api import PersonChangesApi
 from nanites.client.swagger.api.sources_api import SourcesApi
 from nanites.client.swagger.api.users_api import UsersApi
 
@@ -57,7 +56,6 @@ from nanites.client.swagger.models.inline_response2004 import InlineResponse2004
 from nanites.client.swagger.models.inline_response2005 import InlineResponse2005
 from nanites.client.swagger.models.inline_response2006 import InlineResponse2006
 from nanites.client.swagger.models.inline_response2007 import InlineResponse2007
-from nanites.client.swagger.models.inline_response2008 import InlineResponse2008
 from nanites.client.swagger.models.login import Login
 from nanites.client.swagger.models.login_list import LoginList
 from nanites.client.swagger.models.member import Member

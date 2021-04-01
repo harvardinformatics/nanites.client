@@ -31,90 +31,41 @@ class PersonChange(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'int',
-        'person': 'str',
         'comment': 'str',
-        'created': 'datetime',
-        'author': 'int'
+        'comment_by': 'str',
+        'created': 'str',
+        'author': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'person': 'person',
         'comment': 'comment',
+        'comment_by': 'comment_by',
         'created': 'created',
         'author': 'author'
     }
 
-    def __init__(self, id=None, person=None, comment=None, created=None, author=None):  # noqa: E501
+    def __init__(self, comment=None, comment_by=None, created=None, author=None):  # noqa: E501
         """PersonChange - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
-        self._person = None
         self._comment = None
+        self._comment_by = None
         self._created = None
         self._author = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        self.person = person
         if comment is not None:
             self.comment = comment
+        if comment_by is not None:
+            self.comment_by = comment_by
         if created is not None:
             self.created = created
         if author is not None:
             self.author = author
 
     @property
-    def id(self):
-        """Gets the id of this PersonChange.  # noqa: E501
-
-
-        :return: The id of this PersonChange.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PersonChange.
-
-
-        :param id: The id of this PersonChange.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def person(self):
-        """Gets the person of this PersonChange.  # noqa: E501
-
-
-        :return: The person of this PersonChange.  # noqa: E501
-        :rtype: str
-        """
-        return self._person
-
-    @person.setter
-    def person(self, person):
-        """Sets the person of this PersonChange.
-
-
-        :param person: The person of this PersonChange.  # noqa: E501
-        :type: str
-        """
-        if person is None:
-            raise ValueError("Invalid value for `person`, must not be `None`")  # noqa: E501
-
-        self._person = person
-
-    @property
     def comment(self):
         """Gets the comment of this PersonChange.  # noqa: E501
 
-        A comment describing the change.  # noqa: E501
 
         :return: The comment of this PersonChange.  # noqa: E501
         :rtype: str
@@ -125,26 +76,42 @@ class PersonChange(object):
     def comment(self, comment):
         """Sets the comment of this PersonChange.
 
-        A comment describing the change.  # noqa: E501
 
         :param comment: The comment of this PersonChange.  # noqa: E501
         :type: str
         """
-        if comment is not None and len(comment) > 255:
-            raise ValueError("Invalid value for `comment`, length must be less than or equal to `255`")  # noqa: E501
         if comment is not None and len(comment) < 1:
             raise ValueError("Invalid value for `comment`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._comment = comment
 
     @property
+    def comment_by(self):
+        """Gets the comment_by of this PersonChange.  # noqa: E501
+
+
+        :return: The comment_by of this PersonChange.  # noqa: E501
+        :rtype: str
+        """
+        return self._comment_by
+
+    @comment_by.setter
+    def comment_by(self, comment_by):
+        """Sets the comment_by of this PersonChange.
+
+
+        :param comment_by: The comment_by of this PersonChange.  # noqa: E501
+        :type: str
+        """
+        self._comment_by = comment_by
+
+    @property
     def created(self):
         """Gets the created of this PersonChange.  # noqa: E501
 
-        Date created  # noqa: E501
 
         :return: The created of this PersonChange.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._created
 
@@ -152,11 +119,12 @@ class PersonChange(object):
     def created(self, created):
         """Sets the created of this PersonChange.
 
-        Date created  # noqa: E501
 
         :param created: The created of this PersonChange.  # noqa: E501
-        :type: datetime
+        :type: str
         """
+        if created is not None and len(created) < 1:
+            raise ValueError("Invalid value for `created`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._created = created
 
@@ -164,10 +132,9 @@ class PersonChange(object):
     def author(self):
         """Gets the author of this PersonChange.  # noqa: E501
 
-        Created by  # noqa: E501
 
         :return: The author of this PersonChange.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._author
 
@@ -175,10 +142,9 @@ class PersonChange(object):
     def author(self, author):
         """Sets the author of this PersonChange.
 
-        Created by  # noqa: E501
 
         :param author: The author of this PersonChange.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._author = author

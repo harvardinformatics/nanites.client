@@ -116,6 +116,7 @@ class TestPersonApi(ApiTest):
         self.assertTrue(person.full_name == data.PEOPLE[1]['full_name'], 'Incorrect person name: %s' % str(person))
 
         person.full_name = 'A new full name'
+        person.change_comment = 'Updated full name'
         del(person.addresses[0])
         persondata = person.to_dict()
         updatedperson = API.updatePerson(api_client=self.api_client, **persondata)
