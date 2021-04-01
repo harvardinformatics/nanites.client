@@ -450,4 +450,14 @@ class SwaggerClient(object):
         api = GetPersonAffiliationsApi(api_client=api_client)
         return self.call_api_func(api, 'get_person_affiliations_list', *args, **kwargs)
 
+    def getOrgList(self, *args, **kwargs):
+        '''
+        Org list for fiine
+        '''
+        api_client = kwargs.pop('api_client', None)
+        if not api_client:
+            api_client = self.api_client
+        api = GetOrgListApi(api_client=api_client)
+        return self.call_api_func(api, 'get_org_list_list', *args, **kwargs)
+
 API = SwaggerClient()
