@@ -10,12 +10,15 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    nanites.client.swagger.api.addresses_api
+   nanites.client.swagger.api.all_the_things_api
    nanites.client.swagger.api.applications_api
    nanites.client.swagger.api.contacts_api
    nanites.client.swagger.api.get_basics_by_login_api
    nanites.client.swagger.api.get_location_info_api
+   nanites.client.swagger.api.get_org_list_api
    nanites.client.swagger.api.get_org_names_api
    nanites.client.swagger.api.get_person_affiliations_api
    nanites.client.swagger.api.get_pi_names_api

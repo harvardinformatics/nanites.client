@@ -10,6 +10,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    nanites.client.swagger.models.address
    nanites.client.swagger.models.application
@@ -17,6 +18,7 @@ Submodules
    nanites.client.swagger.models.contact
    nanites.client.swagger.models.get_basics_by_login
    nanites.client.swagger.models.get_location_info
+   nanites.client.swagger.models.get_org_list
    nanites.client.swagger.models.get_org_names
    nanites.client.swagger.models.get_person_affiliations
    nanites.client.swagger.models.get_pi_names
@@ -32,6 +34,7 @@ Submodules
    nanites.client.swagger.models.inline_response2008
    nanites.client.swagger.models.login
    nanites.client.swagger.models.login_list
+   nanites.client.swagger.models.member
    nanites.client.swagger.models.organization
    nanites.client.swagger.models.organization_contact
    nanites.client.swagger.models.parent_relation
@@ -40,5 +43,6 @@ Submodules
    nanites.client.swagger.models.person_affiliation
    nanites.client.swagger.models.person_change
    nanites.client.swagger.models.person_contact
+   nanites.client.swagger.models.person_member
    nanites.client.swagger.models.source
    nanites.client.swagger.models.user
