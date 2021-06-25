@@ -35,7 +35,8 @@ class GetPersonAffiliations(object):
         'full_name': 'str',
         'ifxorg': 'str',
         'slug': 'str',
-        'role': 'str'
+        'role': 'str',
+        'active': 'bool'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class GetPersonAffiliations(object):
         'full_name': 'full_name',
         'ifxorg': 'ifxorg',
         'slug': 'slug',
-        'role': 'role'
+        'role': 'role',
+        'active': 'active'
     }
 
-    def __init__(self, ifxid=None, full_name=None, ifxorg=None, slug=None, role=None):  # noqa: E501
+    def __init__(self, ifxid=None, full_name=None, ifxorg=None, slug=None, role=None, active=None):  # noqa: E501
         """GetPersonAffiliations - a model defined in Swagger"""  # noqa: E501
 
         self._ifxid = None
@@ -54,6 +56,7 @@ class GetPersonAffiliations(object):
         self._ifxorg = None
         self._slug = None
         self._role = None
+        self._active = None
         self.discriminator = None
 
         if ifxid is not None:
@@ -66,6 +69,8 @@ class GetPersonAffiliations(object):
             self.slug = slug
         if role is not None:
             self.role = role
+        if active is not None:
+            self.active = active
 
     @property
     def ifxid(self):
@@ -179,6 +184,27 @@ class GetPersonAffiliations(object):
         """
 
         self._role = role
+
+    @property
+    def active(self):
+        """Gets the active of this GetPersonAffiliations.  # noqa: E501
+
+
+        :return: The active of this GetPersonAffiliations.  # noqa: E501
+        :rtype: bool
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """Sets the active of this GetPersonAffiliations.
+
+
+        :param active: The active of this GetPersonAffiliations.  # noqa: E501
+        :type: bool
+        """
+
+        self._active = active
 
     def to_dict(self):
         """Returns the model properties as a dict"""

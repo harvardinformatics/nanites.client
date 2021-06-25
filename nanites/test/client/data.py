@@ -23,6 +23,7 @@ APPLICATIONS = [
     {
         'name': 'CNS User Portal',
         'fields': '__all__',
+        'auth': 'CNS User',
     }
 
 ]

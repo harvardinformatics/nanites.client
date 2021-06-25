@@ -33,21 +33,24 @@ class Member(object):
     swagger_types = {
         'id': 'int',
         'role': 'str',
-        'person': 'PersonMember'
+        'person': 'PersonMember',
+        'active': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
         'role': 'role',
-        'person': 'person'
+        'person': 'person',
+        'active': 'active'
     }
 
-    def __init__(self, id=None, role=None, person=None):  # noqa: E501
+    def __init__(self, id=None, role=None, person=None, active=None):  # noqa: E501
         """Member - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._role = None
         self._person = None
+        self._active = None
         self.discriminator = None
 
         if id is not None:
@@ -56,6 +59,8 @@ class Member(object):
             self.role = role
         if person is not None:
             self.person = person
+        if active is not None:
+            self.active = active
 
     @property
     def id(self):
@@ -121,6 +126,27 @@ class Member(object):
         """
 
         self._person = person
+
+    @property
+    def active(self):
+        """Gets the active of this Member.  # noqa: E501
+
+
+        :return: The active of this Member.  # noqa: E501
+        :rtype: bool
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """Sets the active of this Member.
+
+
+        :param active: The active of this Member.  # noqa: E501
+        :type: bool
+        """
+
+        self._active = active
 
     def to_dict(self):
         """Returns the model properties as a dict"""
