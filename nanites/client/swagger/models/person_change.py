@@ -103,6 +103,7 @@ class PersonChange(object):
         :param comment_by: The comment_by of this PersonChange.  # noqa: E501
         :type: str
         """
+
         self._comment_by = comment_by
 
     @property
@@ -146,6 +147,8 @@ class PersonChange(object):
         :param author: The author of this PersonChange.  # noqa: E501
         :type: str
         """
+        if author is not None and not re.search(r'^.*$', author):  # noqa: E501
+            raise ValueError(r"Invalid value for `author`, must be a follow pattern or equal to `/^.*$/`")  # noqa: E501
 
         self._author = author
 
