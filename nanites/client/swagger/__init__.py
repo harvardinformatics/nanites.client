@@ -30,6 +30,7 @@ from nanites.client.swagger.api.get_user_list_api import GetUserListApi
 from nanites.client.swagger.api.logins_api import LoginsApi
 from nanites.client.swagger.api.organizations_api import OrganizationsApi
 from nanites.client.swagger.api.people_api import PeopleApi
+from nanites.client.swagger.api.rc_to_eppn_api import RcToEppnApi
 from nanites.client.swagger.api.sources_api import SourcesApi
 from nanites.client.swagger.api.users_api import UsersApi
 

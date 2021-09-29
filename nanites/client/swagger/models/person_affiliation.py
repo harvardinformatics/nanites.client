@@ -33,21 +33,24 @@ class PersonAffiliation(object):
     swagger_types = {
         'slug': 'str',
         'role': 'str',
-        'active': 'bool'
+        'active': 'bool',
+        'id': 'str'
     }
 
     attribute_map = {
         'slug': 'slug',
         'role': 'role',
-        'active': 'active'
+        'active': 'active',
+        'id': 'id'
     }
 
-    def __init__(self, slug=None, role=None, active=None):  # noqa: E501
+    def __init__(self, slug=None, role=None, active=None, id=None):  # noqa: E501
         """PersonAffiliation - a model defined in Swagger"""  # noqa: E501
 
         self._slug = None
         self._role = None
         self._active = None
+        self._id = None
         self.discriminator = None
 
         if slug is not None:
@@ -56,6 +59,8 @@ class PersonAffiliation(object):
             self.role = role
         if active is not None:
             self.active = active
+        if id is not None:
+            self.id = id
 
     @property
     def slug(self):
@@ -119,6 +124,27 @@ class PersonAffiliation(object):
         """
 
         self._active = active
+
+    @property
+    def id(self):
+        """Gets the id of this PersonAffiliation.  # noqa: E501
+
+
+        :return: The id of this PersonAffiliation.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this PersonAffiliation.
+
+
+        :param id: The id of this PersonAffiliation.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
