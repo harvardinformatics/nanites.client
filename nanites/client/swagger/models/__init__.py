@@ -25,6 +25,7 @@ from nanites.client.swagger.models.get_org_list import GetOrgList
 from nanites.client.swagger.models.get_org_names import GetOrgNames
 from nanites.client.swagger.models.get_person_affiliations import GetPersonAffiliations
 from nanites.client.swagger.models.get_pi_names import GetPiNames
+from nanites.client.swagger.models.get_rc_sisters import GetRcSisters
 from nanites.client.swagger.models.get_user_list import GetUserList
 from nanites.client.swagger.models.inline_response200 import InlineResponse200
 from nanites.client.swagger.models.inline_response2001 import InlineResponse2001
