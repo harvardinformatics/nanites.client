@@ -44,9 +44,14 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     Ref: https://github.com/swagger-api/swagger-codegen
     Do not edit the class manually.
     """
+    _default = None
 
     def __init__(self):
         """Constructor"""
+        if self._default:
+            for key in self._default.__dict__.keys():
+                self.__dict__[key] = copy.copy(self._default.__dict__[key])
+            return
         # Default Base url
         self.host = os.environ.get('NANITES_API_BASE', 'https://nanites.rc.fas.harvard.edu/nanites/api')
         # Temp file folder for downloading files
@@ -64,6 +69,8 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         self.api_key_prefix = {
             'token': 'Token'
         }
+        # function to refresh API key if expired
+        self.refresh_api_key_hook = None
         # Username for HTTP basic authentication
         self.username = ""
         # Password for HTTP basic authentication
@@ -108,6 +115,12 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         self.proxy = None
         # Safe chars for path_param
         self.safe_chars_for_path_param = ''
+        # Disable client side validation
+        self.client_side_validation = True
+
+    @classmethod
+    def set_default(cls, default):
+        cls._default = default
 
     @property
     def logger_file(self):
