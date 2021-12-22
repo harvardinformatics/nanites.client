@@ -87,8 +87,8 @@ class ContactsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `contacts_create`")  # noqa: E501
 
         collection_formats = {}
@@ -186,8 +186,8 @@ class ContactsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `contacts_delete`")  # noqa: E501
 
         collection_formats = {}
@@ -402,12 +402,12 @@ class ContactsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `contacts_partial_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `contacts_partial_update`")  # noqa: E501
 
         collection_formats = {}
@@ -507,8 +507,8 @@ class ContactsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `contacts_read`")  # noqa: E501
 
         collection_formats = {}
@@ -608,12 +608,12 @@ class ContactsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `contacts_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `contacts_update`")  # noqa: E501
 
         collection_formats = {}

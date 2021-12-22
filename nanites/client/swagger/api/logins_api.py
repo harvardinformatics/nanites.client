@@ -87,8 +87,8 @@ class LoginsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `logins_create`")  # noqa: E501
 
         collection_formats = {}
@@ -186,8 +186,8 @@ class LoginsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `logins_delete`")  # noqa: E501
 
         collection_formats = {}
@@ -410,12 +410,12 @@ class LoginsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `logins_partial_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `logins_partial_update`")  # noqa: E501
 
         collection_formats = {}
@@ -515,8 +515,8 @@ class LoginsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `logins_read`")  # noqa: E501
 
         collection_formats = {}
@@ -616,12 +616,12 @@ class LoginsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
+        if self.api_client.client_side_validation and ('id' not in params or
+                                                       params['id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `id` when calling `logins_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `logins_update`")  # noqa: E501
 
         collection_formats = {}
