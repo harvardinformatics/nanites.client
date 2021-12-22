@@ -30,4 +30,5 @@ setup.py
 test-requirements.txt
 .gitignore
 nanites.client.swagger/configuration.py
+nanites/client/swagger/configuration.py
 test/test_*
