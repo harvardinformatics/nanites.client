@@ -87,8 +87,8 @@ class ApplicationsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `applications_create`")  # noqa: E501
 
         collection_formats = {}
@@ -186,11 +186,11 @@ class ApplicationsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
+        if self.api_client.client_side_validation and ('name' not in params or
+                                                       params['name'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `name` when calling `applications_delete`")  # noqa: E501
 
-        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
+        if self.api_client.client_side_validation and ('name' in params and not re.search(r'[^\/]+', params['name'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_delete`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 
@@ -388,15 +388,15 @@ class ApplicationsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
+        if self.api_client.client_side_validation and ('name' not in params or
+                                                       params['name'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `name` when calling `applications_partial_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `applications_partial_update`")  # noqa: E501
 
-        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
+        if self.api_client.client_side_validation and ('name' in params and not re.search(r'[^\/]+', params['name'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_partial_update`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 
@@ -495,11 +495,11 @@ class ApplicationsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
+        if self.api_client.client_side_validation and ('name' not in params or
+                                                       params['name'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `name` when calling `applications_read`")  # noqa: E501
 
-        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
+        if self.api_client.client_side_validation and ('name' in params and not re.search(r'[^\/]+', params['name'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_read`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 
@@ -598,15 +598,15 @@ class ApplicationsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
+        if self.api_client.client_side_validation and ('name' not in params or
+                                                       params['name'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `name` when calling `applications_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `applications_update`")  # noqa: E501
 
-        if 'name' in params and not re.search(r'[^\/]+', params['name']):  # noqa: E501
+        if self.api_client.client_side_validation and ('name' in params and not re.search(r'[^\/]+', params['name'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `name` when calling `applications_update`, must conform to the pattern `/[^\/]+/`")  # noqa: E501
         collection_formats = {}
 

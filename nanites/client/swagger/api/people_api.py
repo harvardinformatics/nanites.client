@@ -87,8 +87,8 @@ class PeopleApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `people_create`")  # noqa: E501
 
         collection_formats = {}
@@ -186,11 +186,11 @@ class PeopleApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ifxid' is set
-        if ('ifxid' not in params or
-                params['ifxid'] is None):
+        if self.api_client.client_side_validation and ('ifxid' not in params or
+                                                       params['ifxid'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ifxid` when calling `people_delete`")  # noqa: E501
 
-        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+        if self.api_client.client_side_validation and ('ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `ifxid` when calling `people_delete`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
@@ -412,15 +412,15 @@ class PeopleApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ifxid' is set
-        if ('ifxid' not in params or
-                params['ifxid'] is None):
+        if self.api_client.client_side_validation and ('ifxid' not in params or
+                                                       params['ifxid'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ifxid` when calling `people_partial_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `people_partial_update`")  # noqa: E501
 
-        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+        if self.api_client.client_side_validation and ('ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `ifxid` when calling `people_partial_update`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
@@ -519,11 +519,11 @@ class PeopleApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ifxid' is set
-        if ('ifxid' not in params or
-                params['ifxid'] is None):
+        if self.api_client.client_side_validation and ('ifxid' not in params or
+                                                       params['ifxid'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ifxid` when calling `people_read`")  # noqa: E501
 
-        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+        if self.api_client.client_side_validation and ('ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `ifxid` when calling `people_read`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
@@ -622,15 +622,15 @@ class PeopleApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ifxid' is set
-        if ('ifxid' not in params or
-                params['ifxid'] is None):
+        if self.api_client.client_side_validation and ('ifxid' not in params or
+                                                       params['ifxid'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ifxid` when calling `people_update`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if ('data' not in params or
-                params['data'] is None):
+        if self.api_client.client_side_validation and ('data' not in params or
+                                                       params['data'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `data` when calling `people_update`")  # noqa: E501
 
-        if 'ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid']):  # noqa: E501
+        if self.api_client.client_side_validation and ('ifxid' in params and not re.search(r'[A-Z0-9]{15}', params['ifxid'])):  # noqa: E501
             raise ValueError("Invalid value for parameter `ifxid` when calling `people_update`, must conform to the pattern `/[A-Z0-9]{15}/`")  # noqa: E501
         collection_formats = {}
 
