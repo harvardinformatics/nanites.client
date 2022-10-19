@@ -247,6 +247,7 @@ class ContactsApi(object):
         :param str detail: Contact detail (e.g dderpiston@gmail.com)
         :param str email: Short cut for searching by email
         :param str name: Search by name (full name for primary contact records)
+        :param str application_key: Search by application key
         :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
@@ -274,12 +275,13 @@ class ContactsApi(object):
         :param str detail: Contact detail (e.g dderpiston@gmail.com)
         :param str email: Short cut for searching by email
         :param str name: Search by name (full name for primary contact records)
+        :param str application_key: Search by application key
         :return: InlineResponse2002
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'page_size', 'type', 'detail', 'email', 'name']  # noqa: E501
+        all_params = ['page', 'page_size', 'type', 'detail', 'email', 'name', 'application_key']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -312,6 +314,8 @@ class ContactsApi(object):
             query_params.append(('email', params['email']))  # noqa: E501
         if 'name' in params:
             query_params.append(('name', params['name']))  # noqa: E501
+        if 'application_key' in params:
+            query_params.append(('application_key', params['application_key']))  # noqa: E501
 
         header_params = {}
 

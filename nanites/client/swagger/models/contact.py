@@ -41,6 +41,7 @@ class Contact(object):
         'phone': 'str',
         'address': 'str',
         'is_valid': 'bool',
+        'application_key': 'str',
         'created': 'datetime'
     }
 
@@ -53,10 +54,11 @@ class Contact(object):
         'phone': 'phone',
         'address': 'address',
         'is_valid': 'is_valid',
+        'application_key': 'application_key',
         'created': 'created'
     }
 
-    def __init__(self, id=None, ifxcon=None, name=None, type=None, detail=None, phone=None, address=None, is_valid=None, created=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, ifxcon=None, name=None, type=None, detail=None, phone=None, address=None, is_valid=None, application_key=None, created=None, _configuration=None):  # noqa: E501
         """Contact - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -70,6 +72,7 @@ class Contact(object):
         self._phone = None
         self._address = None
         self._is_valid = None
+        self._application_key = None
         self._created = None
         self.discriminator = None
 
@@ -89,6 +92,8 @@ class Contact(object):
             self.address = address
         if is_valid is not None:
             self.is_valid = is_valid
+        if application_key is not None:
+            self.application_key = application_key
         if created is not None:
             self.created = created
 
@@ -292,6 +297,32 @@ class Contact(object):
         """
 
         self._is_valid = is_valid
+
+    @property
+    def application_key(self):
+        """Gets the application_key of this Contact.  # noqa: E501
+
+        External application key for imported contacts  # noqa: E501
+
+        :return: The application_key of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._application_key
+
+    @application_key.setter
+    def application_key(self, application_key):
+        """Sets the application_key of this Contact.
+
+        External application key for imported contacts  # noqa: E501
+
+        :param application_key: The application_key of this Contact.  # noqa: E501
+        :type: str
+        """
+        if (self._configuration.client_side_validation and
+                application_key is not None and len(application_key) > 100):
+            raise ValueError("Invalid value for `application_key`, length must be less than or equal to `100`")  # noqa: E501
+
+        self._application_key = application_key
 
     @property
     def created(self):

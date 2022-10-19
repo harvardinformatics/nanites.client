@@ -11,9 +11,7 @@ SOURCEDIR     = docs/src
 BUILDDIR      = docs/build
 
 client:
-	docker run --rm -v `pwd`:/api swaggerapi/swagger-codegen-cli generate -l python -i /api/schema/swagger.json -o /api --additional-properties packageName=$(PACKAGE_NAME)
-	cp -r $(PACKAGE_NAME)/* nanites/client/swagger
-	rm -rf $(PACKAGE_NAME)
+	docker run --rm -v `pwd`:/api swagger-codegen generate -l python -i /api/schema/swagger.json -o /api --additional-properties packageName=$(PACKAGE_NAME)
 	echo 'Reverting PersonChange due to incorrect author and comment rules' && git checkout nanites/client/swagger/models/person_change.py
 
 
