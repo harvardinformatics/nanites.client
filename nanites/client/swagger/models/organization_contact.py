@@ -34,15 +34,17 @@ class OrganizationContact(object):
     """
     swagger_types = {
         'contact': 'Contact',
-        'role': 'str'
+        'role': 'str',
+        'active': 'bool'
     }
 
     attribute_map = {
         'contact': 'contact',
-        'role': 'role'
+        'role': 'role',
+        'active': 'active'
     }
 
-    def __init__(self, contact=None, role=None, _configuration=None):  # noqa: E501
+    def __init__(self, contact=None, role=None, active=None, _configuration=None):  # noqa: E501
         """OrganizationContact - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -50,11 +52,14 @@ class OrganizationContact(object):
 
         self._contact = None
         self._role = None
+        self._active = None
         self.discriminator = None
 
         self.contact = contact
         if role is not None:
             self.role = role
+        if active is not None:
+            self.active = active
 
     @property
     def contact(self):
@@ -99,6 +104,27 @@ class OrganizationContact(object):
         """
 
         self._role = role
+
+    @property
+    def active(self):
+        """Gets the active of this OrganizationContact.  # noqa: E501
+
+
+        :return: The active of this OrganizationContact.  # noqa: E501
+        :rtype: bool
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """Sets the active of this OrganizationContact.
+
+
+        :param active: The active of this OrganizationContact.  # noqa: E501
+        :type: bool
+        """
+
+        self._active = active
 
     def to_dict(self):
         """Returns the model properties as a dict"""

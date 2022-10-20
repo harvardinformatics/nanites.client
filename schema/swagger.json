@@ -443,6 +443,12 @@
                         "in": "query",
                         "description": "Search by name (full name for primary contact records)",
                         "type": "string"
+                    },
+                    {
+                        "name": "application_key",
+                        "in": "query",
+                        "description": "Search by application key",
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -2064,6 +2070,13 @@
                     "description": "Is this still valid?",
                     "type": "boolean"
                 },
+                "application_key": {
+                    "title": "Application key",
+                    "description": "External application key for imported contacts",
+                    "type": "string",
+                    "maxLength": 100,
+                    "x-nullable": true
+                },
                 "created": {
                     "title": "Created",
                     "description": "Date created",
@@ -2775,6 +2788,11 @@
                     "title": "Role",
                     "type": "string",
                     "readOnly": true
+                },
+                "active": {
+                    "title": "Active",
+                    "type": "boolean",
+                    "readOnly": true
                 }
             }
         },
@@ -2923,7 +2941,8 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/OrganizationContact"
-                    }
+                    },
+                    "readOnly": true
                 },
                 "members": {
                     "type": "array",

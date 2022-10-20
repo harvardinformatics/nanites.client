@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **phone** | **str** | Phone number or numbers | [optional] 
 **address** | **str** | Large text field for address lines | [optional] 
 **is_valid** | **bool** | Is this still valid? | [optional] 
+**application_key** | **str** | External application key for imported contacts | [optional] 
 **created** | **datetime** | Date created | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
