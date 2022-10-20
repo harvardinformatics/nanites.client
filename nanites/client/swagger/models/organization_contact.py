@@ -35,7 +35,7 @@ class OrganizationContact(object):
     swagger_types = {
         'contact': 'Contact',
         'role': 'str',
-        'active': 'str'
+        'active': 'bool'
     }
 
     attribute_map = {
@@ -111,7 +111,7 @@ class OrganizationContact(object):
 
 
         :return: The active of this OrganizationContact.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._active
 
@@ -121,7 +121,7 @@ class OrganizationContact(object):
 
 
         :param active: The active of this OrganizationContact.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._active = active

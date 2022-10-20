@@ -2791,7 +2791,7 @@
                 },
                 "active": {
                     "title": "Active",
-                    "type": "string",
+                    "type": "boolean",
                     "readOnly": true
                 }
             }
