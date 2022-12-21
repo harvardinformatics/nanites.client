@@ -80,8 +80,8 @@ class PersonChange(object):
         :param comment: The comment of this PersonChange.  # noqa: E501
         :type: str
         """
-        if comment is not None and len(comment) < 1:
-            raise ValueError("Invalid value for `comment`, length must be greater than or equal to `1`")  # noqa: E501
+        if comment is None:
+            raise ValueError("Invalid value for `comment`, must not be none")  # noqa: E501
 
         self._comment = comment
 
