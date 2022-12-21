@@ -233,8 +233,8 @@ class User(object):
         :type: str
         """
         if (self._configuration.client_side_validation and
-                first_name is not None and len(first_name) > 30):
-            raise ValueError("Invalid value for `first_name`, length must be less than or equal to `30`")  # noqa: E501
+                first_name is not None and len(first_name) > 150):
+            raise ValueError("Invalid value for `first_name`, length must be less than or equal to `150`")  # noqa: E501
 
         self._first_name = first_name
 
