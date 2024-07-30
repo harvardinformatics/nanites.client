@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_approver_contacts_list**
-> list[GetApproverContacts] get_approver_contacts_list()
+> list[GetApproverContacts] get_approver_contacts_list(org_slugs=org_slugs, role_filters=role_filters)
 
 
 
@@ -30,16 +30,22 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.GetApproverContactsApi(nanites.client.swagger.ApiClient(configuration))
+org_slugs = 'org_slugs_example' # str |  (optional)
+role_filters = 'role_filters_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_approver_contacts_list()
+    api_response = api_instance.get_approver_contacts_list(org_slugs=org_slugs, role_filters=role_filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GetApproverContactsApi->get_approver_contacts_list: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **org_slugs** | **str**|  | [optional] 
+ **role_filters** | **str**|  | [optional] 
 
 ### Return type
 

@@ -43,6 +43,8 @@ class GetApproverContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str org_slugs:
+        :param str role_filters:
         :return: list[GetApproverContacts]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,12 +66,14 @@ class GetApproverContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str org_slugs:
+        :param str role_filters:
         :return: list[GetApproverContacts]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['org_slugs', 'role_filters']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -90,6 +94,10 @@ class GetApproverContactsApi(object):
         path_params = {}
 
         query_params = []
+        if 'org_slugs' in params:
+            query_params.append(('org_slugs', params['org_slugs']))  # noqa: E501
+        if 'role_filters' in params:
+            query_params.append(('role_filters', params['role_filters']))  # noqa: E501
 
         header_params = {}
 
