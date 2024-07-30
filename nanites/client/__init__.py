@@ -470,4 +470,14 @@ class SwaggerClient(object):
         api = GetRcSistersApi(api_client=api_client)
         return self.call_api_func(api, 'get_rc_sisters_list', *args, **kwargs)
 
+    def getApproverContacts(self, *args, **kwargs):
+        '''
+        Get approver contacts
+        '''
+        api_client = kwargs.pop('api_client', None)
+        if not api_client:
+            api_client = self.api_client
+        api = GetApproverContactsApi(api_client=api_client)
+        return self.call_api_func(api, 'get_approver_contacts_list', *args, **kwargs)
+
 API = SwaggerClient()

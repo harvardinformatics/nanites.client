@@ -36,7 +36,7 @@ class GetLocationInfoApi(object):
     def get_location_info_list(self, **kwargs):  # noqa: E501
         """get_location_info_list  # noqa: E501
 
-          # noqa: E501
+        Get location info for addresses. The \"target\" parameter determines the field returned (country, state, city, postal_code) The values for the target can be filtered by other fields.  For example, setting target to city and filtering by state will get you all of the cities in a particular state  A \"location_info\" object is returned. If target was \"state\" and country was \"United States\". {     \"location_info\": [         \"Alabama\",         \"Arkansas\",         ...     ] }  When \"United States\" is in the results (ie a \"country\" target), it is placed at the top of the list.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_location_info_list(async_req=True)
@@ -62,7 +62,7 @@ class GetLocationInfoApi(object):
     def get_location_info_list_with_http_info(self, **kwargs):  # noqa: E501
         """get_location_info_list  # noqa: E501
 
-          # noqa: E501
+        Get location info for addresses. The \"target\" parameter determines the field returned (country, state, city, postal_code) The values for the target can be filtered by other fields.  For example, setting target to city and filtering by state will get you all of the cities in a particular state  A \"location_info\" object is returned. If target was \"state\" and country was \"United States\". {     \"location_info\": [         \"Alabama\",         \"Arkansas\",         ...     ] }  When \"United States\" is in the results (ie a \"country\" target), it is placed at the top of the list.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_location_info_list_with_http_info(async_req=True)
