@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Given one or more organization slugs, return a list of possible approvers and their email addresses. If role_filters are provided, only return approvers with those roles, otherwise PI and Lab Manager are used.
+Given one or more organization slugs, return a list of possible approvers and their email addresses. If role_filters are provided, only return approvers with those roles, otherwise PI and Lab Manager are used. Only active contacts are returned.
 
 ### Example
 ```python

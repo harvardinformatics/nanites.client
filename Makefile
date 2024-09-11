@@ -1,4 +1,4 @@
-#
+
 # Make the swagger client
 # Most of it gets generated in nanites/client/swagger, but for some reason, a nanites.client.swagger directory
 # is also created.  Contents are copied to the correct location and the dir is removed.
@@ -22,10 +22,10 @@ help:
 
 test: clean
 	docker build -t nanites-client .
-	docker-compose run client; docker-compose down
+	docker compose run client; docker compose down
 
 docs:
-	docker-compose run client make html; docker-compose down
+	docker compose run client make html; docker compose down
 clean:
 	find . -name "*.pyc" -print0 | xargs -0 rm -f
 

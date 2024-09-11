@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **title** | **str** | Title (e.g. Dr.) | [optional] 
 **race** | **str** | One or more race codes or text?? | [optional] 
 **ethnicity** | **str** | Ethnicity.  Generally just Hispanic or not. | [optional] 
-**gender** | **str** | Gender.  Using controlled-ish vocab. (Male, Female, Non-binary) | [optional] [default to 'Unknown']
+**gender** | **str** | Gender.  Using controlled-ish vocab. (Male, Female, Non-binary) | [optional] 
 **is_disabled** | **bool** |  | [optional] [default to False]
 **disability** | **str** | Free text description of disability. | [optional] 
 **citizenship** | **str** | Citizenship status (e.g. Permanent Resident) | [optional] 
