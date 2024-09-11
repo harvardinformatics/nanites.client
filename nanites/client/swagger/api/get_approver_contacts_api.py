@@ -36,7 +36,7 @@ class GetApproverContactsApi(object):
     def get_approver_contacts_list(self, **kwargs):  # noqa: E501
         """get_approver_contacts_list  # noqa: E501
 
-        Given one or more organization slugs, return a list of possible approvers and their email addresses. If role_filters are provided, only return approvers with those roles, otherwise PI and Lab Manager are used.  # noqa: E501
+        Given one or more organization slugs, return a list of possible approvers and their email addresses. If role_filters are provided, only return approvers with those roles, otherwise PI and Lab Manager are used. Only active contacts are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_approver_contacts_list(async_req=True)
@@ -59,7 +59,7 @@ class GetApproverContactsApi(object):
     def get_approver_contacts_list_with_http_info(self, **kwargs):  # noqa: E501
         """get_approver_contacts_list  # noqa: E501
 
-        Given one or more organization slugs, return a list of possible approvers and their email addresses. If role_filters are provided, only return approvers with those roles, otherwise PI and Lab Manager are used.  # noqa: E501
+        Given one or more organization slugs, return a list of possible approvers and their email addresses. If role_filters are provided, only return approvers with those roles, otherwise PI and Lab Manager are used. Only active contacts are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_approver_contacts_list_with_http_info(async_req=True)
