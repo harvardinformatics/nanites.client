@@ -465,8 +465,8 @@ class Person(object):
         :type: str
         """
         if (self._configuration.client_side_validation and
-                gender is not None and len(gender) > 20):
-            raise ValueError("Invalid value for `gender`, length must be less than or equal to `20`")  # noqa: E501
+                gender is not None and len(gender) > 50):
+            raise ValueError("Invalid value for `gender`, length must be less than or equal to `50`")  # noqa: E501
 
         self._gender = gender
 
