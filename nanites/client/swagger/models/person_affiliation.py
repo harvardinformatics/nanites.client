@@ -35,16 +35,18 @@ class PersonAffiliation(object):
     swagger_types = {
         'slug': 'str',
         'role': 'str',
-        'active': 'bool'
+        'active': 'bool',
+        'detail': 'str'
     }
 
     attribute_map = {
         'slug': 'slug',
         'role': 'role',
-        'active': 'active'
+        'active': 'active',
+        'detail': 'detail'
     }
 
-    def __init__(self, slug=None, role=None, active=None, _configuration=None):  # noqa: E501
+    def __init__(self, slug=None, role=None, active=None, detail=None, _configuration=None):  # noqa: E501
         """PersonAffiliation - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -53,6 +55,7 @@ class PersonAffiliation(object):
         self._slug = None
         self._role = None
         self._active = None
+        self._detail = None
         self.discriminator = None
 
         if slug is not None:
@@ -61,6 +64,8 @@ class PersonAffiliation(object):
             self.role = role
         if active is not None:
             self.active = active
+        if detail is not None:
+            self.detail = detail
 
     @property
     def slug(self):
@@ -124,6 +129,27 @@ class PersonAffiliation(object):
         """
 
         self._active = active
+
+    @property
+    def detail(self):
+        """Gets the detail of this PersonAffiliation.  # noqa: E501
+
+
+        :return: The detail of this PersonAffiliation.  # noqa: E501
+        :rtype: str
+        """
+        return self._detail
+
+    @detail.setter
+    def detail(self, detail):
+        """Sets the detail of this PersonAffiliation.
+
+
+        :param detail: The detail of this PersonAffiliation.  # noqa: E501
+        :type: str
+        """
+
+        self._detail = detail
 
     def to_dict(self):
         """Returns the model properties as a dict"""
