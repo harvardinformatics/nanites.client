@@ -60,7 +60,8 @@ class Person(object):
         'affiliations': 'list[PersonAffiliation]',
         'contacts': 'list[PersonContact]',
         'logins': 'list[LoginList]',
-        'changes': 'list[PersonChange]'
+        'changes': 'list[PersonChange]',
+        'scholar_type': 'str'
     }
 
     attribute_map = {
@@ -91,10 +92,11 @@ class Person(object):
         'affiliations': 'affiliations',
         'contacts': 'contacts',
         'logins': 'logins',
-        'changes': 'changes'
+        'changes': 'changes',
+        'scholar_type': 'scholar_type'
     }
 
-    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, title=None, race=None, ethnicity=None, gender=None, is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, comment_by=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None, changes=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, title=None, race=None, ethnicity=None, gender=None, is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, comment_by=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None, changes=None, scholar_type=None, _configuration=None):  # noqa: E501
         """Person - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -128,6 +130,7 @@ class Person(object):
         self._contacts = None
         self._logins = None
         self._changes = None
+        self._scholar_type = None
         self.discriminator = None
 
         if id is not None:
@@ -183,6 +186,8 @@ class Person(object):
             self.logins = logins
         if changes is not None:
             self.changes = changes
+        if scholar_type is not None:
+            self.scholar_type = scholar_type
 
     @property
     def id(self):
@@ -859,6 +864,32 @@ class Person(object):
         """
 
         self._changes = changes
+
+    @property
+    def scholar_type(self):
+        """Gets the scholar_type of this Person.  # noqa: E501
+
+        Undergraduate Student, Graduate Student, Postdoctoral Fellow, Professor, Visiting Scholar, Research Associate, Other  # noqa: E501
+
+        :return: The scholar_type of this Person.  # noqa: E501
+        :rtype: str
+        """
+        return self._scholar_type
+
+    @scholar_type.setter
+    def scholar_type(self, scholar_type):
+        """Sets the scholar_type of this Person.
+
+        Undergraduate Student, Graduate Student, Postdoctoral Fellow, Professor, Visiting Scholar, Research Associate, Other  # noqa: E501
+
+        :param scholar_type: The scholar_type of this Person.  # noqa: E501
+        :type: str
+        """
+        if (self._configuration.client_side_validation and
+                scholar_type is not None and len(scholar_type) > 50):
+            raise ValueError("Invalid value for `scholar_type`, length must be less than or equal to `50`")  # noqa: E501
+
+        self._scholar_type = scholar_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""
