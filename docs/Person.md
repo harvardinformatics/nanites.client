@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **contacts** | [**list[PersonContact]**](PersonContact.md) |  | [optional] 
 **logins** | [**list[LoginList]**](LoginList.md) |  | [optional] 
 **changes** | [**list[PersonChange]**](PersonChange.md) |  | [optional] 
+**scholar_type** | **str** | Undergraduate Student, Graduate Student, Postdoctoral Fellow, Professor, Visiting Scholar, Research Associate, Other | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
