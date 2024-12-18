@@ -132,45 +132,45 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def contacts_delete(self, id, **kwargs):  # noqa: E501
+    def contacts_delete(self, ifxcon, **kwargs):  # noqa: E501
         """contacts_delete  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_delete(id, async_req=True)
+        >>> thread = api.contacts_delete(ifxcon, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.contacts_delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.contacts_delete_with_http_info(ifxcon, **kwargs)  # noqa: E501
         else:
-            (data) = self.contacts_delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.contacts_delete_with_http_info(ifxcon, **kwargs)  # noqa: E501
             return data
 
-    def contacts_delete_with_http_info(self, id, **kwargs):  # noqa: E501
+    def contacts_delete_with_http_info(self, ifxcon, **kwargs):  # noqa: E501
         """contacts_delete  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_delete_with_http_info(id, async_req=True)
+        >>> thread = api.contacts_delete_with_http_info(ifxcon, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['ifxcon']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -185,16 +185,16 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if self.api_client.client_side_validation and ('id' not in params or
-                                                       params['id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `id` when calling `contacts_delete`")  # noqa: E501
+        # verify the required parameter 'ifxcon' is set
+        if self.api_client.client_side_validation and ('ifxcon' not in params or
+                                                       params['ifxcon'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `ifxcon` when calling `contacts_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxcon' in params:
+            path_params['ifxcon'] = params['ifxcon']  # noqa: E501
 
         query_params = []
 
@@ -216,7 +216,7 @@ class ContactsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{id}/', 'DELETE',
+            '/contacts/{ifxcon}/', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -350,17 +350,17 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def contacts_partial_update(self, id, data, **kwargs):  # noqa: E501
+    def contacts_partial_update(self, ifxcon, data, **kwargs):  # noqa: E501
         """contacts_partial_update  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_partial_update(id, data, async_req=True)
+        >>> thread = api.contacts_partial_update(ifxcon, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,
@@ -368,29 +368,29 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.contacts_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            return self.contacts_partial_update_with_http_info(ifxcon, data, **kwargs)  # noqa: E501
         else:
-            (data) = self.contacts_partial_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            (data) = self.contacts_partial_update_with_http_info(ifxcon, data, **kwargs)  # noqa: E501
             return data
 
-    def contacts_partial_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
+    def contacts_partial_update_with_http_info(self, ifxcon, data, **kwargs):  # noqa: E501
         """contacts_partial_update  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_partial_update_with_http_info(id, data, async_req=True)
+        >>> thread = api.contacts_partial_update_with_http_info(ifxcon, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'data']  # noqa: E501
+        all_params = ['ifxcon', 'data']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -405,10 +405,10 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if self.api_client.client_side_validation and ('id' not in params or
-                                                       params['id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `id` when calling `contacts_partial_update`")  # noqa: E501
+        # verify the required parameter 'ifxcon' is set
+        if self.api_client.client_side_validation and ('ifxcon' not in params or
+                                                       params['ifxcon'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `ifxcon` when calling `contacts_partial_update`")  # noqa: E501
         # verify the required parameter 'data' is set
         if self.api_client.client_side_validation and ('data' not in params or
                                                        params['data'] is None):  # noqa: E501
@@ -417,8 +417,8 @@ class ContactsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxcon' in params:
+            path_params['ifxcon'] = params['ifxcon']  # noqa: E501
 
         query_params = []
 
@@ -442,7 +442,7 @@ class ContactsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{id}/', 'PATCH',
+            '/contacts/{ifxcon}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -457,45 +457,45 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def contacts_read(self, id, **kwargs):  # noqa: E501
+    def contacts_read(self, ifxcon, **kwargs):  # noqa: E501
         """contacts_read  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_read(id, async_req=True)
+        >>> thread = api.contacts_read(ifxcon, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.contacts_read_with_http_info(id, **kwargs)  # noqa: E501
+            return self.contacts_read_with_http_info(ifxcon, **kwargs)  # noqa: E501
         else:
-            (data) = self.contacts_read_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.contacts_read_with_http_info(ifxcon, **kwargs)  # noqa: E501
             return data
 
-    def contacts_read_with_http_info(self, id, **kwargs):  # noqa: E501
+    def contacts_read_with_http_info(self, ifxcon, **kwargs):  # noqa: E501
         """contacts_read  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_read_with_http_info(id, async_req=True)
+        >>> thread = api.contacts_read_with_http_info(ifxcon, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['ifxcon']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -510,16 +510,16 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if self.api_client.client_side_validation and ('id' not in params or
-                                                       params['id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `id` when calling `contacts_read`")  # noqa: E501
+        # verify the required parameter 'ifxcon' is set
+        if self.api_client.client_side_validation and ('ifxcon' not in params or
+                                                       params['ifxcon'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `ifxcon` when calling `contacts_read`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxcon' in params:
+            path_params['ifxcon'] = params['ifxcon']  # noqa: E501
 
         query_params = []
 
@@ -541,7 +541,7 @@ class ContactsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{id}/', 'GET',
+            '/contacts/{ifxcon}/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -556,17 +556,17 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def contacts_update(self, id, data, **kwargs):  # noqa: E501
+    def contacts_update(self, ifxcon, data, **kwargs):  # noqa: E501
         """contacts_update  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_update(id, data, async_req=True)
+        >>> thread = api.contacts_update(ifxcon, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,
@@ -574,29 +574,29 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.contacts_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            return self.contacts_update_with_http_info(ifxcon, data, **kwargs)  # noqa: E501
         else:
-            (data) = self.contacts_update_with_http_info(id, data, **kwargs)  # noqa: E501
+            (data) = self.contacts_update_with_http_info(ifxcon, data, **kwargs)  # noqa: E501
             return data
 
-    def contacts_update_with_http_info(self, id, data, **kwargs):  # noqa: E501
+    def contacts_update_with_http_info(self, ifxcon, data, **kwargs):  # noqa: E501
         """contacts_update  # noqa: E501
 
         ViewSet for contact objects  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.contacts_update_with_http_info(id, data, async_req=True)
+        >>> thread = api.contacts_update_with_http_info(ifxcon, data, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: (required)
+        :param str ifxcon: (required)
         :param Contact data: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'data']  # noqa: E501
+        all_params = ['ifxcon', 'data']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -611,10 +611,10 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'id' is set
-        if self.api_client.client_side_validation and ('id' not in params or
-                                                       params['id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `id` when calling `contacts_update`")  # noqa: E501
+        # verify the required parameter 'ifxcon' is set
+        if self.api_client.client_side_validation and ('ifxcon' not in params or
+                                                       params['ifxcon'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `ifxcon` when calling `contacts_update`")  # noqa: E501
         # verify the required parameter 'data' is set
         if self.api_client.client_side_validation and ('data' not in params or
                                                        params['data'] is None):  # noqa: E501
@@ -623,8 +623,8 @@ class ContactsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
+        if 'ifxcon' in params:
+            path_params['ifxcon'] = params['ifxcon']  # noqa: E501
 
         query_params = []
 
@@ -648,7 +648,7 @@ class ContactsApi(object):
         auth_settings = ['token']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{id}/', 'PUT',
+            '/contacts/{ifxcon}/', 'PUT',
             path_params,
             query_params,
             header_params,
