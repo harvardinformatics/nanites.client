@@ -1,6 +1,6 @@
 # nanites.client.swagger.AddressesApi
 
-All URIs are relative to *http://localhost:8765/nanites/api*
+All URIs are relative to *https://nanites.rc.fas.harvard.edu/nanites/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

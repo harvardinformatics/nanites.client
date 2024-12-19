@@ -1,15 +1,15 @@
 # nanites.client.swagger.ContactsApi
 
-All URIs are relative to *http://localhost:8765/nanites/api*
+All URIs are relative to *https://nanites.rc.fas.harvard.edu/nanites/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**contacts_create**](ContactsApi.md#contacts_create) | **POST** /contacts/ | 
-[**contacts_delete**](ContactsApi.md#contacts_delete) | **DELETE** /contacts/{id}/ | 
+[**contacts_delete**](ContactsApi.md#contacts_delete) | **DELETE** /contacts/{ifxcon}/ | 
 [**contacts_list**](ContactsApi.md#contacts_list) | **GET** /contacts/ | 
-[**contacts_partial_update**](ContactsApi.md#contacts_partial_update) | **PATCH** /contacts/{id}/ | 
-[**contacts_read**](ContactsApi.md#contacts_read) | **GET** /contacts/{id}/ | 
-[**contacts_update**](ContactsApi.md#contacts_update) | **PUT** /contacts/{id}/ | 
+[**contacts_partial_update**](ContactsApi.md#contacts_partial_update) | **PATCH** /contacts/{ifxcon}/ | 
+[**contacts_read**](ContactsApi.md#contacts_read) | **GET** /contacts/{ifxcon}/ | 
+[**contacts_update**](ContactsApi.md#contacts_update) | **PUT** /contacts/{ifxcon}/ | 
 
 
 # **contacts_create**
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contacts_delete**
-> contacts_delete(id)
+> contacts_delete(ifxcon)
 
 
 
@@ -88,10 +88,10 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxcon = 'ifxcon_example' # str | 
 
 try:
-    api_instance.contacts_delete(id)
+    api_instance.contacts_delete(ifxcon)
 except ApiException as e:
     print("Exception when calling ContactsApi->contacts_delete: %s\n" % e)
 ```
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxcon** | **str**|  | 
 
 ### Return type
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contacts_partial_update**
-> Contact contacts_partial_update(id, data)
+> Contact contacts_partial_update(ifxcon, data)
 
 
 
@@ -205,11 +205,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxcon = 'ifxcon_example' # str | 
 data = nanites.client.swagger.Contact() # Contact | 
 
 try:
-    api_response = api_instance.contacts_partial_update(id, data)
+    api_response = api_instance.contacts_partial_update(ifxcon, data)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->contacts_partial_update: %s\n" % e)
@@ -219,7 +219,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxcon** | **str**|  | 
  **data** | [**Contact**](Contact.md)|  | 
 
 ### Return type
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contacts_read**
-> Contact contacts_read(id)
+> Contact contacts_read(ifxcon)
 
 
 
@@ -260,10 +260,10 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxcon = 'ifxcon_example' # str | 
 
 try:
-    api_response = api_instance.contacts_read(id)
+    api_response = api_instance.contacts_read(ifxcon)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->contacts_read: %s\n" % e)
@@ -273,7 +273,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxcon** | **str**|  | 
 
 ### Return type
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contacts_update**
-> Contact contacts_update(id, data)
+> Contact contacts_update(ifxcon, data)
 
 
 
@@ -313,11 +313,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = nanites.client.swagger.ContactsApi(nanites.client.swagger.ApiClient(configuration))
-id = 'id_example' # str | 
+ifxcon = 'ifxcon_example' # str | 
 data = nanites.client.swagger.Contact() # Contact | 
 
 try:
-    api_response = api_instance.contacts_update(id, data)
+    api_response = api_instance.contacts_update(ifxcon, data)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->contacts_update: %s\n" % e)
@@ -327,7 +327,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **ifxcon** | **str**|  | 
  **data** | [**Contact**](Contact.md)|  | 
 
 ### Return type
