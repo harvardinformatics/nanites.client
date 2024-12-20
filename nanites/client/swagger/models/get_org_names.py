@@ -34,15 +34,17 @@ class GetOrgNames(object):
     """
     swagger_types = {
         'name': 'str',
-        'slug': 'str'
+        'slug': 'str',
+        'ifxorg': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'slug': 'slug'
+        'slug': 'slug',
+        'ifxorg': 'ifxorg'
     }
 
-    def __init__(self, name=None, slug=None, _configuration=None):  # noqa: E501
+    def __init__(self, name=None, slug=None, ifxorg=None, _configuration=None):  # noqa: E501
         """GetOrgNames - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -50,12 +52,15 @@ class GetOrgNames(object):
 
         self._name = None
         self._slug = None
+        self._ifxorg = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
         if slug is not None:
             self.slug = slug
+        if ifxorg is not None:
+            self.ifxorg = ifxorg
 
     @property
     def name(self):
@@ -104,6 +109,30 @@ class GetOrgNames(object):
             raise ValueError("Invalid value for `slug`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._slug = slug
+
+    @property
+    def ifxorg(self):
+        """Gets the ifxorg of this GetOrgNames.  # noqa: E501
+
+
+        :return: The ifxorg of this GetOrgNames.  # noqa: E501
+        :rtype: str
+        """
+        return self._ifxorg
+
+    @ifxorg.setter
+    def ifxorg(self, ifxorg):
+        """Sets the ifxorg of this GetOrgNames.
+
+
+        :param ifxorg: The ifxorg of this GetOrgNames.  # noqa: E501
+        :type: str
+        """
+        if (self._configuration.client_side_validation and
+                ifxorg is not None and len(ifxorg) < 1):
+            raise ValueError("Invalid value for `ifxorg`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._ifxorg = ifxorg
 
     def to_dict(self):
         """Returns the model properties as a dict"""
