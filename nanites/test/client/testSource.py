@@ -5,7 +5,6 @@ Test Source
 """
 
 
-from nanites.client.swagger import ApiClient, Configuration
 from nanites.client import API
 from nanites.test.client import data, ApiTest
 

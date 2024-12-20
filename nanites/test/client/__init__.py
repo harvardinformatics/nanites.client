@@ -81,6 +81,8 @@ class ApiTest(unittest.TestCase):
                         API.apiFn('deletePerson', api_client=self.api_client, ifxid=result.ifxid)
                     elif model_name == 'Organization':
                         API.apiFn('deleteOrganization', api_client=self.api_client, ifxorg=result.ifxorg)
+                    elif model_name == 'Contact':
+                        API.apiFn('deleteContact', api_client=self.api_client, ifxcon=result.ifxcon)
                     else:
                         API.apiFn('delete%s' % model_name, api_client=self.api_client, id=result.id)
                 except Exception as e:
