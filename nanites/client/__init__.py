@@ -296,6 +296,11 @@ class SwaggerClient(object):
                     raise Exception('Organization update requires an ifxorg')
                 ifxorg = data.pop('ifxorg')
                 return self.call_api_func(api, swagger_func_name.lower(), ifxorg=ifxorg, data=data, **kwargs)
+            elif model_name == 'Contact':
+                if 'ifxcon' not in data:
+                    raise Exception('Contact update requires an ifxcon')
+                ifxcon = data.pop('ifxcon')
+                return self.call_api_func(api, swagger_func_name.lower(), ifxcon=ifxcon, data=data, **kwargs)
             else:
                 if 'id' not in data:
                     raise Exception('id required to update %s' % model_name)
@@ -317,6 +322,11 @@ class SwaggerClient(object):
                     raise Exception('ifxorg required to delete Organizations')
                 ifxorg = data.pop('ifxorg')
                 return self.call_api_func(api, swagger_func_name.lower(), ifxorg=ifxorg, **kwargs)
+            elif model_name == 'Contact':
+                if 'ifxcon' not in data:
+                    raise Exception('ifxcon required to delete Contacts')
+                ifxcon = data.pop('ifxcon')
+                return self.call_api_func(api, swagger_func_name.lower(), ifxcon=ifxcon, **kwargs)
             else:
                 if 'id' not in data:
                     raise Exception('id required to delete %s' % model_name)
