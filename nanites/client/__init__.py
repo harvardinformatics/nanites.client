@@ -367,6 +367,8 @@ class SwaggerClient(object):
                 raise Exception('Item not found in call to %s using %s' % (func_name, repr(kwargs)))
             elif e.status == 401:
                 raise Exception('Not authorized to use %s' % func_name)
+            elif e.status == 400:
+                raise Exception('Bad request to %s' % (repr(e.body)))
             else:
                 raise
 
