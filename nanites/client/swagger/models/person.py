@@ -96,7 +96,7 @@ class Person(object):
         'scholar_type': 'scholar_type'
     }
 
-    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, title=None, race=None, ethnicity=None, gender=None, is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, comment_by=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None, changes=None, scholar_type=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, url=None, ifxid=None, first_name=None, last_name=None, full_name=None, primary_email=None, title=None, race=None, ethnicity=None, gender='Unknown', is_disabled=False, disability=None, citizenship=None, visa_details=None, national_origin=None, primary_affiliation=None, is_enabled=True, source=None, change_comment=None, comment_by=None, created=None, author=None, addresses=None, affiliations=None, contacts=None, logins=None, changes=None, scholar_type=None, _configuration=None):  # noqa: E501
         """Person - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
