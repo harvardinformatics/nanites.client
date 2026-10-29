@@ -41,6 +41,8 @@ class Login(object):
         'role': 'str',
         'is_enabled': 'bool',
         'created': 'datetime',
+        'updated': 'datetime',
+        'expiration': 'datetime',
         'author': 'str',
         'person': 'Person',
         'contacts': 'list[int]'
@@ -55,12 +57,14 @@ class Login(object):
         'role': 'role',
         'is_enabled': 'is_enabled',
         'created': 'created',
+        'updated': 'updated',
+        'expiration': 'expiration',
         'author': 'author',
         'person': 'person',
         'contacts': 'contacts'
     }
 
-    def __init__(self, id=None, ifxid=None, application=None, application_key=None, username=None, role='user', is_enabled=True, created=None, author=None, person=None, contacts=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, ifxid=None, application=None, application_key=None, username=None, role='user', is_enabled=True, created=None, updated=None, expiration=None, author=None, person=None, contacts=None, _configuration=None):  # noqa: E501
         """Login - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -74,6 +78,8 @@ class Login(object):
         self._role = None
         self._is_enabled = None
         self._created = None
+        self._updated = None
+        self._expiration = None
         self._author = None
         self._person = None
         self._contacts = None
@@ -93,6 +99,10 @@ class Login(object):
             self.is_enabled = is_enabled
         if created is not None:
             self.created = created
+        if updated is not None:
+            self.updated = updated
+        if expiration is not None:
+            self.expiration = expiration
         if author is not None:
             self.author = author
         if person is not None:
@@ -292,6 +302,48 @@ class Login(object):
         """
 
         self._created = created
+
+    @property
+    def updated(self):
+        """Gets the updated of this Login.  # noqa: E501
+
+
+        :return: The updated of this Login.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated
+
+    @updated.setter
+    def updated(self, updated):
+        """Sets the updated of this Login.
+
+
+        :param updated: The updated of this Login.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated = updated
+
+    @property
+    def expiration(self):
+        """Gets the expiration of this Login.  # noqa: E501
+
+
+        :return: The expiration of this Login.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration
+
+    @expiration.setter
+    def expiration(self, expiration):
+        """Sets the expiration of this Login.
+
+
+        :param expiration: The expiration of this Login.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration = expiration
 
     @property
     def author(self):

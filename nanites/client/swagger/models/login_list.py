@@ -36,17 +36,19 @@ class LoginList(object):
         'username': 'str',
         'application': 'str',
         'role': 'str',
-        'is_enabled': 'bool'
+        'is_enabled': 'bool',
+        'expiration': 'datetime'
     }
 
     attribute_map = {
         'username': 'username',
         'application': 'application',
         'role': 'role',
-        'is_enabled': 'is_enabled'
+        'is_enabled': 'is_enabled',
+        'expiration': 'expiration'
     }
 
-    def __init__(self, username=None, application=None, role=None, is_enabled=None, _configuration=None):  # noqa: E501
+    def __init__(self, username=None, application=None, role=None, is_enabled=None, expiration=None, _configuration=None):  # noqa: E501
         """LoginList - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -56,6 +58,7 @@ class LoginList(object):
         self._application = None
         self._role = None
         self._is_enabled = None
+        self._expiration = None
         self.discriminator = None
 
         if username is not None:
@@ -63,6 +66,8 @@ class LoginList(object):
         self.application = application
         self.role = role
         self.is_enabled = is_enabled
+        if expiration is not None:
+            self.expiration = expiration
 
     @property
     def username(self):
@@ -164,6 +169,29 @@ class LoginList(object):
             raise ValueError("Invalid value for `is_enabled`, must not be `None`")  # noqa: E501
 
         self._is_enabled = is_enabled
+
+    @property
+    def expiration(self):
+        """Gets the expiration of this LoginList.  # noqa: E501
+
+        Timestamp when the login expires  # noqa: E501
+
+        :return: The expiration of this LoginList.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expiration
+
+    @expiration.setter
+    def expiration(self, expiration):
+        """Sets the expiration of this LoginList.
+
+        Timestamp when the login expires  # noqa: E501
+
+        :param expiration: The expiration of this LoginList.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expiration = expiration
 
     def to_dict(self):
         """Returns the model properties as a dict"""

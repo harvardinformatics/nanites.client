@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **application** | **str** |  | 
 **role** | **str** |  | 
 **is_enabled** | **bool** |  | 
+**expiration** | **datetime** | Timestamp when the login expires | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

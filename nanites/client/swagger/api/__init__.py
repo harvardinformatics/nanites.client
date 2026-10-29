@@ -3,6 +3,8 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from nanites.client.swagger.api.api_api import ApiApi
+from nanites.client.swagger.api.redirect_uri_api import RedirectUriApi
 from nanites.client.swagger.api.addresses_api import AddressesApi
 from nanites.client.swagger.api.all_the_things_api import AllTheThingsApi
 from nanites.client.swagger.api.applications_api import ApplicationsApi

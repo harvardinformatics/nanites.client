@@ -16,6 +16,8 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
+from nanites.client.swagger.api.api_api import ApiApi
+from nanites.client.swagger.api.redirect_uri_api import RedirectUriApi
 from nanites.client.swagger.api.addresses_api import AddressesApi
 from nanites.client.swagger.api.all_the_things_api import AllTheThingsApi
 from nanites.client.swagger.api.applications_api import ApplicationsApi
@@ -35,7 +37,6 @@ from nanites.client.swagger.api.people_api import PeopleApi
 from nanites.client.swagger.api.rc_to_eppn_api import RcToEppnApi
 from nanites.client.swagger.api.sources_api import SourcesApi
 from nanites.client.swagger.api.users_api import UsersApi
-
 # import ApiClient
 from nanites.client.swagger.api_client import ApiClient
 from nanites.client.swagger.configuration import Configuration

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **role** | **str** | Role in the application (e.g. superuser) | [optional] [default to 'user']
 **is_enabled** | **bool** |  | [optional] [default to True]
 **created** | **datetime** |  | [optional] 
+**updated** | **datetime** |  | [optional] 
+**expiration** | **datetime** |  | [optional] 
 **author** | **str** |  | [optional] 
 **person** | [**Person**](Person.md) |  | [optional] 
 **contacts** | **list[int]** |  | [optional] 
