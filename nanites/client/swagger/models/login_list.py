@@ -37,7 +37,8 @@ class LoginList(object):
         'application': 'str',
         'role': 'str',
         'is_enabled': 'bool',
-        'expiration': 'datetime'
+        'expiration': 'datetime',
+        'application_key': 'str'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class LoginList(object):
         'application': 'application',
         'role': 'role',
         'is_enabled': 'is_enabled',
-        'expiration': 'expiration'
+        'expiration': 'expiration',
+        'application_key': 'application_key'
     }
 
-    def __init__(self, username=None, application=None, role=None, is_enabled=None, expiration=None, _configuration=None):  # noqa: E501
+    def __init__(self, username=None, application=None, role=None, is_enabled=None, expiration=None, application_key=None, _configuration=None):  # noqa: E501
         """LoginList - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -59,6 +61,7 @@ class LoginList(object):
         self._role = None
         self._is_enabled = None
         self._expiration = None
+        self._application_key = None
         self.discriminator = None
 
         if username is not None:
@@ -68,6 +71,8 @@ class LoginList(object):
         self.is_enabled = is_enabled
         if expiration is not None:
             self.expiration = expiration
+        if application_key is not None:
+            self.application_key = application_key
 
     @property
     def username(self):
@@ -192,6 +197,30 @@ class LoginList(object):
         """
 
         self._expiration = expiration
+
+    @property
+    def application_key(self):
+        """Gets the application_key of this LoginList.  # noqa: E501
+
+
+        :return: The application_key of this LoginList.  # noqa: E501
+        :rtype: str
+        """
+        return self._application_key
+
+    @application_key.setter
+    def application_key(self, application_key):
+        """Sets the application_key of this LoginList.
+
+
+        :param application_key: The application_key of this LoginList.  # noqa: E501
+        :type: str
+        """
+        if (self._configuration.client_side_validation and
+                application_key is not None and len(application_key) > 255):
+            raise ValueError("Invalid value for `application_key`, length must be less than or equal to `255`")  # noqa: E501
+
+        self._application_key = application_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""
