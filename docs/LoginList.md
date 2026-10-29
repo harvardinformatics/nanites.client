@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **role** | **str** |  | 
 **is_enabled** | **bool** |  | 
 **expiration** | **datetime** | Timestamp when the login expires | [optional] 
-**application_key** | **str** | Alternate key for the application login (e.g. objectSid). | [optional] 
+**application_key** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

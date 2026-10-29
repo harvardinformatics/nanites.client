@@ -202,7 +202,6 @@ class LoginList(object):
     def application_key(self):
         """Gets the application_key of this LoginList.  # noqa: E501
 
-        Alternate key for the application login (e.g. objectSid).  # noqa: E501
 
         :return: The application_key of this LoginList.  # noqa: E501
         :rtype: str
@@ -213,7 +212,6 @@ class LoginList(object):
     def application_key(self, application_key):
         """Sets the application_key of this LoginList.
 
-        Alternate key for the application login (e.g. objectSid).  # noqa: E501
 
         :param application_key: The application_key of this LoginList.  # noqa: E501
         :type: str
